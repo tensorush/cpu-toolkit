@@ -18,7 +18,7 @@
     <p><a href="https://twitter.com/etiennejcb/">Animation by Étienne Jacob</a></p>
 </h4>
 
-## :: Bare essentials for studying Computer Science — Algorithms and Data Structures — which I've been researching, polishing and reimplementing for personal convenience.
+## :hammer_and_wrench: Bare essentials for studying Computer Science — Algorithms and Data Structures — which I've been researching, polishing and reimplementing for personal convenience.
 
 > ### Any contributions, corrections or optimizations are very welcome! :hugs:
 
