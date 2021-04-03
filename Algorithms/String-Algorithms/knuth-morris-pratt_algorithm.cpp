@@ -32,4 +32,6 @@ int main() {
             std::cout << "word = text[" << i - m + 1 << ".." << i << "]" << std::endl;
         }
     }
+
+    return 0;
 }
