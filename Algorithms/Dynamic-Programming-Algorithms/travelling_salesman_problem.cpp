@@ -50,4 +50,6 @@ int main() {
         std::cin >> x[i] >> y[i];
     }
     std::cout << TravellingSalesmanProblem(n, x, y) << std::endl;
+
+    return 0;
 }

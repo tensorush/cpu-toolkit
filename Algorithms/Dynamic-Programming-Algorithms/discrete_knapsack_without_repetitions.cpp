@@ -27,8 +27,7 @@ size_t DiscreteKnapsackWithoutRepetitions(std::vector<Item>& items, const size_t
 }
 
 int main() {
-    size_t numItems;
-    size_t knapsackCapacity;
+    size_t numItems, knapsackCapacity;
     std::cin >> numItems >> knapsackCapacity;
     std::vector<Item> items(numItems);
     for (size_t i = 0; i < numItems; ++i) {

@@ -27,11 +27,11 @@
 
 - ### [Graph Algorithms (coming soon...)](https://github.com/geotrush/Computer-Scientists-Toolkit/blob/master/Algorithms/Graph-Algorithms)
 
-- ### [Greedy Algorithms](https://github.com/geotrush/Computer-Scientists-Toolkit/blob/master/Algorithms/Greedy-Algorithms)
+- ### [String Algorithms](https://github.com/geotrush/Computer-Scientists-Toolkit/blob/master/Algorithms/String-Algorithms)
 
 - ### [Search Algorithms](https://github.com/geotrush/Computer-Scientists-Toolkit/blob/master/Algorithms/Search-Algorithms)
 
-- ### [String Algorithms](https://github.com/geotrush/Computer-Scientists-Toolkit/blob/master/Algorithms/String-Algorithms)
+- ### [Greedy Algorithms](https://github.com/geotrush/Computer-Scientists-Toolkit/blob/master/Algorithms/Greedy-Algorithms)
 
 - ### [Sorting Algorithms](https://github.com/geotrush/Computer-Scientists-Toolkit/blob/master/Algorithms/Sorting-Algorithms)
 
@@ -44,7 +44,7 @@
 
 ## :wrench: [Data Structures](https://github.com/geotrush/Computer-Scientists-Toolkit/blob/master/Data-Structures)
 
-- ### [Array Structures](https://github.com/geotrush/Computer-Scientists-Toolkit/blob/master/Data-Structures/Array-Structures)
+- ### [List Structures](https://github.com/geotrush/Computer-Scientists-Toolkit/blob/master/Data-Structures/List-Structures)
 
 - ### [Tree Structures (coming soon...)](https://github.com/geotrush/Computer-Scientists-Toolkit/blob/master/Data-Structures/Tree-Structures)
 

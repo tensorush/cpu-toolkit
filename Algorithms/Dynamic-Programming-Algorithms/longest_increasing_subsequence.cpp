@@ -42,4 +42,6 @@ int main() {
     for (auto index : solution) {
         std::cout << index << ' ';
     }
+
+    return 0;
 }

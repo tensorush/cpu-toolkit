@@ -53,4 +53,6 @@ int main() {
     for (auto element : solution) {
         std::cout << element << ' ';
     }
+
+    return 0;
 }

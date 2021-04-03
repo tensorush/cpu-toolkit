@@ -25,7 +25,6 @@ int main() {
     size_t numStations, tankCapacity, destination;
     std::cin >> numStations >> tankCapacity >> destination;
     std::vector<size_t> locations(numStations + 2);
-    locations[0] = 0;
     locations[numStations + 1] = destination;
     for (size_t i = 1; i <= numStations; ++i) {
         std::cin >> locations[i];
