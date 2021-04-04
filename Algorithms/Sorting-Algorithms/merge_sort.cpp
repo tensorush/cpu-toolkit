@@ -10,7 +10,7 @@
 template<typename T>
 void MergeSort(std::vector<T>& array, const size_t& low, const size_t& high) {
     if (low == high) return ;
-    size_t mid = (low + high) / 2;
+    size_t mid = low + (high - low) / 2;
     MergeSort(array, low, mid);
     MergeSort(array, mid + 1, high);
     std::vector<T> mergedArray;

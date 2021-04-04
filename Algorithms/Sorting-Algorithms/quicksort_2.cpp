@@ -10,13 +10,13 @@
 template<typename T>
 void Quicksort2(std::vector<T>& array, int low, int high) {
     if (low >= high) return ;
-    // "Median-of-Three" pivot rule
+    // "Median-of-Three" pivot selection strategy
     int mid = low + (high - low) / 2;
     if (array[high] < array[low]) std::swap(array[high], array[low]);
     if (array[mid] < array[low]) std::swap(array[mid], array[low]);
     if (array[high] < array[mid]) std::swap(array[high], array[mid]);
     const T pivot = array[mid];
-    // Hoare's partition scheme
+    // Hoare's partitioning scheme
     int i = low, j = high;
     while (i <= j) {
         while (array[i] < pivot) ++i;

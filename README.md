@@ -67,13 +67,16 @@
 
 - ### [Data Structures and Algorithms Tutorials](https://www.programiz.com/dsa/)
 
-- ### [Advanced Data Structures lectures by Niema Moshiri](https://www.youtube.com/playlist?list=PLM_KIlU0WoXmkV4QB1Dg8PtJaHTdWHwRS)
+- ### [Advanced Data Structures Lectures by Niema Moshiri](https://www.youtube.com/playlist?list=PLM_KIlU0WoXmkV4QB1Dg8PtJaHTdWHwRS)
 
 - ### [Algorithm and Data Structures Problems by Ravi Mandliya](https://github.com/mandliya/algorithms_and_data_structures/)
+
 
 - ### [COS226 Undergraduate Course offered by Princeton University](https://www.cs.princeton.edu/courses/archive/fall20/cos226/syllabus.php)
 
 - ### [Algorithms Coursera Specialization offered by Stanford University](https://www.coursera.org/specializations/algorithms/)
+
+- ### [Collection of Algorithms and Data Structures by Andrei Navumenka](https://github.com/indy256/codelibrary/)
 
 - ### [Data Structures and Algorithms Coursera Specialization offered by University of California, San Diego (UCSD) and HSE University](https://www.coursera.org/specializations/data-structures-algorithms/)
 
