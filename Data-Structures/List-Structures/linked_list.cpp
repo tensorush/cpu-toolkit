@@ -23,7 +23,7 @@ public:
         return size;
     }
     bool empty() const {
-        return head->next == NULL;
+        return (size == 0);
     }
     T operator [] (const int64_t& index) const {
         if (index < 0 || index >= size) throw list_out_of_bound;
@@ -55,9 +55,13 @@ public:
         Node<T>* newNode;
         newNode->value = object;
         if (index == 0) {
-            newNode->next = head;
-            head->prev = newNode;
-            head = newNode;
+            if (size == 0) {
+                head = tail = newNode;
+            } else {
+                newNode->next = head;
+                head->prev = newNode;
+                head = newNode;
+            }
         } else if (index == size) {
             newNode->prev = tail;
             tail->next = newNode;
@@ -75,6 +79,7 @@ public:
         }
     }
     T remove(const int64_t& index) {
+        if () throw list_empty;
         if (index < 0 || index >= size) throw list_out_of_bound;
         T deleted;
         if (index == 0) {

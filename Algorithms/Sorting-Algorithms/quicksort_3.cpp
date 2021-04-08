@@ -12,7 +12,7 @@ void Quicksort3(std::vector<T>& array, int low, int high) {
     if (low >= high) return ;
     // TODO: mid1, mid2 pivots
     if (array[low] > array[high]) std::swap(array[low], array[high]);
-    const T pivot_1 = array[low], pivot_2 = array[high];
+    T pivot_1 = array[low], pivot_2 = array[high];
     int i, less = low + 1, greater = high - 1;
     for (i = low + 1; i <= greater; ++i) {
         if (array[i] < pivot_1) {

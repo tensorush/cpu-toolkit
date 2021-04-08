@@ -1,5 +1,5 @@
 /*
-    Z-function
+    Z-Function
     -----------
     Time: O(n)
     Space: O(n)

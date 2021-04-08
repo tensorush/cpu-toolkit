@@ -1,6 +1,6 @@
 /*
-    Correct Bracket Sequence
-    ------------------------
+    Balanced Bracket Sequence
+    -------------------------
     Time: O(n)
     Space: O(n)
 */
@@ -8,7 +8,7 @@
 #include <string>
 #include <stack>
 
-bool CorrectBracketSequence(const std::string& str) {
+bool BalancedBracketSequence(const std::string& str) {
     std::stack<char> stack;
     std::string open = "([{", close = ")]}";
     for (const char& c : str) {
@@ -25,7 +25,7 @@ bool CorrectBracketSequence(const std::string& str) {
 int main() {
     std::string str;
     std::cin >> str;
-    std::cout << CorrectBracketSequence(str) << std::endl;
+    std::cout << BalancedBracketSequence(str) << std::endl;
     
     return 0;
 }

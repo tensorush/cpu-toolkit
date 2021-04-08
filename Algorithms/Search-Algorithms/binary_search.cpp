@@ -9,11 +9,10 @@
 
 template<typename T>
 size_t BinarySearch(const std::vector<T>& array, const T& key) {
-    int low = -1, high = array.size();
-    while (low < high - 1) {
-        size_t mid = (low + high) / 2;
-        (array[mid] < key)?(low = mid):(high = mid); // left-sided
-        // (array[mid] >= key)?(low = mid):(high = mid); // right-sided
+    size_t low = 0, high = array.size() - 1;
+    while (low < high) {
+        size_t mid = low + (high - low) / 2;
+        (array[mid] < key)?(low = mid + 1):(high = mid);
     }
     return high;
 }

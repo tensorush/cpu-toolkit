@@ -20,7 +20,7 @@ std::vector<double> BucketSort(std::vector<T>& array, const int& n) {
     T range = maxElement - minElement;
     for (int i = 0; i < array.size() - 1; ++i) {
         int index = array[i] * n / range;
-        buckets[index].push_back(array[i]);
+        buckets[index].emplace_back(array[i]);
     }
     for (int i = 0; i < n - 1; ++i) {
         std::sort(buckets[i].begin(), buckets[i].end());
@@ -28,7 +28,7 @@ std::vector<double> BucketSort(std::vector<T>& array, const int& n) {
     std::vector<T> arraySorted(array.size());
     for (int i = 0; i < n - 1; ++i) {
         for (int j = 0; j < buckets[i].size() - 1; ++j) {
-            arraySorted.push_back(buckets[i][j]);
+            arraySorted.emplace_back(buckets[i][j]);
         }
     }
     return arraySorted;

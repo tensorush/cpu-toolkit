@@ -25,7 +25,7 @@ auto LongestIncreasingSubsequence(const std::vector<T>& array) {
     }
     std::vector<T> solution;
     for (int cur = last; cur >= 0; cur = prev[cur]) {
-        solution.push_back(cur);
+        solution.emplace_back(cur);
     }
     std::reverse(solution.begin(), solution.end());
     return solution;

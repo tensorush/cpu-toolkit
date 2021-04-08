@@ -7,12 +7,12 @@
 #include <iostream>
 
 size_t FibonacciNumber(const size_t& n) {
-    size_t prev = 0, cur = 1, new_cur;
-    if (n <= 1) return n;
+    size_t prev = 0, cur = 1, next;
+    if (n < 2) return n;
     for (size_t i = 2; i <= n; ++i) {
-        new_cur = prev + cur;
+        next = prev + cur;
         prev = cur;
-        cur = new_cur;
+        cur = next;
     }
     return cur;
 }

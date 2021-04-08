@@ -19,7 +19,7 @@ auto MinimumSegmentsOverSortedPoints(const std::vector<double>& points, const do
     while (i < points.size()) {
         segment.left_end = points[i];
         segment.right_end = points[i] + segmentLength;
-        segments.push_back(segment);
+        segments.emplace_back(segment);
         ++i;
         while (i < points.size() && points[i] <= segment.right_end) ++i;
     }

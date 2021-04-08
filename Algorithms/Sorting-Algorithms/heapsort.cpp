@@ -1,5 +1,5 @@
 /*
-    Heap Sort (unstable)
+    Heapsort (unstable)
     ------------------------------------------
     Time: Ω(n log(n)) Θ(n log(n)) O(n log(n))
     Space: O(1)
@@ -26,7 +26,7 @@ void Heapify(std::vector<T>& array) {
 }
 
 template<typename T>
-void HeapSort(std::vector<T>& array) {
+void Heapsort(std::vector<T>& array) {
     Heapify(array);
     for (size_t i = array.size() - 1, n = array.size(); i > 0; --i) {
         std::swap(array[0], array[i]);
@@ -38,10 +38,10 @@ int main() {
     size_t n;
     std::cin >> n;
     std::vector<int> array(n);
-    for (int i = 0; i < n; ++i) {
+    for (size_t i = 0; i < n; ++i) {
         std::cin >> array[i];
     }
-    HeapSort(array);
+    Heapsort(array);
     for (const int& element : array) {
         std::cout << element << ' ';
     }

@@ -1,5 +1,5 @@
 /*
-    Placing Bishops On Chessboard
+    Bishops On A Chessboard
     ------------------------------
     Time: O(boardSize*numBishops)
     Space: O(boardSize*numBishops)
@@ -7,7 +7,7 @@
 #include <iostream>
 #include <vector>
 
-size_t PlacingBishopsOnChessboard(const size_t& n, const size_t& k) {
+size_t BishopsOnChessboard(const size_t& n, const size_t& k) {
     if (k > 2 * n - 1) {
     	std::cout << 0;
 	    return 0;
@@ -32,7 +32,7 @@ size_t PlacingBishopsOnChessboard(const size_t& n, const size_t& k) {
 int main() {
     size_t boardSize, numBishops;
     std::cin >> boardSize >> numBishops;
-    std::cout << PlacingBishopsOnChessboard(boardSize, numBishops) << std::endl;
+    std::cout << BishopsOnChessboard(boardSize, numBishops) << std::endl;
 
     return 0;
 }

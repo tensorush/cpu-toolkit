@@ -9,6 +9,7 @@
 
 auto SieveOfEratosthenes(const size_t& n) {
     std::vector<bool> isPrime(n + 1, true);
+    isPrime[0] = isPrime[1] = false;
     for (size_t p = 2; p * p <= n; ++p) {
         if (isPrime[p] == true) {
             for (size_t i = p * p; i <= n; i += p) {

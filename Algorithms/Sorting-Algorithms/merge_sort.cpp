@@ -13,20 +13,13 @@ void MergeSort(std::vector<T>& array, const size_t& low, const size_t& high) {
     size_t mid = low + (high - low) / 2;
     MergeSort(array, low, mid);
     MergeSort(array, mid + 1, high);
-    std::vector<T> mergedArray;
-    for (size_t i = low, j = mid + 1; i <= mid || j <= high; ) {
-        if (i > mid) {
-            mergedArray.push_back(array[j++]);
-        } else if (j > high) {
-            mergedArray.push_back(array[i++]);
-        } else if (array[i] <= array[j]) {
-            mergedArray.push_back(array[i++]);
-        } else {
-            mergedArray.push_back(array[j++]);
-        }
-    }
-    for (size_t i = 0; i < mergedArray.size(); ++i) {
-        array[low + i] = mergedArray[i];
+    std::vector<T> merged(high - low + 1);
+    size_t i = low, j = mid + 1, k = 0;
+    while (i <= mid && j <= high) (array[i] <= array[j])?(merged[k++] = array[i++]):(merged[k++] = array[j++]);
+    while (i <= mid) merged[k++] = array[i++];
+    while (j <= high) merged[k++] = array[j++];
+    for (size_t i = 0; i < merged.size(); ++i) {
+        array[low + i] = merged[i];
     }
 }
 

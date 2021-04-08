@@ -25,7 +25,7 @@
 
 ## :hammer: [Algorithms](https://github.com/geotrush/Computer-Scientists-Toolkit/blob/master/Algorithms)
 
-- ### [Graph Algorithms (coming soon...)](https://github.com/geotrush/Computer-Scientists-Toolkit/blob/master/Algorithms/Graph-Algorithms)
+- ### [Graph Algorithms](https://github.com/geotrush/Computer-Scientists-Toolkit/blob/master/Algorithms/Graph-Algorithms)
 
 - ### [String Algorithms](https://github.com/geotrush/Computer-Scientists-Toolkit/blob/master/Algorithms/String-Algorithms)
 
@@ -57,20 +57,19 @@
 
 - ### [E-Maxx Algorithms](https://cp-algorithms.com/)
 
-- ### [The Sound of Sorting](https://panthema.net/2013/sound-of-sorting/)
-
 - ### [Algorithmic Cheatsheet](https://sinon.org/algorithms/)
 
 - ### [Data Structures Cheatsheet](https://www.clear.rice.edu/comp160/data_cheat.html)
 
 - ### [The Arcane Algorithm Archive](https://www.algorithm-archive.org/)
 
-- ### [Data Structures and Algorithms Tutorials](https://www.programiz.com/dsa/)
+- ### [The Sound of Sorting by Timo Bingmann](https://panthema.net/2013/sound-of-sorting/)
 
 - ### [Advanced Data Structures Lectures by Niema Moshiri](https://www.youtube.com/playlist?list=PLM_KIlU0WoXmkV4QB1Dg8PtJaHTdWHwRS)
 
 - ### [Algorithm and Data Structures Problems by Ravi Mandliya](https://github.com/mandliya/algorithms_and_data_structures/)
 
+- ### [Data Structure and Algorithm Tutorials offered by Programiz](https://www.programiz.com/dsa/)
 
 - ### [COS226 Undergraduate Course offered by Princeton University](https://www.cs.princeton.edu/courses/archive/fall20/cos226/syllabus.php)
 

@@ -9,9 +9,9 @@
 
 template<typename T>
 void InsertionSort(std::vector<T>& array) {
-    for (size_t i = 0; i < array.size(); ++i) {
-        for (size_t cur = i; cur > 0 && array[cur - 1] > array[cur]; --cur) {
-            std::swap(array[cur - 1], array[cur]);
+    for (size_t i = 1; i < array.size(); ++i) {
+        for (size_t j = i; j > 0 && array[j - 1] > array[j]; --j) {
+            std::swap(array[j - 1], array[j]);
         }
     }
 }
