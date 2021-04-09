@@ -71,14 +71,8 @@ void Introsort(std::vector<T>& array, size_t low, size_t high, const size_t& max
         Heapsort(array, low, high);
     } else {
         size_t pivotIndex = Quicksort2(array, low, high);
-        // Tail call elimination
-        if (pivotIndex - low + 1 < high - pivotIndex) {
-            Introsort(array, low, pivotIndex, maxDepth - 1);
-            low = pivotIndex + 1;
-        } else {
-            Introsort(array, pivotIndex + 1, high, maxDepth - 1);
-            high = pivotIndex;
-        }
+        Introsort(array, low, pivotIndex, maxDepth - 1);
+        Introsort(array, pivotIndex + 1, high, maxDepth - 1);
     }
 }
 

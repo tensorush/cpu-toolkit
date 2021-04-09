@@ -21,17 +21,11 @@ void Quicksort2(std::vector<T>& array, size_t low, size_t high) {
     while (true) {
         while (array[i] < pivot) ++i;
         while (array[j] > pivot) --j;
-        if (i >= j) break;
+        if (i >= j) break ;
         std::swap(array[i++], array[j--]);
     }
-    // Tail call elimination
-    if (j - low + 1 < high - j) {
-        Quicksort2(array, low, j);
-        low = j + 1;
-    } else {
-        Quicksort2(array, j + 1, high);
-        high = j;
-    }
+    Quicksort2(array, low, j);
+    Quicksort2(array, j + 1, high);
 }
 
 int main() {
