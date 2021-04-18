@@ -5,7 +5,6 @@
     Space: O(1)
 */
 #include <iostream>
-#include <utility>
 #include <vector>
 
 struct Segment {

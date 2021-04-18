@@ -11,36 +11,37 @@
 
 class Graph {
 public:
-    Graph(const size_t& n) : adjLists(n), visited(n) {}
+    Graph(const size_t& n) : visited(n), adjLists(n) {}
     void addEdge(const size_t& v_1, const size_t& v_2) {
         adjLists[v_1].emplace_back(v_2);
         adjLists[v_2].emplace_back(v_1);
     }
-    void DepthFirstSearch(size_t vertex, std::list<size_t>& component) {
-        std::stack<size_t> stack;
-        stack.push(vertex);
-        while (!stack.empty()) {
-            vertex = stack.top();
-            stack.pop();
-            visited[vertex] = true;
-            component.emplace_back(vertex);
-            for (const size_t& v : adjLists[vertex]) {
-                if (!visited[v]) stack.push(v);
-            }
-        }
-    }
     auto ComponentSearch() {
-        components.clear();
-        for (size_t v = 0; v < adjLists.size(); ++v) {
-            if (!visited[v]) {
+        // components.clear();
+        for (size_t vertex = 0; vertex < adjLists.size(); ++vertex) {
+            if (!visited[vertex]) {
                 std::list<size_t> component;
-                DepthFirstSearch(v, component);
+                DepthFirstSearch(vertex, component);
                 components.emplace_back(component);
             }
         }
         return components;
     }
 private:
+    void DepthFirstSearch(size_t vertex, std::list<size_t>& component) {
+        // visited.assign(visited.size(), false);
+        std::stack<size_t> stack;
+        stack.emplace(vertex);
+        while (!stack.empty()) {
+            vertex = stack.top();
+            stack.pop();
+            visited[vertex] = true;
+            component.emplace_back(vertex);
+            for (const size_t& next : adjLists[vertex]) {
+                if (!visited[next]) stack.emplace(next);
+            }
+        }
+    }
     std::vector<bool> visited;
     std::list<std::list<size_t>> components;
     std::vector<std::list<size_t>> adjLists;

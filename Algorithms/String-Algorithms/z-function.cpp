@@ -9,7 +9,7 @@
 #include <vector>
 #include <string>
 
-std::vector<size_t> ZFunction(std::string str) {
+auto ZFunction(std::string str) {
 	size_t n_m = str.length();
 	std::vector<size_t> zFunction(n_m);
 	for (size_t i = 1, l = 0, r = 0; i < n_m; ++i) {
@@ -23,7 +23,7 @@ std::vector<size_t> ZFunction(std::string str) {
 int main() {
     std::string word, text;
     std::cin >> word >> text;
-    std::vector<size_t> zFunction = ZFunction(word + '#' + text);
+    auto zFunction = ZFunction(word + '#' + text);
     size_t n = text.length(), m = word.length();
     for (size_t i = 0; i < n; ++i) {
         if (zFunction[m + 1 + i] == m) {

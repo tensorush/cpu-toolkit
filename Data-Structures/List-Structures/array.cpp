@@ -91,6 +91,7 @@ int main() {
     array.insert(3, 0);
     array.insert(7, 0);
     std::cout << array.get_size() << ' '
+              << array.find(7) << ' '
               << array[0] << ' '
               << array.remove(1) << ' '
               << array.get_capacity() << ' '

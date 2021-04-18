@@ -8,7 +8,7 @@
 #include <vector>
 #include <string>
 
-std::vector<size_t> PrefixFunction(const std::string& str) {
+auto PrefixFunction(const std::string& str) {
     size_t n_m = str.length();
     std::vector<size_t> prefixFunction(n_m);
     for (size_t i = 1; i < n_m; ++i) {
@@ -25,7 +25,7 @@ std::vector<size_t> PrefixFunction(const std::string& str) {
 int main() {
     std::string word, text;
     std::cin >> word >> text;
-    std::vector<size_t> prefixFunction = PrefixFunction(word + '#' + text);
+    auto prefixFunction = PrefixFunction(word + '#' + text);
     size_t m = word.length();
     for (size_t i = 0; i < text.length(); ++i) {
         if (prefixFunction[m + 1 + i] == m) {

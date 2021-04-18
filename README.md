@@ -46,6 +46,8 @@
 
 - ### [List Structures](https://github.com/geotrush/Computer-Scientists-Toolkit/blob/master/Data-Structures/List-Structures)
 
+- ### [Heap Structures (coming soon...)](https://github.com/geotrush/Computer-Scientists-Toolkit/blob/master/Data-Structures/Tree-Structures)
+
 - ### [Tree Structures (coming soon...)](https://github.com/geotrush/Computer-Scientists-Toolkit/blob/master/Data-Structures/Tree-Structures)
 
 
@@ -70,6 +72,8 @@
 - ### [Algorithm and Data Structures Problems by Ravi Mandliya](https://github.com/mandliya/algorithms_and_data_structures/)
 
 - ### [Data Structure and Algorithm Tutorials offered by Programiz](https://www.programiz.com/dsa/)
+
+- ### [Collection of Algorithms and Data Structures by William Fiset](https://github.com/williamfiset/Algorithms/)
 
 - ### [COS226 Undergraduate Course offered by Princeton University](https://www.cs.princeton.edu/courses/archive/fall20/cos226/syllabus.php)
 

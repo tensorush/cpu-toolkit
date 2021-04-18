@@ -11,22 +11,23 @@
 
 class Graph {
 public:
-    Graph(const size_t& n) : adjLists(n), visited(n) {}
+    Graph(const size_t& n) : visited(n), adjLists(n) {}
     void addEdge(const size_t& v_1, const size_t& v_2) {
         adjLists[v_1].emplace_back(v_2);
         adjLists[v_2].emplace_back(v_1);
     }
     auto DepthFirstSearch(size_t vertex) {
-        dfs.clear();
+        // dfs.clear();
+        // visited.assign(visited.size(), false);
         std::stack<size_t> stack;
-        stack.push(vertex);
+        stack.emplace(vertex);
         while (!stack.empty()) {
             vertex = stack.top();
             stack.pop();
-            dfs.emplace_back(vertex);
+            if (!visited[vertex]) dfs.emplace_back(vertex);
             visited[vertex] = true;
-            for (const size_t& v : adjLists[vertex]) {
-                if (!visited[v]) stack.push(v);
+            for (const size_t& next : adjLists[vertex]) {
+                if (!visited[next]) stack.emplace(next);
             }
         }
         return dfs;

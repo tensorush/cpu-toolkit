@@ -5,7 +5,6 @@
     Space: O(1)
 */
 #include <iostream>
-#include <utility>
 #include <vector>
 
 struct Item {
@@ -16,7 +15,7 @@ auto SortedFractionalKnapsack(std::vector<Item>& items, double& knapsackCapacity
     double totalValue = 0;
     std::vector<Item> knapsack(items.size());
     for (size_t i = 0; i < items.size(); ++i) {
-        if (knapsackCapacity == 0) break;
+        if (knapsackCapacity == 0) break ;
         knapsack[i].weight = (items[i].weight < knapsackCapacity)?(items[i].weight):(knapsackCapacity);
         knapsack[i].value = knapsack[i].weight * items[i].value / items[i].weight;
         knapsackCapacity -= knapsack[i].weight;

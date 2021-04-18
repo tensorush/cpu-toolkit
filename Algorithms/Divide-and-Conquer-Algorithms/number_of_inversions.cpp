@@ -15,7 +15,7 @@ size_t CountInversions(std::vector<T>& array, std::vector<T>& temp, size_t low, 
             temp[k++] = array[i++];
         } else {
             temp[k++] = array[j++];
-            inversionsCount += (mid - i + 1);
+            inversionsCount += mid - i + 1;
         }
     }
     while (i <= mid) temp[k++] = array[i++];

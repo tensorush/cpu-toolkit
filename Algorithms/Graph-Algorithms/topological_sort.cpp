@@ -4,47 +4,46 @@
     Time: O(n+m)
     Space: O(n)
 */
-#include <algorithm>
 #include <iostream>
 #include <vector>
 #include <stack>
 #include <list>
 
-class DirectedGraph {
+class DAG {
 public:
-    DirectedGraph(const size_t& n) : adjLists(n), visited(n) {}
+    DAG(const size_t& n) : visited(n), adjLists(n) {}
     void addEdge(const size_t& source, const size_t& destination) {
         adjLists[source].emplace_back(destination);
     }
+    auto TopologicalSort() {
+        // sorted.clear();
+        for (size_t vertex = 0; vertex < adjLists.size(); ++vertex) {
+            if (!visited[vertex]) DepthFirstSearch(vertex);
+        }
+        return sorted;
+    }
+private:
     void DepthFirstSearch(size_t vertex) {
+        // visited.assign(visited.size(), false);
         std::stack<size_t> stack;
-        stack.push(vertex);
+        stack.emplace(vertex);
         while (!stack.empty()) {
             vertex = stack.top();
             stack.pop();
             visited[vertex] = true;
-            sorted.emplace_back(vertex);
-            for (const size_t& v : adjLists[vertex]) {
-                if (!visited[v]) stack.push(v);
+            sorted.emplace_front(vertex);
+            for (const size_t& next : adjLists[vertex]) {
+                if (!visited[next]) stack.emplace(next);
             }
         }
     }
-    auto TopologicalSort() {
-        sorted.clear();
-        for (size_t v = 0; v < adjLists.size(); ++v) {
-            if (!visited[v]) DepthFirstSearch(v);
-        }
-        std::reverse(sorted.begin(), sorted.end());
-        return sorted;
-    }
-private:
+    std::list<size_t> sorted;
     std::vector<bool> visited;
-    std::vector<size_t> sorted;
     std::vector<std::vector<size_t>> adjLists;
 };
 
 int main() {
-    DirectedGraph graph(4);
+    DAG graph(4);
     graph.addEdge(0, 2);
     graph.addEdge(0, 3);
     graph.addEdge(1, 2);
