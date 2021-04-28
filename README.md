@@ -29,7 +29,7 @@
 
 - ### :dna: [String Algorithms](https://github.com/geotrush/Computer-Scientists-Toolkit/blob/master/Algorithms/String-Algorithms)
 
-- ### :mag_left: [Search Algorithms](https://github.com/geotrush/Computer-Scientists-Toolkit/blob/master/Algorithms/Search-Algorithms)
+- ### :mag: [Search Algorithms](https://github.com/geotrush/Computer-Scientists-Toolkit/blob/master/Algorithms/Search-Algorithms)
 
 - ### :moneybag: [Greedy Algorithms](https://github.com/geotrush/Computer-Scientists-Toolkit/blob/master/Algorithms/Greedy-Algorithms)
 
