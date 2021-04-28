@@ -10,7 +10,7 @@
 
 template<typename T>
 auto LongestCommonSubsequence(const std::vector<T>& a, const std::vector<T>& b) {
-    std::vector<std::vector<size_t>> lcs(a.size() + 1, std::vector<size_t>(b.size() + 1));
+    std::vector<std::vector<unsigned>> lcs(a.size() + 1, std::vector<unsigned>(b.size() + 1));
     for (size_t i = 1; i <= a.size(); ++i) {
         for (size_t j = 1; j <= b.size(); ++j) {
             if (a[i - 1] == b[j - 1]) {
@@ -20,7 +20,7 @@ auto LongestCommonSubsequence(const std::vector<T>& a, const std::vector<T>& b) 
             }
         }
     }
-    size_t maxLCS = lcs[a.size()][b.size()];
+    unsigned maxLCS = lcs[a.size()][b.size()];
     std::vector<T> solution(maxLCS);
     size_t i = a.size(), j = b.size();
     while (i > 0 && j > 0) {
@@ -37,22 +37,23 @@ auto LongestCommonSubsequence(const std::vector<T>& a, const std::vector<T>& b) 
 }
 
 int main() {
-    size_t n;
+    unsigned n;
     std::cin >> n;
     std::vector<int> a(n);
-    for (size_t i = 0; i < n; ++i) {
-        std::cin >> a[i];
+    for (int& element : a) {
+        std::cin >> element;
     }
-    size_t m;
+    unsigned m;
     std::cin >> m;
     std::vector<int> b(m);
-    for (size_t j = 0; j < m; ++j) {
-        std::cin >> b[j];
+    for (int& element : b) {
+        std::cin >> element;
     }
     auto solution = LongestCommonSubsequence(a, b);
-    for (auto element : solution) {
+    for (const int& element : solution) {
         std::cout << element << ' ';
     }
+    std::cout << std::endl;
 
     return 0;
 }

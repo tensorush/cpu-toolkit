@@ -17,7 +17,7 @@ public:
     size_t get_size() const {
         return size;
     }
-    size_t getcapacity() const {
+    size_t get_capacity() const {
         return capacity;
     }
     bool empty() const {

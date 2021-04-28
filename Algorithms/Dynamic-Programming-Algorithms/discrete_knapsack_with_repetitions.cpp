@@ -5,19 +5,20 @@
     Space: O(knapsackCapacity)
 */
 #include <iostream>
+#include <iomanip>
 #include <vector>
 
 struct Item {
-    size_t weight, value;
+    unsigned weight, value;
 };
 
-size_t DiscreteKnapsackWithRepetitions(std::vector<Item>& items, const size_t& knapsackCapacity) {
+unsigned DiscreteKnapsackWithRepetitions(const std::vector<Item>& items, const unsigned& knapsackCapacity) {
     // TODO: Top-down (recursive) approach with hash table memoization + solution reconstruction
-    std::vector<size_t> totalValues(knapsackCapacity + 1);
+    std::vector<unsigned> totalValues(knapsackCapacity + 1);
     for (size_t i = 0; i < items.size(); ++i) {
-        for (size_t w = 1; w <= knapsackCapacity; ++w) {
+        for (unsigned w = 1; w <= knapsackCapacity; ++w) {
             if (items[i].weight <= w) {
-                size_t value = totalValues[w - items[i].weight] + items[i].value;
+                unsigned value = totalValues[w - items[i].weight] + items[i].value;
                 if (value > totalValues[w]) totalValues[w] = value;
             }
         }
@@ -26,14 +27,14 @@ size_t DiscreteKnapsackWithRepetitions(std::vector<Item>& items, const size_t& k
 }
 
 int main() {
-    size_t numItems, knapsackCapacity;
+    unsigned numItems, knapsackCapacity;
     std::cin >> numItems >> knapsackCapacity;
     std::vector<Item> items(numItems);
-    for (size_t i = 0; i < numItems; ++i) {
-        std::cin >> items[i].weight >> items[i].value;
+    for (Item& item : items) {
+        std::cin >> item.weight >> item.value;
     }
-    std::cout.precision(3);
-    std::cout << DiscreteKnapsackWithRepetitions(items, knapsackCapacity) << std::endl;
+    std::cout << std::setprecision(3) << std::fixed
+              << DiscreteKnapsackWithRepetitions(items, knapsackCapacity) << std::endl;
 
     return 0;
 }

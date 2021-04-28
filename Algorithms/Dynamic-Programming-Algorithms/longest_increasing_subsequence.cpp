@@ -32,16 +32,17 @@ auto LongestIncreasingSubsequence(const std::vector<T>& array) {
 }
 
 int main() {
-    size_t n;
+    unsigned n;
     std::cin >> n;
-    std::vector<size_t> array(n);
-    for (size_t i = 0; i < n; ++i) {
-        std::cin >> array[i];
+    std::vector<unsigned> array(n);
+    for (unsigned& element : array) {
+        std::cin >> element;
     }
     auto solution = LongestIncreasingSubsequence(array);
-    for (auto index : solution) {
+    for (const unsigned& index : solution) {
         std::cout << index << ' ';
     }
+    std::cout << std::endl;
 
     return 0;
 }

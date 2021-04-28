@@ -5,16 +5,15 @@
     Space: O(change)
 */
 #include <iostream>
-#include <climits>
 #include <vector>
 
-std::size_t MinimumCoinChange(const size_t& change, const std::vector<size_t>& coins) {
-    std::vector<size_t> minCoins(change + 1);
-    for (size_t i = 1; i <= change; ++i) {
-        minCoins[i] = UINT_MAX;
+unsigned MinimumCoinChange(const unsigned& change, const std::vector<unsigned>& coins) {
+    std::vector<unsigned> minCoins(change + 1);
+    for (unsigned i = 1; i <= change; ++i) {
+        minCoins[i] = UINT32_MAX;
         for (size_t j = 0; j < coins.size(); ++j) {
             if (i >= coins[j]) {
-                size_t numCoins = minCoins[i - coins[j]] + 1;
+                unsigned numCoins = minCoins[i - coins[j]] + 1;
                 if (numCoins < minCoins[i]) minCoins[i] = numCoins;
             }
         }
@@ -23,11 +22,11 @@ std::size_t MinimumCoinChange(const size_t& change, const std::vector<size_t>& c
 }
 
 int main() {
-    size_t change, numCoins;
+    unsigned change, numCoins;
     std::cin >> change >> numCoins;
-    std::vector<size_t> coins(numCoins);
-    for (size_t i = 0; i < numCoins; ++i) {
-        std::cin >> coins[i];
+    std::vector<unsigned> coins(numCoins);
+    for (unsigned& coin : coins) {
+        std::cin >> coin;
     }
     std::cout << MinimumCoinChange(change, coins) << std::endl;
 

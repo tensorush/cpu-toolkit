@@ -4,17 +4,18 @@
     Time: O(m)
     Space: O(n)
 */
+#include <unordered_map>
+#include <unordered_set>
 #include <iostream>
 #include <vector>
 #include <queue>
-#include <list>
 
 class Graph {
 public:
     Graph(const size_t& n) : colours(n, BLANK), adjLists(n) {}
     void addEdge(const size_t& v_1, const size_t& v_2) {
-        adjLists[v_1].emplace_back(v_2);
-        adjLists[v_2].emplace_back(v_1);
+        adjLists[v_1].emplace(v_2);
+        adjLists[v_2].emplace(v_1);
     }
     auto BipartitenessCheck() {
         // colours.assign(colours.size(), BLANK);
@@ -45,8 +46,8 @@ private:
             }
         }
     }
-    std::vector<char> colours;
-    std::vector<std::list<size_t>> adjLists;
+    std::vector<int> colours;
+    std::unordered_map<size_t, std::unordered_multiset<size_t>> adjLists;
 };
 
 int main() {
@@ -56,10 +57,11 @@ int main() {
     graph.addEdge(2, 3);
     auto [IsBipartite, colours] = graph.BipartitenessCheck();
     if (IsBipartite) {
-        for (const size_t& colour : colours) {
+        for (const int& colour : colours) {
             std::cout << colour << ' ';
         }
     }
+    std::cout << std::endl;
 
     return 0;
 }

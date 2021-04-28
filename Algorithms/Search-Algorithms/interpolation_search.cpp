@@ -31,11 +31,11 @@ int InterpolationSearch(const std::vector<T>& array, const T& key) {
 
 int main() {
     int key;
-    size_t n;
+    unsigned n;
     std::cin >> n >> key;
     std::vector<int> array(n);
-    for (size_t i = 0; i < n; ++i) {
-        std::cin >> array[i];
+    for (int& element : array) {
+        std::cin >> element;
     }
     std::cout << InterpolationSearch(array, key) << std::endl;
 

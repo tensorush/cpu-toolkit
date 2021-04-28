@@ -18,37 +18,57 @@
     <p><a href="https://twitter.com/etiennejcb/">Animation by Étienne Jacob</a></p>
 </h4>
 
-## :hammer_and_wrench: Bare essentials for studying Computer Science — Algorithms and Data Structures — which I've been researching, polishing and reimplementing for personal convenience.
+## :hammer_and_wrench: Bare essentials for studying Computer Science — Algorithms and Data Structures — which I've been researching, reimplementing and refining for quick reference.
 
 > ### Any contributions, corrections or optimizations are very welcome! :hugs:
 
 
 ## :hammer: [Algorithms](https://github.com/geotrush/Computer-Scientists-Toolkit/blob/master/Algorithms)
 
-- ### [Graph Algorithms](https://github.com/geotrush/Computer-Scientists-Toolkit/blob/master/Algorithms/Graph-Algorithms)
+- ### :diamond_shape_with_a_dot_inside: [Graph Algorithms](https://github.com/geotrush/Computer-Scientists-Toolkit/blob/master/Algorithms/Graph-Algorithms)
 
-- ### [String Algorithms](https://github.com/geotrush/Computer-Scientists-Toolkit/blob/master/Algorithms/String-Algorithms)
+- ### :dna: [String Algorithms](https://github.com/geotrush/Computer-Scientists-Toolkit/blob/master/Algorithms/String-Algorithms)
 
-- ### [Search Algorithms](https://github.com/geotrush/Computer-Scientists-Toolkit/blob/master/Algorithms/Search-Algorithms)
+- ### :mag_left: [Search Algorithms](https://github.com/geotrush/Computer-Scientists-Toolkit/blob/master/Algorithms/Search-Algorithms)
 
-- ### [Greedy Algorithms](https://github.com/geotrush/Computer-Scientists-Toolkit/blob/master/Algorithms/Greedy-Algorithms)
+- ### :moneybag: [Greedy Algorithms](https://github.com/geotrush/Computer-Scientists-Toolkit/blob/master/Algorithms/Greedy-Algorithms)
 
-- ### [Sorting Algorithms](https://github.com/geotrush/Computer-Scientists-Toolkit/blob/master/Algorithms/Sorting-Algorithms)
+- ### :bar_chart: [Sorting Algorithms](https://github.com/geotrush/Computer-Scientists-Toolkit/blob/master/Algorithms/Sorting-Algorithms)
 
-- ### [Mathematical Algorithms](https://github.com/geotrush/Computer-Scientists-Toolkit/blob/master/Algorithms/Mathematical-Algorithms)
+    - ### :1st_place_medal: [Comparison Sorts](https://github.com/geotrush/Computer-Scientists-Toolkit/blob/master/Algorithms/Sorting-Algorithms/Comparison-Sorts)
 
-- ### [Divide and Conquer Algorithms](https://github.com/geotrush/Computer-Scientists-Toolkit/blob/master/Algorithms/Divide-and-Conquer-Algorithms)
+    - ### :2nd_place_medal: [Non-Comparison Sorts](https://github.com/geotrush/Computer-Scientists-Toolkit/blob/master/Algorithms/Sorting-Algorithms/Non-Comparison-Sorts)
 
-- ### [Dynamic Programming Algorithms](https://github.com/geotrush/Computer-Scientists-Toolkit/blob/master/Algorithms/Dynamic-Programming-Algorithms)
+    - ### :3rd_place_medal: [Ridiculously Inefficient Sorts](https://github.com/geotrush/Computer-Scientists-Toolkit/blob/master/Algorithms/Sorting-Algorithms/Ridiculously-Inefficient-Sorts)
+
+
+- ### :closed_lock_with_key: [Hashing Algorithms](https://github.com/geotrush/Computer-Scientists-Toolkit/blob/master/Algorithms/Hashing-Algorithms)
+
+- ### :scroll: [Mathematical Algorithms](https://github.com/geotrush/Computer-Scientists-Toolkit/blob/master/Algorithms/Mathematical-Algorithms)
+
+    - ### :man_juggling: [Combinatorics](https://github.com/geotrush/Computer-Scientists-Toolkit/blob/master/Algorithms/Mathematical-Algorithms/Combinatorics)
+
+    - ### :mechanical_arm: [Linear Algebra](https://github.com/geotrush/Computer-Scientists-Toolkit/blob/master/Algorithms/Mathematical-Algorithms/Linear-Algebra)
+
+    - ### :abacus: [Number Theory](https://github.com/geotrush/Computer-Scientists-Toolkit/blob/master/Algorithms/Mathematical-Algorithms/Number-Theory)
+
+    - ### :game_die: [Probability Theory](https://github.com/geotrush/Computer-Scientists-Toolkit/blob/master/Algorithms/Mathematical-Algorithms/Probability-Theory)
+
+
+- ### :chains: [Dynamic Programming Algorithms](https://github.com/geotrush/Computer-Scientists-Toolkit/blob/master/Algorithms/Dynamic-Programming-Algorithms)
 
 
 ## :wrench: [Data Structures](https://github.com/geotrush/Computer-Scientists-Toolkit/blob/master/Data-Structures)
 
-- ### [List Structures](https://github.com/geotrush/Computer-Scientists-Toolkit/blob/master/Data-Structures/List-Structures)
+- ### :bookmark_tabs: [List Structures](https://github.com/geotrush/Computer-Scientists-Toolkit/blob/master/Data-Structures/List-Structures)
 
-- ### [Heap Structures (coming soon...)](https://github.com/geotrush/Computer-Scientists-Toolkit/blob/master/Data-Structures/Tree-Structures)
+- ### :deciduous_tree: [Tree Structures (coming soon...)](https://github.com/geotrush/Computer-Scientists-Toolkit/blob/master/Data-Structures/Tree-Structures)
 
-- ### [Tree Structures (coming soon...)](https://github.com/geotrush/Computer-Scientists-Toolkit/blob/master/Data-Structures/Tree-Structures)
+- ### :mount_fuji: [Heap Structures (coming soon...)](https://github.com/geotrush/Computer-Scientists-Toolkit/blob/master/Data-Structures/Heap-Structures)
+
+- ### :card_file_box: [Hashing Structures (coming soon...)](https://github.com/geotrush/Computer-Scientists-Toolkit/blob/master/Data-Structures/Hashing-Structures)
+
+- ### :slot_machine: [Probabilistic Structures (coming soon...)](https://github.com/geotrush/Computer-Scientists-Toolkit/blob/master/Data-Structures/Probabilistic-Structures)
 
 
 ## :bow: Acknowledgements
@@ -78,6 +98,8 @@
 - ### [COS226 Undergraduate Course offered by Princeton University](https://www.cs.princeton.edu/courses/archive/fall20/cos226/syllabus.php)
 
 - ### [Algorithms Coursera Specialization offered by Stanford University](https://www.coursera.org/specializations/algorithms/)
+
+- ### [Algorithms Coursera Specialization offered by Princeton University](https://www.coursera.org/learn/algorithms-part1/)
 
 - ### [Collection of Algorithms and Data Structures by Andrei Navumenka](https://github.com/indy256/codelibrary/)
 

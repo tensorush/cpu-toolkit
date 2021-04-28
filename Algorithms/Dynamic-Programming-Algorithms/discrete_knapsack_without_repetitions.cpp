@@ -5,20 +5,21 @@
     Space: O(numItems*knapsackCapacity)
 */
 #include <iostream>
+#include <iomanip>
 #include <vector>
 
 struct Item {
-    size_t weight, value;
+    unsigned weight, value;
 };
 
-size_t DiscreteKnapsackWithoutRepetitions(std::vector<Item>& items, const size_t& knapsackCapacity) {
+unsigned DiscreteKnapsackWithoutRepetitions(const std::vector<Item>& items, const unsigned& knapsackCapacity) {
     // TODO: Top-down (recursive) approach with hash table memoization + solution reconstruction
-    std::vector<std::vector<size_t>> totalValues(items.size() + 1, std::vector<size_t>(knapsackCapacity + 1));
+    std::vector<std::vector<unsigned>> totalValues(items.size() + 1, std::vector<unsigned>(knapsackCapacity + 1));
     for (size_t i = 1; i <= items.size(); ++i) {
-        for (size_t w = 1; w <= knapsackCapacity; ++w) {
+        for (unsigned w = 1; w <= knapsackCapacity; ++w) {
             totalValues[i][w] = totalValues[i - 1][w];
             if (items[i - 1].weight <= w) {
-                size_t value = totalValues[i - 1][w - items[i - 1].weight] + items[i - 1].value;
+                unsigned value = totalValues[i - 1][w - items[i - 1].weight] + items[i - 1].value;
                 if (value > totalValues[i][w]) totalValues[i][w] = value;
             }
         }
@@ -27,14 +28,14 @@ size_t DiscreteKnapsackWithoutRepetitions(std::vector<Item>& items, const size_t
 }
 
 int main() {
-    size_t numItems, knapsackCapacity;
+    unsigned numItems, knapsackCapacity;
     std::cin >> numItems >> knapsackCapacity;
     std::vector<Item> items(numItems);
-    for (size_t i = 0; i < numItems; ++i) {
-        std::cin >> items[i].weight >> items[i].value;
+    for (Item& item : items) {
+        std::cin >> item.weight >> item.value;
     }
-    std::cout.precision(3);
-    std::cout << DiscreteKnapsackWithoutRepetitions(items, knapsackCapacity) << std::endl;
+    std::cout << std::setprecision(3) << std::fixed
+              << DiscreteKnapsackWithoutRepetitions(items, knapsackCapacity) << std::endl;
 
     return 0;
 }

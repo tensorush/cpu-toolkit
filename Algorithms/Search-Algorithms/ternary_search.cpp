@@ -23,8 +23,8 @@ double TernarySearch(double f(const double&), double left, double right, const d
 int main() {
     double left, right;
     std::cin >> left >> right;
-    std::cout << std::setprecision(3) << std::fixed;
-    std::cout << TernarySearch(f, left, right) << std::endl;
+    std::cout << std::setprecision(3) << std::fixed
+              << TernarySearch(f, left, right) << std::endl;
 
     return 0;
 }

@@ -26,14 +26,15 @@ auto MinimumSegmentsOverSortedPoints(const std::vector<double>& points, const do
 }
 
 int main() {
-    size_t numPoints;
+    unsigned numPoints;
     double segmentLength;
     std::cin >> numPoints >> segmentLength;
     std::vector<double> points(numPoints);
-    for (size_t i = 0; i < numPoints; ++i) {
-        std::cin >> points[i];
+    for (double& point : points) {
+        std::cin >> point;
     }
-    std::cout << MinimumSegmentsOverSortedPoints(points, segmentLength).first << std::endl;
+    auto [numSegments, segments] = MinimumSegmentsOverSortedPoints(points, segmentLength);
+    std::cout << numSegments << std::endl;
 
     return 0;
 }

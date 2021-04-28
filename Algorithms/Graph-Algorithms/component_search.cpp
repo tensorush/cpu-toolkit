@@ -4,6 +4,8 @@
     Time: O(n+m)
     Space: O(n)
 */
+#include <unordered_map>
+#include <unordered_set>
 #include <iostream>
 #include <vector>
 #include <stack>
@@ -13,8 +15,8 @@ class Graph {
 public:
     Graph(const size_t& n) : visited(n), adjLists(n) {}
     void addEdge(const size_t& v_1, const size_t& v_2) {
-        adjLists[v_1].emplace_back(v_2);
-        adjLists[v_2].emplace_back(v_1);
+        adjLists[v_1].emplace(v_2);
+        adjLists[v_2].emplace(v_1);
     }
     auto ComponentSearch() {
         // components.clear();
@@ -44,7 +46,7 @@ private:
     }
     std::vector<bool> visited;
     std::list<std::list<size_t>> components;
-    std::vector<std::list<size_t>> adjLists;
+    std::unordered_map<size_t, std::unordered_multiset<size_t>> adjLists;
 };
 
 int main() {
@@ -53,8 +55,8 @@ int main() {
     graph.addEdge(1, 3);
     auto components = graph.ComponentSearch();
     for (const std::list<size_t>& component : components) {
-        for (const size_t& v : component) {
-            std::cout << v << ' ';
+        for (const size_t& vertex : component) {
+            std::cout << vertex << ' ';
         }
         std::cout << std::endl;
     }

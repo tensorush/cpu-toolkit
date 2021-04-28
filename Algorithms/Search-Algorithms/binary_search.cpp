@@ -18,12 +18,12 @@ size_t BinarySearch(const std::vector<T>& array, const T& key) {
 }
 
 int main() {
+    unsigned n;
     int key;
-    size_t n;
     std::cin >> n >> key;
     std::vector<int> array(n);
-    for (size_t i = 0; i < n; ++i) {
-        std::cin >> array[i];
+    for (int& element : array) {
+        std::cin >> element;
     }
     std::cout << BinarySearch(array, key) << std::endl;
 

@@ -4,6 +4,8 @@
     Time: O(n+m)
     Space: O(n+m)
 */
+#include <unordered_map>
+#include <unordered_set>
 #include <iostream>
 #include <vector>
 #include <list>
@@ -12,8 +14,8 @@ class Graph {
 public:
     Graph(const size_t& n) : colours(n), parents(n, -1), adjLists(n) {}
     void addEdge(const size_t& v_1, const size_t& v_2) {
-        adjLists[v_1].emplace_back(v_2);
-        adjLists[v_2].emplace_back(v_1);
+        adjLists[v_1].emplace(v_2);
+        adjLists[v_2].emplace(v_1);
     }
     auto CycleSearch(const size_t& vertex) {
         // cycles.clear();
@@ -43,9 +45,9 @@ private:
         colours[vertex] = BLACK;
     }
     std::vector<int> parents;
-    std::vector<char> colours;
+    std::vector<unsigned> colours;
     std::list<std::list<size_t>> cycles;
-    std::vector<std::list<size_t>> adjLists;
+    std::unordered_map<size_t, std::unordered_multiset<size_t>> adjLists;
 };
 
 int main() {
@@ -56,8 +58,8 @@ int main() {
     auto cycles = graph.CycleSearch(0);
     if (cycles.size()) {
         for (const auto& cycle : cycles) {
-            for (const size_t& v : cycle) {
-                std::cout << v << ' ';
+            for (const size_t& vertex : cycle) {
+                std::cout << vertex << ' ';
             }
             std::cout << std::endl;
         }

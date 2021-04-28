@@ -4,6 +4,8 @@
     Time: O(n+m)
     Space: O(n)
 */
+#include <unordered_set>
+#include <unordered_map>
 #include <iostream>
 #include <vector>
 #include <stack>
@@ -13,7 +15,7 @@ class DAG {
 public:
     DAG(const size_t& n) : visited(n), adjLists(n) {}
     void addEdge(const size_t& source, const size_t& destination) {
-        adjLists[source].emplace_back(destination);
+        adjLists[source].emplace(destination);
     }
     auto TopologicalSort() {
         // sorted.clear();
@@ -39,7 +41,7 @@ private:
     }
     std::list<size_t> sorted;
     std::vector<bool> visited;
-    std::vector<std::vector<size_t>> adjLists;
+    std::unordered_map<size_t, std::unordered_multiset<size_t>> adjLists;
 };
 
 int main() {
@@ -48,9 +50,10 @@ int main() {
     graph.addEdge(0, 3);
     graph.addEdge(1, 2);
     auto sorted = graph.TopologicalSort();
-    for (const size_t& v : sorted) {
-        std::cout << v << ' ';
+    for (const size_t& vertex : sorted) {
+        std::cout << vertex << ' ';
     }
+    std::cout << std::endl;
 
     return 0;
 }

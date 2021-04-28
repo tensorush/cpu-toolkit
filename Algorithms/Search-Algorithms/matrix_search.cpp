@@ -5,13 +5,12 @@
     Space: O(1)
 */
 #include <iostream>
-#include <utility>
 #include <vector>
 
 template<typename T>
-std::pair<int, int> MatrixSearch(const std::vector<std::vector<T>>& matrix, const T& key) {
+auto MatrixSearch(const std::vector<std::vector<T>>& matrix, const T& key) {
     size_t n = matrix.size(), m = matrix[0].size();
-    if (key < matrix[0][0] || key > matrix[n - 1][m - 1]) return {-1, -1};
+    if (key < matrix[0][0] || key > matrix[n - 1][m - 1]) return std::make_pair(-1, -1);
     size_t row = 0, col = m - 1;
     while (row <= n - 1 && col >= 0) {
         if (matrix[row][col] < key) {
@@ -22,21 +21,21 @@ std::pair<int, int> MatrixSearch(const std::vector<std::vector<T>>& matrix, cons
             return {row, col};
         }
     }
-    return {-1, -1};
+    return std::make_pair(-1, -1);
 }
 
 int main() {
     int key;
-    size_t n, m;
+    unsigned n, m;
     std::cin >> n >> m >> key;
     std::vector<std::vector<int>> matrix(n, std::vector<int>(m));
-    for (size_t i = 0; i < n; ++i) {
-        for (size_t j = 0; j < m; ++j) {
-            std::cin >> matrix[i][j];
+    for (std::vector<int>& row : matrix) {
+        for (int& col : row) {
+            std::cin >> col;
         }
     }
-    auto row_col = MatrixSearch(matrix, key);
-    std::cout << row_col.first << row_col.second << std::endl;
+    auto [row, col] = MatrixSearch(matrix, key);
+    std::cout << row << ' ' << col << std::endl;
 
     return 0;
 }

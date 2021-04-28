@@ -4,6 +4,8 @@
     Time: O(n+m)
     Space: O(n)
 */
+#include <unordered_map>
+#include <unordered_set>
 #include <iostream>
 #include <vector>
 #include <queue>
@@ -13,8 +15,8 @@ class Graph {
 public:
     Graph(const size_t& n) : parents(n, -1), visited(n), adjLists(n) {}
     void addEdge(const size_t& v_1, const size_t& v_2) {
-        adjLists[v_1].emplace_back(v_2);
-        adjLists[v_2].emplace_back(v_1);
+        adjLists[v_1].emplace(v_2);
+        adjLists[v_2].emplace(v_1);
     }
     auto BreadthFirstSearch(size_t vertex) {
         // bfs.clear();
@@ -49,7 +51,7 @@ private:
     std::vector<size_t> bfs;
     std::vector<int> parents;
     std::vector<bool> visited;
-    std::vector<std::list<size_t>> adjLists;
+    std::unordered_map<size_t, std::unordered_multiset<size_t>> adjLists;
 };
 
 int main() {
@@ -58,16 +60,17 @@ int main() {
     graph.addEdge(0, 3);
     graph.addEdge(1, 2);
     auto bfs = graph.BreadthFirstSearch(2);
-    for (const size_t& v : bfs) {
-        std::cout << v << ' ';
+    for (const size_t& vertex : bfs) {
+        std::cout << vertex << ' ';
     }
     std::cout << std::endl;
     auto [exists, path] = graph.ShortestPath(0, 2);
     if (exists) {
-        for (const size_t& v : path) {
-            std::cout << v << ' ';
+        for (const size_t& vertex : path) {
+            std::cout << vertex << ' ';
         }
     }
+    std::cout << std::endl;
 
     return 0;
 }

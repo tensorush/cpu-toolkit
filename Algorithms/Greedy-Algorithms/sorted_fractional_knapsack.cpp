@@ -5,6 +5,7 @@
     Space: O(1)
 */
 #include <iostream>
+#include <iomanip>
 #include <vector>
 
 struct Item {
@@ -26,15 +27,16 @@ auto SortedFractionalKnapsack(std::vector<Item>& items, double& knapsackCapacity
 }
 
 int main() {
-    size_t numItems;
+    unsigned numItems;
     double knapsackCapacity;
     std::cin >> numItems >> knapsackCapacity;
     std::vector<Item> items(numItems);
-    for (size_t i = 0; i < numItems; ++i) {
-        std::cin >> items[i].weight >> items[i].value;
+    for (Item& item : items) {
+        std::cin >> item.weight >> item.value;
     }
-    std::cout.precision(3);
-    std::cout << SortedFractionalKnapsack(items, knapsackCapacity).first << std::endl;
+    auto [totalValue, knapsack] = SortedFractionalKnapsack(items, knapsackCapacity);
+    std::cout << std::setprecision(3) << std::fixed
+              << totalValue << std::endl;
 
     return 0;
 }
