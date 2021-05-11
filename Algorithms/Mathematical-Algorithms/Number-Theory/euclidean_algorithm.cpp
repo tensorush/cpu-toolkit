@@ -6,8 +6,12 @@
 */
 #include <iostream>
 
-int EuclideanAlgorithm(const int& a, const int& b) {
-    return (b)?(EuclideanAlgorithm(b, a % b)):(a);
+int EuclideanAlgorithm(int a, int b) {
+    while (b > 0) {
+        a %= b;
+        std::swap(a, b);
+    }
+    return a;
 }
 
 int main() {

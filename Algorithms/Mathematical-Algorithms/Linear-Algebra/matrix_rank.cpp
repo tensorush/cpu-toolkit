@@ -2,41 +2,49 @@
     Matrix Rank
     -------------------
     Time: O(max(n,m)^3)
-    Space: O(n)
+    Space: O(1)
 */
-#include <algorithm>
 #include <iostream>
 #include <vector>
+#include <cmath>
 
-double MatrixRank(std::vector<std::vector<double>>& matrix, const double EPS = 1e-9) {
-    size_t n = matrix.size(), m = matrix[0].size();
-    size_t rank = std::max(n, m);
-    std::vector<bool> rowsVisited(n);
-    for (size_t i = 0, j; i < m; ++i) {
-        for (j = 0; j < n; ++j) {
-            if (!rowsVisited[j] && abs(matrix[j][i]) > EPS) break;
-        }
-        if (j == n) {
-            --rank;
-        } else {
-            rowsVisited[j] = true;
-            for (size_t p = i + 1; p < m; ++p) {
-                matrix[j][p] /= matrix[j][i];
+double MatrixRank(std::vector<std::vector<double>>& matrix, const double& EPS = 1e-9) {
+    int n = matrix.size(), m = matrix[0].size();
+    int rank = (n < m)?(n):(m);
+    for (int row = 0, col = 0; row < n && col < m; ++col) {
+        // Pivoting
+        if (fabs(matrix[row][col]) < EPS) {
+            for (int pivot = row + 1; pivot < n; ++pivot) {
+                if (fabs(matrix[pivot][col]) > EPS) {
+                    matrix[row].swap(matrix[pivot]);
+                    break;
+                }
             }
-            for (size_t k = 0; k < n; ++k) {
-                if (k != j && abs (matrix[k][i]) > EPS) {
-                    for (size_t p = i + 1; p < m; ++p) {
-                        matrix[k][p] -= matrix[j][p] * matrix[k][i];
-                    }
+            if (fabs(matrix[row][col]) < EPS) {
+                --rank;
+                continue;
+            }
+        }
+        // Forward elimination (row echelon form)
+        if (fabs(matrix[row][col] - 1) > EPS) {
+            for (int j = m - 1; j >= col; --j) {
+                matrix[row][j] /= matrix[row][col];
+            }
+        }
+        for (int i = row + 1; i < n; ++i) {
+            if (fabs(matrix[i][col]) > EPS) {
+                for (int j = m - 1; j >= col; --j) {
+                    matrix[i][j] -= matrix[row][j] * matrix[i][col];
                 }
             }
         }
+        ++row;
     }
     return rank;
 }
 
 int main() {
-    size_t n, m;
+    unsigned n, m;
     std::cin >> n >> m;
     std::vector<std::vector<double>> matrix(n, std::vector<double>(m));
     for (std::vector<double>& row : matrix) {

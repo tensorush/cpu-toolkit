@@ -29,7 +29,7 @@ long long MaximumPairwiseProduct(const std::vector<int>& numbers) {
 }
 
 int main() {
-    size_t n;
+    unsigned n;
     std::cin >> n;
     std::vector<int> numbers(n);
     for (int& number : numbers) {

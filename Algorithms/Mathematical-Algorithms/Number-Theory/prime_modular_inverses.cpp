@@ -7,21 +7,21 @@
 #include <iostream>
 #include <vector>
 
-auto PrimeModularInverses(const size_t& m) {
-	std::vector<size_t> inverses(m);
+auto PrimeModularInverses(const unsigned& prime) {
+	std::vector<unsigned> inverses(prime);
 	inverses[1] = 1;
-    for (size_t i = 2; i < m; ++i) {
-        inverses[i] = m - (m / i) * inverses[m % i] % m;
+    for (unsigned i = 2; i < prime; ++i) {
+        inverses[i] = prime - (prime / i) * inverses[prime % i] % prime;
     }
     return inverses;
 }
 
 int main() {
-    size_t m;
-    std::cin >> m;
-    auto inverses = PrimeModularInverses(m);
-    for (size_t inv : inverses) {
-        std::cout << inv << ' ';
+    unsigned prime;
+    std::cin >> prime;
+    auto inverses = PrimeModularInverses(prime);
+    for (const unsigned& inverse : inverses) {
+        std::cout << inverse << ' ';
     }
     std::cout << std::endl;
 

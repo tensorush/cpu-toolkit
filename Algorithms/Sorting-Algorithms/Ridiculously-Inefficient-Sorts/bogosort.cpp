@@ -6,6 +6,7 @@
 */
 #include <iostream>
 #include <vector>
+#include <ctime>
 
 template<typename T>
 bool isSorted(const std::vector<T>& array) {
@@ -17,6 +18,7 @@ bool isSorted(const std::vector<T>& array) {
 
 template<typename T>
 void Bogosort(std::vector<T>& array) {
+    srand(time(0));
     while (!isSorted(array)) {
         for (size_t i = 0, n = array.size(); i < n; ++i) {
             std::swap(array[i], array[rand() % n]);

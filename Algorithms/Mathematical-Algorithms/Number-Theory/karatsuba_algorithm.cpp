@@ -1,6 +1,6 @@
 /*
-    Karatsuba Algorithm
-    -------------------
+    Karatsuba's Algorithm
+    ---------------------
     Time: O(n^1.585)
     Space: O(1)
 */

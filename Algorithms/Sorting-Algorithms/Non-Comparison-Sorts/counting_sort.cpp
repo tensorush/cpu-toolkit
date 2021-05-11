@@ -7,8 +7,8 @@
 #include <iostream>
 #include <vector>
 
-void CountingSort(std::vector<int>& array, const int& maxValue) {
-    std::vector<int> counter(maxValue);
+void CountingSort(std::vector<unsigned>& array, const unsigned& maxValue) {
+    std::vector<unsigned> counter(maxValue);
     for (size_t i = 0; i < array.size(); ++i) {
         ++counter[array[i]];
     }
@@ -17,7 +17,7 @@ void CountingSort(std::vector<int>& array, const int& maxValue) {
     for (size_t j = 1; j < counter.size(); ++j) {
         positions[j] = positions[j - 1] + counter[j - 1];
     }
-    std::vector<int> arraySorted(array.size());
+    std::vector<unsigned> arraySorted(array.size());
     for (size_t i = 0; i < array.size(); ++i) {
         arraySorted[positions[array[i]]] = array[i];
         ++positions[array[i]];
@@ -26,14 +26,14 @@ void CountingSort(std::vector<int>& array, const int& maxValue) {
 }
 
 int main() {
-    int maxValue, element;
+    unsigned maxValue, element;
     std::cin >> maxValue;
-    std::vector<int> array;
+    std::vector<unsigned> array;
     while (std::cin >> element) {
         array.emplace_back(element);
     }
     CountingSort(array, maxValue);
-    for (const int& element : array) {
+    for (const unsigned& element : array) {
         std::cout << element << ' ';
     }
     std::cout << std::endl;

@@ -1,25 +1,25 @@
 /*
-    Euler's Totient (Phi) Function
-    ------------------------------
+    Euler's Totient Function
+    ------------------------
     Time: O(sqrt(n))
     Space: O(1)
 */
 #include <iostream>
 #include <vector>
 
-size_t TotientFunction(size_t n) {
-	size_t numCoPrimes = n;
-	for (size_t i = 2; i * i <= n; ++i)
+unsigned TotientFunction(unsigned n) {
+    unsigned numCoprimes = n;
+	for (unsigned i = 2; i * i <= n; ++i)
 		if (n % i == 0) {
 			while (n % i == 0) n /= i;
-			numCoPrimes -= numCoPrimes / i;
+			numCoprimes -= numCoprimes / i;
 		}
-	if (n > 1) numCoPrimes -= numCoPrimes / n;
-	return numCoPrimes;
+	if (n > 1) numCoprimes -= numCoprimes / n;
+	return numCoprimes;
 }
 
 int main() {
-    size_t n;
+    unsigned n;
     std::cin >> n;
     std::cout << TotientFunction(n) << std::endl;
 

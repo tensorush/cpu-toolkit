@@ -1,23 +1,38 @@
 /*
     Fibonacci Number
-    ----------------
-    Time: O(n)
-    Space: O(1)
+    ---------------------------------------------------------------
+    | Implicit Formula | Matrix Exponentiation | Explicit Formula |
+    ---------------------------------------------------------------
+    | Time: O(n)       |       O(log(n))       |       O(1)       |
+    | Space: O(1)      |          O(1)         |       O(1)       |
+    ---------------------------------------------------------------
 */
 #include <iostream>
+#include <cmath>
 
-size_t FibonacciNumber(size_t n) {
-    size_t prev = 0, cur = 1, next;
-    while (--n) {
-        next = prev + cur;
-        prev = cur;
-        cur = next;
+enum Algorithm {ImplicitFormula, MatrixExponentiation, ExplicitFormula};
+
+unsigned FibonacciNumber(unsigned n, const Algorithm& algorithm = MatrixExponentiation) {
+    if (n == 0) return 0;
+    if (n == 1 || n == 2) return 1;
+    if (algorithm == MatrixExponentiation) {
+        // TODO
+    } else if (algorithm == ImplicitFormula) {
+        unsigned prev = 0, cur = 1, next;
+        while (--n) {
+            next = prev + cur;
+            prev = cur;
+            cur = next;
+        }
+        return cur;
+    } else if (algorithm == ExplicitFormula) {
+        double goldenRatio = (1 + sqrt(5)) / 2;
+        return round(pow(goldenRatio, n) / sqrt(5));
     }
-    return cur;
 }
 
 int main() {
-    size_t n;
+    unsigned n;
     std::cin >> n;
     std::cout << FibonacciNumber(n) << std::endl;
 

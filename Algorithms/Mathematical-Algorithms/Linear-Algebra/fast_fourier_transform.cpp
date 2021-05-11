@@ -5,10 +5,10 @@
     Space: O(1)
 */
 #define _USE_MATH_DEFINES
-#include<iostream>
-#include<complex>
-#include<vector>
-#include<cmath>
+#include <iostream>
+#include <complex>
+#include <vector>
+#include <cmath>
 
 void FastFourierTransform(std::vector<std::complex<double>>& array, const bool& invert = false) {
 	size_t n = array.size();

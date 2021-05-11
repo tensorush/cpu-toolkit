@@ -7,12 +7,12 @@
 #include <iostream>
 
 unsigned CatalanNumber(const unsigned& n) {
-    unsigned cat = 1;
+    unsigned catalan = 1;
 	for (unsigned i = 0; i < n; ++i) {
-		cat *= 4 * i + 2;
-        cat /= i + 2;
+		catalan *= 4 * i + 2;
+        catalan /= i + 2;
     }
-	return cat;
+	return catalan;
 }
 
 int main() {

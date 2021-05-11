@@ -6,8 +6,12 @@
 */
 #include <iostream>
 
-int GreatestCommonDivisor(const int& a, const int& b) {
-    return (b)?(GreatestCommonDivisor(b, a % b)):(a);
+int GreatestCommonDivisor(int a, int b) {
+    while (b > 0) {
+        a %= b;
+        std::swap(a, b);
+    }
+    return a;
 }
 
 int LeastCommonMultiple(const int& a, const int& b) {

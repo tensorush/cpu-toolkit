@@ -79,6 +79,8 @@
 
 - ### [E-Maxx Algorithms](https://cp-algorithms.com/)
 
+- ### [LiteratePrograms Wiki](https://www.literateprograms.org/)
+
 - ### [Algorithmic Cheatsheet](https://sinon.org/algorithms/)
 
 - ### [Data Structures Cheatsheet](https://www.clear.rice.edu/comp160/data_cheat.html)
@@ -86,6 +88,10 @@
 - ### [The Arcane Algorithm Archive](https://www.algorithm-archive.org/)
 
 - ### [The Sound of Sorting by Timo Bingmann](https://panthema.net/2013/sound-of-sorting/)
+
+- ### [Cosmos Dataset held by OpenGenus Foundation](https://github.com/OpenGenus/cosmos)
+
+- ### [Algorithms and Data Structures by Petar Veličković](https://github.com/PetarV-/Algorithms)
 
 - ### [Advanced Data Structures Lectures by Niema Moshiri](https://www.youtube.com/playlist?list=PLM_KIlU0WoXmkV4QB1Dg8PtJaHTdWHwRS)
 

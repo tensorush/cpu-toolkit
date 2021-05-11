@@ -2,30 +2,32 @@
     Sieve of Eratosthenes
     ---------------------
     Time: O(n log(log(n))
-    Space: O(n bytes)
+    Space: O(n bits)
 */
 #include <iostream>
 #include <vector>
+#include <cmath>
 
-auto SieveOfEratosthenes(const size_t& n) {
-    std::vector<bool> isPrime(n + 1, true);
-    isPrime[0] = isPrime[1] = false;
-    for (size_t p = 2; p * p <= n; ++p) {
-        if (isPrime[p] == true) {
-            for (size_t i = p * p; i <= n; i += p) {
-                isPrime[i] = false;
+auto SieveOfEratosthenes(const unsigned& bound) {
+    std::vector<bool> sieve(bound + 1, true);
+    sieve[0] = sieve[1] = false;
+    unsigned maxPrime = sqrt(bound);
+    for (unsigned p = 2; p <= maxPrime; ++p) {
+        if (sieve[p] == true) {
+            for (unsigned i = p * p; i <= bound; i += p) {
+                sieve[i] = false;
             }
         }
     }
-    return isPrime;
+    return sieve;
 }
 
 int main() {
-    size_t n;
-    std::cin >> n;
-    auto isPrime = SieveOfEratosthenes(n);
-    for (size_t i = 2; i <= n; ++i) {
-        if (isPrime[i]) std::cout << i << ' ';
+    unsigned bound;
+    std::cin >> bound;
+    auto sieve = SieveOfEratosthenes(bound);
+    for (unsigned i = 2; i <= bound; ++i) {
+        if (sieve[i]) std::cout << i << ' ';
     }
     std::cout << std::endl;
 

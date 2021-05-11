@@ -12,9 +12,10 @@ double f(const double& x) {
     return pow(x - 1, 2);
 }
 
-double TernarySearch(double f(const double&), double left, double right, const double& EPS = 1e-9) {
+template<typename T>
+T TernarySearch(T f(const T&), T left, T right, const T& EPS = 1e-9) {
     while (right - left > EPS) {
-        double a = (left * 2 + right) / 3, b = (left + right * 2) / 3;
+        T a = (left * 2 + right) / 3, b = (left + right * 2) / 3;
         (f(a) < f(b))?(right = b):(left = a);
     }
     return (left + right) / 2;

@@ -8,16 +8,14 @@
 #include <vector>
 #include <string>
 
-std::string LargestNumber(const unsigned& numDigits) {
+std::string LargestNumber(const std::vector<unsigned>& digits) {
     std::vector<unsigned> digitCounter(10);
-    for (unsigned i = 0; i < numDigits; ++i) {
-        unsigned digit;
-        std::cin >> digit;
+    for (const unsigned& digit : digits) {
         ++digitCounter[digit];
     }
     std::string largest;
     for (int i = 9; i >= 0; --i) {
-        largest += std::string(digitCounter[i], (char) (i + 48));
+        largest += std::string(digitCounter[i], std::to_string(i)[0]);
     }
     return largest;
 }
@@ -25,7 +23,11 @@ std::string LargestNumber(const unsigned& numDigits) {
 int main() {
     unsigned numDigits;
     std::cin >> numDigits;
-    std::cout << LargestNumber(numDigits) << std::endl;
+    std::vector<unsigned> digits(numDigits);
+    for (unsigned& digit : digits) {
+        std::cin >> digit;
+    }
+    std::cout << LargestNumber(digits) << std::endl;
 
     return 0;
 }
