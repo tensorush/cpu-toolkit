@@ -10,67 +10,67 @@
 #include <iostream>
 
 template<typename T>
-class Deque {
+class Deque final {
 public:
-    Deque(size_t _capacity = 1024) : head(0), tail(-1), size(0), capacity(_capacity), deque(new T[_capacity]) {}
+    Deque(const size_t& capacity = 1024) : _head(0), _tail(-1), _size(0), _capacity(capacity), deque(new T[capacity]) {}
     ~Deque() { delete[] deque; }
     size_t get_size() const {
-        return size;
+        return _size;
     }
     size_t get_capacity() const {
-        return capacity;
+        return _capacity;
     }
     bool empty() const {
-        return (size == 0);
+        return (_size == 0);
     }
     const T& front() const {
         if (empty()) throw deque_empty;
-        return deque[head];
+        return deque[_head];
     }
     const T& back() const {
         if (empty()) throw deque_empty;
-        return deque[tail];
+        return deque[_tail];
     }
     void push_front(const T& object) {
-        if (size == capacity) throw deque_out_of_bound;
-        (head == 0)?(head = capacity - 1):(--head);
-        ++size;
-        deque[head] = object;
+        if (_size == _capacity) throw deque_out_of_bound;
+        (_head == 0)?(_head = _capacity - 1):(--_head);
+        ++_size;
+        deque[_head] = object;
     }
     T pop_front() {
         if (empty()) throw deque_empty;
-        T popped = deque[head];
-        --size; ++head;
-        if (head == capacity) head = 0;
+        T popped = deque[_head];
+        --_size; ++_head;
+        if (_head == _capacity) _head = 0;
         return popped;
     }
     void push_back(const T& object) {
-        if (size == capacity) throw deque_out_of_bound;
-        ++size; ++tail;
-        if (tail == capacity) tail = 0;
-        deque[tail] = object;
+        if (_size == _capacity) throw deque_out_of_bound;
+        ++_size; ++_tail;
+        if (_tail == _capacity) _tail = 0;
+        deque[_tail] = object;
     }
     T pop_back() {
         if (empty()) throw deque_empty;
-        T popped = deque[tail];
-        (tail == 0)?(tail = capacity - 1):(--tail);
-        --size;
+        T popped = deque[_tail];
+        (_tail == 0)?(_tail = _capacity - 1):(--_tail);
+        --_size;
         return popped;
     }
     void print(std::ostream& out = std::cout) const {
         if (empty()) throw deque_empty;
-        for (int64_t i = head, s = size; s > 0; ++i, --s) {
-            if (i == capacity) i = 0;
+        for (int64_t i = _head, s = _size; s > 0; ++i, --s) {
+            if (i == _capacity) i = 0;
             out << deque[i] << ' ';
         }
         out << std::endl;
     }
 private:
     T* deque;
-    size_t head;
-    size_t tail;
-    size_t size;
-    size_t capacity;
+    size_t _head;
+    size_t _tail;
+    size_t _size;
+    size_t _capacity;
     class DequeEmptyException : public std::exception {
         virtual const char* what() const throw() {
             return "Deque is empty";
@@ -93,5 +93,5 @@ int main() {
               << deque.empty() << std::endl;
     deque.print();
 
-    return 0;
+    return EXIT_SUCCESS;
 }

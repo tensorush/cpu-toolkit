@@ -37,5 +37,5 @@ int main() {
     std::cout << std::setprecision(3) << std::fixed
               << DiscreteKnapsackWithoutRepetitions(items, knapsackCapacity) << std::endl;
 
-    return 0;
+    return EXIT_SUCCESS;
 }

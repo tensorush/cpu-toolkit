@@ -29,5 +29,5 @@ int main() {
     NQueensProblem(boardSize, numWays, column, diag_1, diag_2);
     std::cout << numWays << std::endl;
 
-    return 0;
+    return EXIT_SUCCESS;
 }

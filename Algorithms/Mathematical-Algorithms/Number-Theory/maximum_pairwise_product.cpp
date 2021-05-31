@@ -37,5 +37,5 @@ int main() {
     }
     std::cout << MaximumPairwiseProduct(numbers) << std::endl;
 
-    return 0;
+    return EXIT_SUCCESS;
 }

@@ -27,9 +27,9 @@ size_t CountInversions(std::vector<T>& array, std::vector<T>& temp, size_t low, 
 
 template<typename T>
 size_t NumberOfInversions(std::vector<T>& array, size_t left, size_t right) {
-    if (right == left) return 0;
-    std::vector<T> temp = array;
     size_t numInversions = 0, mid = left + (right - left) / 2;
+    if (right == left) return numInversions;
+    std::vector<T> temp = array;
     numInversions += NumberOfInversions(array, left, mid);
     numInversions += NumberOfInversions(array, mid + 1, right);
     numInversions += CountInversions(array, temp, left, mid, right);
@@ -45,5 +45,5 @@ int main() {
     }
     std::cout << NumberOfInversions(array, 0, array.size() - 1) << std::endl;
 
-    return 0;
+    return EXIT_SUCCESS;
 }

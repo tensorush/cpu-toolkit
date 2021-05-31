@@ -1,67 +1,56 @@
-void multiply(int a[3][3], int b[3][3]) {
-    int mul[3][3];
-    for (int i = 0; i < 3; ++i) {
-        for (int j = 0; j < 3; ++j) {
-            mul[i][j] = 0;
-            for (int k = 0; k < 3; ++k)
-                mul[i][j] += a[i][k] * b[k][j];
+/*
+    Matrix Exponentiation
+    -----------------------
+    Time: O(n^3 log(power))
+    Space: O(n^2)
+*/
+#include <iostream>
+#include <vector>
+#include <cmath>
+
+template<typename T>
+auto MatrixMultiplication(const std::vector<std::vector<T>>& A, const std::vector<std::vector<T>>& B) {
+    size_t n = A.size(), m = B[0].size(), l = B.size();
+    std::vector<std::vector<T>> C(n, std::vector<T>(n));
+    for (size_t i = 0; i < n; ++i) {
+        for (size_t j = 0; j < m; ++j) {
+            for (size_t k = 0; k < l; ++k) {
+                C[i][j] += A[i][k] * B[k][j];
+            }
         }
     }
- 
-    // storing the multiplication result in a[][]
-    for (int i=0; i<3; i++)
-        for (int j=0; j<3; j++)
-            a[i][j] = mul[i][j];  // Updating our matrix
+    return C;
 }
- 
-// Function to compute F raise to power n-2.
-int power(int F[3][3], int n)
-{
-    int M[3][3] = {{1,1,1}, {1,0,0}, {0,1,0}};
- 
-    // Multiply it with initial values i.e with
-    // F(0) = 0, F(1) = 1, F(2) = 1
-    if (n==1)
-        return F[0][0] + F[0][1];
- 
-    power(F, n/2);
- 
-    multiply(F, F);
- 
-    if (n%2 != 0)
-        multiply(F, M);
- 
-    // Multiply it with initial values i.e with
-    // F(0) = 0, F(1) = 1, F(2) = 1
-    return F[0][0] + F[0][1] ;
+
+template<typename T>
+void MatrixExponentiation(std::vector<std::vector<T>> A, std::vector<std::vector<T>>& B, unsigned power) {
+    size_t n = A.size();
+    while (power) {
+        if (power % 2 == 1) B = MatrixMultiplication(B, A);
+        A = MatrixMultiplication(A, A);
+        power /= 2;
+    }
 }
- 
-// Return n'th term of a series defined using below
-// recurrence relation.
-// f(n) is defined as
-//    f(n) = f(n-1) + f(n-2) + f(n-3), n>=3
-// Base Cases :
-//    f(0) = 0, f(1) = 1, f(2) = 1
-int findNthTerm(int n)
-{
- 
-    int F[3][3] = {{1,1,1}, {1,0,0}, {0,1,0}} ;
- 
-    //Base cases
-    if(n==0)
-        return 0;
-    if(n==1 || n==2)
-        return 1;
- 
-    return power(F, n-2);
-}
- 
-// Driver code
-int main()
-{
-   int n = 5;
- 
-   cout << "F(5) is " << findNthTerm(n);
- 
-   return 0;
+
+int main() {
+    unsigned n, power;
+    std::cin >> n >> power;
+    std::vector<std::vector<double>> matrix(n, std::vector<double>(n)), exponent(n, std::vector<double>(n));
+    for (std::vector<double>& row : matrix) {
+        for (double& col : row) {
+            std::cin >> col;
+        }
+    }
+    for (size_t i = 0; i < n; ++i) {
+        exponent[i][i] = 1;
+    }
+    MatrixExponentiation(matrix, exponent, power);
+    for (std::vector<double>& row : exponent) {
+        for (double& col : row) {
+            std::cout << col << ' ';
+        }
+        std::cout << std::endl;
+    }
+
+    return EXIT_SUCCESS;
 }

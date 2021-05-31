@@ -2,20 +2,28 @@
     Fibonacci Number Modulo M
     -------------------------
     Time: O(n)
-    Space: O(m)
+    Space: O(1)
 */
 #include <iostream>
-#include <vector>
 
-unsigned FibonacciNumberModuloM(unsigned n, unsigned m) {
-    std::vector<unsigned> fib(6 * m + 2);
-    fib[1] = fib[2] = 1;
-    unsigned i;
-    for (i = 3; i <= n && (fib[i - 2] != 0 || fib[i - 1] != 1); ++i) {
-        fib[i] = (fib[i - 2] + fib[i - 1]) % m;
+unsigned FibonacciNumberModuloM(const unsigned& n, const unsigned& m) {
+    unsigned prev = 0, cur = 1, next = 1, pisanoPeriod = 0;
+    if (n == 0) return prev;
+    if (n == 1) return cur;
+    if (n == 2) return next;
+    do {
+        next = (prev + cur) % m;
+        prev = cur;
+        cur = next;
+        ++pisanoPeriod;
+    } while (prev != 0 || cur != 1);
+    prev = 0, cur = 1, next = 1;
+    for (unsigned remainder = n % pisanoPeriod; remainder > 1; --remainder) {
+        next = (prev + cur) % m;
+        prev = cur;
+        cur = next;
     }
-    unsigned pisanoPeriod = i - 2;
-    return (n < i)?(fib[n]):(fib[n % pisanoPeriod]);
+    return cur;
 }
 
 int main() {
@@ -23,5 +31,5 @@ int main() {
     std::cin >> n >> m;
     std::cout << FibonacciNumberModuloM(n, m) << std::endl;
 
-    return 0;
+    return EXIT_SUCCESS;
 }

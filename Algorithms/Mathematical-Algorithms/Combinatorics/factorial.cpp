@@ -20,5 +20,5 @@ int main() {
     std::cin >> n;
     std::cout << Factorial(n) << std::endl;
 
-    return 0;
+    return EXIT_SUCCESS;
 }

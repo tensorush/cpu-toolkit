@@ -32,5 +32,5 @@ int main() {
     std::cin >> string_1 >> string_2;
     std::cout << LevensteinDistance(string_1, string_2) << std::endl;
 
-    return 0;
+    return EXIT_SUCCESS;
 }

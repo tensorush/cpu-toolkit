@@ -20,5 +20,5 @@ int main() {
     std::cout << std::setprecision(3) << std::fixed
               << BirthdayParadox(numDays, numPeople) << std::endl;
 
-    return 0;
+    return EXIT_SUCCESS;
 }

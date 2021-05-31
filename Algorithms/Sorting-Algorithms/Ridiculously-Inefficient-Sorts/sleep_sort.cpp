@@ -5,8 +5,8 @@
     Space: O(1)
 */
 #include <iostream>
-#include <chrono>
 #include <thread>
+#include <chrono>
 #include <vector>
 #include <string>
  
@@ -22,6 +22,4 @@ int main(int argc, char* argv[]) {
     for (std::thread& thread : threads) {
         thread.join();
     }
-
-    return 0;
 }

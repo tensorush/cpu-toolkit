@@ -31,5 +31,5 @@ int main() {
     std::cin >> n >> k;
     std::cout << StirlingNumberOfTheSecondKind(n, k) << std::endl;
 
-    return 0;
+    return EXIT_SUCCESS;
 }

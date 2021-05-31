@@ -10,12 +10,10 @@
 #include <iostream>
 
 template<typename T>
-class LinkedList {
+class LinkedList final {
 public:
     LinkedList() : size(0), head(nullptr), tail(nullptr) {}
-    ~LinkedList() {
-        clear();
-    }
+    ~LinkedList() { clear(); }
     size_t get_size() const {
         return size;
     }
@@ -162,5 +160,5 @@ int main() {
               << list.empty() << std::endl;
     list.print();
 
-    return 0;
+    return EXIT_SUCCESS;
 }

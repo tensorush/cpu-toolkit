@@ -30,5 +30,5 @@ int main() {
     }
     std::cout << MinimumCoinChange(change, coins) << std::endl;
 
-    return 0;
+    return EXIT_SUCCESS;
 }

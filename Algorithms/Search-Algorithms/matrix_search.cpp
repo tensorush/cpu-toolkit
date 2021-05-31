@@ -37,5 +37,5 @@ int main() {
     auto [row, col] = MatrixSearch(matrix, key);
     std::cout << row << ' ' << col << std::endl;
 
-    return 0;
+    return EXIT_SUCCESS;
 }

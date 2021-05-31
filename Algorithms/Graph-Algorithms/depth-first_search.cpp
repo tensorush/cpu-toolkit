@@ -11,7 +11,7 @@
 #include <stack>
 #include <list>
 
-class Graph {
+class Graph final {
 public:
     Graph(const size_t& n) : visited(n), adjLists(n) {}
     void addEdge(const size_t& v_1, const size_t& v_2) {
@@ -51,5 +51,5 @@ int main() {
     }
     std::cout << std::endl;
 
-    return 0;
+    return EXIT_SUCCESS;
 }

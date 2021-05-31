@@ -29,5 +29,5 @@ int main() {
     }
     std::cout << LargestNumber(digits) << std::endl;
 
-    return 0;
+    return EXIT_SUCCESS;
 }

@@ -11,7 +11,7 @@
 #include <stack>
 #include <list>
 
-class DAG {
+class DAG final {
 public:
     DAG(const size_t& n) : visited(n), adjLists(n) {}
     void addEdge(const size_t& source, const size_t& destination) {
@@ -55,5 +55,5 @@ int main() {
     }
     std::cout << std::endl;
 
-    return 0;
+    return EXIT_SUCCESS;
 }

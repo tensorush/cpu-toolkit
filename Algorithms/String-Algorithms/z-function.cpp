@@ -22,7 +22,8 @@ auto ZFunction(std::string str) {
 
 int main() {
     std::string word, text;
-    std::cin >> word >> text;
+    std::getline(std::cin, word);
+    std::getline(std::cin, text);
     auto zFunction = ZFunction(word + '#' + text);
     size_t n = text.length(), m = word.length();
     for (size_t i = 0; i < n; ++i) {
@@ -31,5 +32,5 @@ int main() {
         }
     }
 
-    return 0;
+    return EXIT_SUCCESS;
 }

@@ -24,12 +24,12 @@ auto LinearSieveAlgorithm(const unsigned& n) {
 }
 
 int main() {
-    unsigned n; // less than 10^7
+    unsigned n;
     std::cin >> n;
     auto smallestPrimeDivisors = LinearSieveAlgorithm(n);
     for (unsigned i = 2; i <= n; ++i) {
         std::cout << i << " | " << smallestPrimeDivisors[i] << std::endl;
     }
 
-    return 0;
+    return EXIT_SUCCESS;
 }

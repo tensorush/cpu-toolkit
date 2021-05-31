@@ -21,5 +21,5 @@ int main() {
     std::cin >> n >> k;
     std::cout << BinomialCoefficient(n, k) << std::endl;
 
-    return 0;
+    return EXIT_SUCCESS;
 }

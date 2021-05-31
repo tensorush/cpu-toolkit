@@ -10,7 +10,7 @@
 #include <iostream>
 #include <vector>
 
-enum Algorithm {Garner, Gauss};
+enum class Algorithm {Gauss = 0, Garner = 1};
 
 int ModularInverse(int a, int m) {
     // Extended Euclidean Algorithm
@@ -28,41 +28,43 @@ int ModularInverse(int a, int m) {
     return (y < 0)?(y + mod):(y);
 }
 
-auto ChineseRemainderTheorem(const std::vector<int>& coprimes, const std::vector<int>& remainders, const Algorithm& algorithm = Gauss) {
+auto ChineseRemainderTheorem(const Algorithm& algorithm, const std::vector<int>& coprimes, const std::vector<int>& remainders) {
     size_t n = coprimes.size();
-    int coprimesProduct = 1;
+    int x = 0, coprimesProduct = 1;
     for (const int& coprime : coprimes) {
         coprimesProduct *= coprime;
     }
-    if (algorithm == Gauss) {
-        int x = 0, y_i;
-        for (size_t i = 0; i < n; ++i) {
-            y_i = coprimesProduct / coprimes[i];
-            x += remainders[i] * ModularInverse(y_i, coprimes[i]) * y_i;
-        }
-        return std::make_pair(x % coprimesProduct, coprimesProduct);
-    } else if (algorithm == Garner) {
-        int x_i, x = 0;
-        std::vector<int> coef(n);
-        for (size_t i = 0; i < n; ++i) {
-            coef[i] = remainders[i];
-            for (int j = 0; j < i; ++j) {
-                coef[i] = (ModularInverse(coprimes[i], coprimes[j]) * (coef[i] - coef[j])) % coprimes[i];
-                if (coef[i] < 0) coef[i] += coprimes[i];
+    switch (algorithm) {
+        case Algorithm::Gauss:
+            int y_i;
+            for (size_t i = 0; i < n; ++i) {
+                y_i = coprimesProduct / coprimes[i];
+                x += remainders[i] * ModularInverse(y_i, coprimes[i]) * y_i;
             }
-            x_i = coef[i];
-            for (int j = 0; j < i; ++j) {
-                x_i *= coprimes[j];
+            x %= coprimesProduct;
+            break;
+        case Algorithm::Garner:
+            int x_i;
+            std::vector<int> coef(n);
+            for (size_t i = 0; i < n; ++i) {
+                coef[i] = remainders[i];
+                for (int j = 0; j < i; ++j) {
+                    coef[i] = (ModularInverse(coprimes[i], coprimes[j]) * (coef[i] - coef[j])) % coprimes[i];
+                    if (coef[i] < 0) coef[i] += coprimes[i];
+                }
+                x_i = coef[i];
+                for (int j = 0; j < i; ++j) {
+                    x_i *= coprimes[j];
+                }
+                x += x_i;
             }
-            x += x_i;
-        }
-        return std::make_pair(x, coprimesProduct);
     }
+    return std::make_pair(x, coprimesProduct);
 }
 
 int main() {
-    unsigned n;
-    std::cin >> n;
+    unsigned algorithm, n;
+    std::cin >> algorithm >> n;
     std::vector<int> coprimes(n);
     for (int& coprime : coprimes) {
         std::cin >> coprime;
@@ -71,8 +73,8 @@ int main() {
     for (int& remainder : remainders) {
         std::cin >> remainder;
     }
-    auto [x, coprimesProduct] = ChineseRemainderTheorem(coprimes, remainders);
+    auto [x, coprimesProduct] = ChineseRemainderTheorem(static_cast<Algorithm>(algorithm), coprimes, remainders);
     std::cout << x << " mod " << coprimesProduct << std::endl;
 
-    return 0;
+    return EXIT_SUCCESS;
 }

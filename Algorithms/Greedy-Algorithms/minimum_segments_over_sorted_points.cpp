@@ -36,5 +36,5 @@ int main() {
     auto [numSegments, segments] = MinimumSegmentsOverSortedPoints(points, segmentLength);
     std::cout << numSegments << std::endl;
 
-    return 0;
+    return EXIT_SUCCESS;
 }

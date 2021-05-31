@@ -25,5 +25,5 @@ int main() {
     }
     std::cout << LinearSearch(array, key) << std::endl;
 
-    return 0;
+    return EXIT_SUCCESS;
 }

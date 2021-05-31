@@ -1,6 +1,6 @@
 /*
-    Karatsuba's Algorithm
-    ---------------------
+    Karatsuba Algorithm
+    -------------------
     Time: O(n^1.585)
     Space: O(1)
 */
@@ -25,5 +25,5 @@ int main() {
     std::cin >> x >> y;
     std::cout << KaratsubaAlgorithm(x, y);
 
-    return 0;
+    return EXIT_SUCCESS;
 }

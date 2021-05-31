@@ -34,5 +34,5 @@ int main() {
     std::cin >> a >> b >> m;
     std::cout << BabyStepGiantStepAlgorithm(a, b, m) << std::endl;
 
-    return 0;
+    return EXIT_SUCCESS;
 }

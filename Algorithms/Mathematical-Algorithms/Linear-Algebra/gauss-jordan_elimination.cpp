@@ -16,19 +16,19 @@ std::string GaussJordanElimination(std::vector<std::vector<double>>& A_b, std::v
 		// Partial pivoting
         int pivot = row;
 		for (int i = row + 1; i < n; ++i) {
-			if (fabs(A_b[i][col]) > fabs(A_b[pivot][col])) pivot = i;
+			if (abs(A_b[i][col]) > abs(A_b[pivot][col])) pivot = i;
         }
-		if (fabs(A_b[pivot][col]) < EPS) continue ;
+		if (abs(A_b[pivot][col]) < EPS) continue ;
 		if (row != pivot) A_b[row].swap(A_b[pivot]);
 		pivotRows[col] = row;
         // Reduced row echelon form
-        if (fabs(A_b[row][col] - 1) > EPS) {
+        if (abs(A_b[row][col] - 1) > EPS) {
             for (int j = m; j >= col; --j) {
                 A_b[row][j] /= A_b[row][col];
             }
         }
 		for (int i = 0; i < n; ++i) {
-			if (i != row && fabs(A_b[i][col]) > EPS) {
+			if (i != row && abs(A_b[i][col]) > EPS) {
 				for (int j = m; j >= col; --j) {
 					A_b[i][j] -= A_b[row][j] * A_b[i][col];
                 }
@@ -59,14 +59,14 @@ int main() {
             std::cin >> col;
         }
     }
-    std::string solutions = GaussJordanElimination(A_b, x);
-    std::cout << solutions << std::endl;
-    if (solutions == "Single solution") {
+    std::string numSolutions = GaussJordanElimination(A_b, x);
+    std::cout << numSolutions << std::endl;
+    if (numSolutions == "Single solution") {
         for (const double& value : x) {
             std::cout << value << ' ';
         }
         std::cout << std::endl;
     }
 
-    return 0;
+    return EXIT_SUCCESS;
 }

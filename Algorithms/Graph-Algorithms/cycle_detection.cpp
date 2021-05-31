@@ -1,5 +1,5 @@
 /*
-    Cycle Search
+    Cycle Detection
     -------------
     Time: O(n+m)
     Space: O(n+m)
@@ -10,14 +10,14 @@
 #include <vector>
 #include <list>
 
-class Graph {
+class Graph final {
 public:
     Graph(const size_t& n) : colours(n), parents(n, -1), adjLists(n) {}
     void addEdge(const size_t& v_1, const size_t& v_2) {
         adjLists[v_1].emplace(v_2);
         adjLists[v_2].emplace(v_1);
     }
-    auto CycleSearch(const size_t& vertex) {
+    auto CycleDetection(const size_t& vertex) {
         // cycles.clear();
         // parents.assign(parents.size(), -1);
         // colours.assign(colours.size(), WHITE);
@@ -55,7 +55,7 @@ int main() {
     graph.addEdge(0, 1);
     graph.addEdge(1, 2);
     graph.addEdge(2, 0);
-    auto cycles = graph.CycleSearch(0);
+    auto cycles = graph.CycleDetection(0);
     if (cycles.size()) {
         for (const auto& cycle : cycles) {
             for (const size_t& vertex : cycle) {
@@ -65,5 +65,5 @@ int main() {
         }
     }
 
-    return 0;
+    return EXIT_SUCCESS;
 }

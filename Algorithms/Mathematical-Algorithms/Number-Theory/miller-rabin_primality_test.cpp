@@ -5,18 +5,11 @@
     Space: O(1)
 */
 #include <iostream>
+#include <chrono>
+#include <random>
 #include <vector>
-#include <ctime>
 
-unsigned EuclideanAlgorithm(unsigned a, unsigned b) {
-    while (b > 0) {
-        a %= b;
-        std::swap(a, b);
-    }
-    return a;
-}
-
-unsigned modularExponentiation(unsigned a, unsigned power, const unsigned& p) {
+unsigned ModularExponentiation(unsigned a, unsigned power, const unsigned& p) {
     unsigned mod = 1;
     a %= p;
     while (power) {
@@ -33,11 +26,12 @@ bool MillerRabinPrimalityTest(const unsigned& n, unsigned numIterations) {
     unsigned d = n - 1;
     while (d % 2 == 0) d /= 2;
     bool isPrime;
-    srand(time(0));
+    unsigned seed = std::chrono::system_clock::now().time_since_epoch().count();
+    std::mt19937 randomInteger(seed);
     while (--numIterations) {
         isPrime = false;
-        unsigned a = 2 + rand() % (n - 4);
-        unsigned mod = modularExponentiation(a, d, n);
+        unsigned a = 2 + randomInteger() % (n - 4);
+        unsigned mod = ModularExponentiation(a, d, n);
         if (mod == 1 || mod == n - 1) continue ;
         while (d != n - 1) {
             mod = (mod * mod) % n;
@@ -58,5 +52,5 @@ int main() {
     std::cin >> number >> numIterations;
     std::cout << std::boolalpha << MillerRabinPrimalityTest(number, numIterations) << std::endl;
 
-    return 0;
+    return EXIT_SUCCESS;
 }

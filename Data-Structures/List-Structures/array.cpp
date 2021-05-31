@@ -10,70 +10,70 @@
 #include <iostream>
 
 template<typename T>
-class Array {
+class Array final {
 public:
-    Array(size_t _capacity = 1024) : size(0), capacity(_capacity), array(new T[_capacity]) {}
+    Array(const size_t& capacity = 1024) : _size(0), _capacity(capacity), array(new T[capacity]) {}
     ~Array() { delete[] array; }
     size_t get_size() const {
-        return size;
+        return _size;
     }
     size_t get_capacity() const {
-        return capacity;
+        return _capacity;
     }
     bool empty() const {
-        return (size == 0);
+        return (_size == 0);
     }
     T operator [] (const int64_t& index) const {
-        if (index < 0 || index >= size) throw array_out_of_bound;
+        if (index < 0 || index >= _size) throw array_out_of_bound;
         return array[index];
     }
     int64_t find(const T& object) const {
-        for (int64_t i = 0; i < size; ++i) {
+        for (int64_t i = 0; i < _size; ++i) {
             if (array[i] == object) return i;
         }
         return -1;
     }
     void insert(const T object, const int64_t& index) {
-        if (index < 0 || index > size) throw array_out_of_bound;
-        if (size == capacity) {
-            T* new_array = new T[2 * capacity];
-            for (size_t i = 0; i < capacity; ++i) {
+        if (index < 0 || index > _size) throw array_out_of_bound;
+        if (_size == _capacity) {
+            T* new_array = new T[2 * _capacity];
+            for (size_t i = 0; i < _capacity; ++i) {
                 new_array[i] = array[i];
             }
             delete[] array;
             array = new_array;
-            capacity *= 2;
+            _capacity *= 2;
         }
-        if (index < size) {
-            for (int64_t i = size - 1; i >= index; --i) {
+        if (index < _size) {
+            for (int64_t i = _size - 1; i >= index; --i) {
                 array[i + 1] = array[i];
             }
         }
         array[index] = object;
-        ++size;
+        ++_size;
     }
     T remove(const int64_t& index) {
-        if (index < 0 || index >= size) throw array_out_of_bound;
+        if (index < 0 || index >= _size) throw array_out_of_bound;
         const T deleted = array[index];
-        if (index < size - 1) {
-            for (size_t i = index; i <= size - 2; ++i) {
+        if (index < _size - 1) {
+            for (size_t i = index; i <= _size - 2; ++i) {
                 array[i] = array[i + 1];
             }
         }
-        --size;
+        --_size;
         return deleted;
     }
     void print(std::ostream& out = std::cout) const {
         if (empty()) throw array_empty;
-        for (size_t i = 0; i < size; ++i) {
+        for (size_t i = 0; i < _size; ++i) {
             out << array[i] << ' ';
         }
         out << std::endl;
     }
 private:
     T* array;
-    int64_t size;
-    int64_t capacity;
+    int64_t _size;
+    int64_t _capacity;
     class ArrayEmptyException : public std::exception {
         virtual const char* what() const throw() {
             return "Array is empty";
@@ -98,5 +98,5 @@ int main() {
               << array.empty() << std::endl;
     array.print();
 
-    return 0;
+    return EXIT_SUCCESS;
 }

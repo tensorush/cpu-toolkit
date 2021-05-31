@@ -7,11 +7,11 @@
 #include <iostream>
 
 int GreatestCommonDivisor(int a, int b) {
-    while (b > 0) {
-        a %= b;
+    while (a > 0) {
+        b %= a;
         std::swap(a, b);
     }
-    return a;
+    return b;
 }
 
 int LeastCommonMultiple(const int& a, const int& b) {
@@ -23,5 +23,5 @@ int main() {
     std::cin >> a >> b;
     std::cout << LeastCommonMultiple(a, b) << std::endl;
 
-    return 0;
+    return EXIT_SUCCESS;
 }

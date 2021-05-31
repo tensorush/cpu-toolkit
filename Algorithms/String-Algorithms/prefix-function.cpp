@@ -24,7 +24,8 @@ auto PrefixFunction(const std::string& str) {
 
 int main() {
     std::string word, text;
-    std::cin >> word >> text;
+    std::getline(std::cin, word);
+    std::getline(std::cin, text);
     auto prefixFunction = PrefixFunction(word + '#' + text);
     size_t m = word.length();
     for (size_t i = 0; i < text.length(); ++i) {
@@ -33,5 +34,5 @@ int main() {
         }
     }
 
-    return 0;
+    return EXIT_SUCCESS;
 }

@@ -35,5 +35,5 @@ int main() {
     std::cin >> boardSize >> numBishops;
     std::cout << BishopsProblem(boardSize, numBishops) << std::endl;
 
-    return 0;
+    return EXIT_SUCCESS;
 }

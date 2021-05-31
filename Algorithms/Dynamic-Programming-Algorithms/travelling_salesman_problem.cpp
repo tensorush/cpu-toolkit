@@ -51,5 +51,5 @@ int main() {
     }
     std::cout << TravellingSalesmanProblem(n, x, y) << std::endl;
 
-    return 0;
+    return EXIT_SUCCESS;
 }

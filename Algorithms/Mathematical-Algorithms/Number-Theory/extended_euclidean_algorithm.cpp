@@ -26,5 +26,5 @@ int main() {
     std::cout << "a * x + b * y = gcd" << std::endl
               << a << " * " << x << " + " << b << " * " << y << " = " << gcd << std::endl;
 
-    return 0;
+    return EXIT_SUCCESS;
 }

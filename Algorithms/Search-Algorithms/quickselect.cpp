@@ -26,14 +26,15 @@ T Quickselect(std::vector<T>& array, const size_t& left, const size_t& right, co
     T pivot = Quickselect(medians, 0, medians.size() - 1, medians.size() / 2);
     size_t pivotIndex = std::find(array.begin(), array.end(), pivot) - array.begin();
     std::swap(array[pivotIndex], array[left]);
+    pivotIndex = left;
     // Hoare's partitioning scheme
-    size_t pivot = left, i = left, j = right + 1;
+    size_t i = left, j = right + 1;
     while (i < j) {
-        while (++i < j && array[i] < array[pivot]);
-        while (--j >= i && array[j] >= array[pivot]);
+        while (++i < j && array[i] < array[pivotIndex]);
+        while (--j >= i && array[j] >= array[pivotIndex]);
         if (i <= j) std::swap(array[i], array[j]);
     }
-    std::swap(array[pivot], array[j]);
+    std::swap(array[pivotIndex], array[j]);
     if (k - 1 == j) return array[j];
     return (k - 1 < j)?(Quickselect(array, left, j - 1, k)):(Quickselect(array, j + 1, right, k));
 }
@@ -47,5 +48,5 @@ int main() {
     }
     std::cout << Quickselect(array, 0, n - 1, k) << std::endl;
 
-    return 0;
+    return EXIT_SUCCESS;
 }

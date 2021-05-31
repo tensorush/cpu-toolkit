@@ -5,15 +5,16 @@
     Space: O(1)
 */
 #include <iostream>
+#include <chrono>
+#include <random>
 #include <vector>
-#include <ctime>
 
 unsigned EuclideanAlgorithm(unsigned a, unsigned b) {
-    while (b > 0) {
-        a %= b;
+    while (a > 0) {
+        b %= a;
         std::swap(a, b);
     }
-    return a;
+    return b;
 }
 
 unsigned FermatLittleTheorem(unsigned a, const unsigned& p) {
@@ -30,11 +31,11 @@ unsigned FermatLittleTheorem(unsigned a, const unsigned& p) {
 bool FermatPrimalityTest(const unsigned& n, unsigned numIterations) {
     if (n < 2 || n == 4) return false;
     if (n < 4) return true;
-    srand(time(0));
+    unsigned seed = std::chrono::system_clock::now().time_since_epoch().count();
+    std::mt19937 randomInteger(seed);
     while (--numIterations) {
-        unsigned a = 2 + rand() % (n - 4);
-        if (EuclideanAlgorithm(a, n) != 1) return false;
-        if (FermatLittleTheorem(a, n) != 1) return false;
+        unsigned a = 2 + randomInteger() % (n - 4);
+        if (EuclideanAlgorithm(a, n) != 1 || FermatLittleTheorem(a, n) != 1) return false;
     }
     return true;
 }
@@ -44,5 +45,5 @@ int main() {
     std::cin >> n >> numIterations;
     std::cout << std::boolalpha << FermatPrimalityTest(n, numIterations) << std::endl;
 
-    return 0;
+    return EXIT_SUCCESS;
 }

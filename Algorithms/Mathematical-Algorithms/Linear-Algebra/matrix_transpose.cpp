@@ -8,11 +8,12 @@
 #include <vector>
 #include <cmath>
 
-void MatrixTranspose(const std::vector<std::vector<double>>& matrix, std::vector<std::vector<double>>& transpose) {
-    int n = matrix.size(), m = matrix[0].size();
-    for (int row = 0; row < n; ++row) {
-        for (int col = 0; col < m; ++col) {
-            transpose[col][row] = matrix[row][col];
+template<typename T>
+void MatrixTranspose(const std::vector<std::vector<T>>& matrix, std::vector<std::vector<T>>& transpose) {
+    size_t n = matrix.size(), m = matrix[0].size();
+    for (size_t i = 0; i < n; ++i) {
+        for (size_t j = 0; j < m; ++j) {
+            transpose[j][i] = matrix[i][j];
         }
     }
 }
@@ -34,5 +35,5 @@ int main() {
         std::cout << std::endl;
     }
 
-    return 0;
+    return EXIT_SUCCESS;
 }

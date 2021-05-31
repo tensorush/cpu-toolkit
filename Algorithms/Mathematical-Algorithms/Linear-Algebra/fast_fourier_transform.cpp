@@ -54,5 +54,5 @@ int main() {
         std::cout << number;
     }
 
-    return 0;
+    return EXIT_SUCCESS;
 }

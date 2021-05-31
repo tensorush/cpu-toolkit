@@ -7,11 +7,11 @@
 #include <iostream>
 
 int EuclideanAlgorithm(int a, int b) {
-    while (b > 0) {
-        a %= b;
+    while (a > 0) {
+        b %= a;
         std::swap(a, b);
     }
-    return a;
+    return b;
 }
 
 int main() {
@@ -19,5 +19,5 @@ int main() {
     std::cin >> a >> b;
     std::cout << EuclideanAlgorithm(a, b) << std::endl;
 
-    return 0;
+    return EXIT_SUCCESS;
 }

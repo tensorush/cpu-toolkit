@@ -23,5 +23,5 @@ int main() {
     std::cin >> n;
     std::cout << TotientFunction(n) << std::endl;
 
-    return 0;
+    return EXIT_SUCCESS;
 }

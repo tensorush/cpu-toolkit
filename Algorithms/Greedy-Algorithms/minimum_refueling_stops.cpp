@@ -13,7 +13,7 @@ int MinimumRefuelingStops(const std::vector<unsigned>& locations, const unsigned
     while (curStop <= numStations) {
         unsigned lastStop = curStop;
         while (curStop <= numStations && locations[curStop + 1] - locations[lastStop] <= tankCapacity) ++curStop;
-        if (curStop == lastStop) return -1; // Impossible
+        if (curStop == lastStop) return -1;
         if (curStop <= numStations) ++numStops;
     }
     return numStops;
@@ -29,5 +29,5 @@ int main() {
     }
     std::cout << MinimumRefuelingStops(locations, numStations, tankCapacity) << std::endl;
 
-    return 0;
+    return EXIT_SUCCESS;
 }

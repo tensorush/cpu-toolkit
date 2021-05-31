@@ -11,28 +11,28 @@
 #include <string>
 #include <queue>
 
-class HuffmanCoding{
+class HuffmanCoding final {
 private:
-    struct CharSetFrequency{
-        std::string char_set;
+    struct CharSetFrequency {
+        std::string charSet;
         int frequency;
         const bool operator < (const CharSetFrequency &other) const {
-            return std::tie(frequency, char_set) > std::tie(other.frequency, other.char_set);
+            return std::tie(frequency, charSet) > std::tie(other.frequency, other.charSet);
         }
     };
 public:
     static std::unordered_map<char, std::string> Encode(const std::string &text) {
-        std::unordered_map<char, int> char_frequencies;
+        std::unordered_map<char, int> charFrequencies;
         for(auto& c : text) {
-            ++char_frequencies[c];
+            ++charFrequencies[c];
         }
         std::vector<CharSetFrequency> frequencies;
-        for (auto& char_frequency : char_frequencies) {
+        for (auto& char_frequency : charFrequencies) {
             frequencies.push_back({std::string(1, char_frequency.first), char_frequency.second});
         }
         if (frequencies.size() == 1) {
             std::unordered_map<char, std::string> result;
-            result[frequencies[0].char_set[0]] = "0";
+            result[frequencies[0].charSet[0]] = "0";
             return result;
         }
         std::unordered_map<char, std::string> result;
@@ -42,24 +42,24 @@ public:
             queue.pop();
             auto second = queue.top();
             queue.pop();
-            for (auto& c : first.char_set) {
+            for (auto& c : first.charSet) {
                 result[c] += "0";
             }
-            for (auto& c : second.char_set) {
+            for (auto& c : second.charSet) {
                 result[c] += "1";
             }
-            queue.push({first.char_set + second.char_set, first.frequency + second.frequency});
+            queue.push({first.charSet + second.charSet, first.frequency + second.frequency});
         }
         for (auto& encoding : result) {
             std::reverse(encoding.second.begin(), encoding.second.end());
         }
         return result;
     }
-    static std::string Decode(const std::string &text, const std::unordered_map<char, std::string> &huffman_encoding) {
+    static std::string Decode(const std::string &text, const std::unordered_map<char, std::string> &huffmanEncoding) {
         std::string result;
         size_t pos = 0, len = text.length();
         while (pos < len) {
-            for (auto& encoded : huffman_encoding) {
+            for (auto& encoded : huffmanEncoding) {
                 if (text.substr(pos, encoded.second.length()) == encoded.second) {
                     result += encoded.first;
                     pos += encoded.second.length();
@@ -73,17 +73,17 @@ public:
 
 int main() {
     std::string text;
-    std::cin >> text;
-    auto huffman_encoding = HuffmanCoding::Encode(text);
-    std::string encoded_text;
+    std::getline(std::cin, text);
+    auto huffmanEncoding = HuffmanCoding::Encode(text);
+    std::string encodedText;
     for (auto& character : text) {
-        encoded_text += huffman_encoding[character];
+        encodedText += huffmanEncoding[character];
     }
-    std::cout << huffman_encoding.size() << ' ' << encoded_text.length() << std::endl;
-    for (auto& encoded : huffman_encoding) {
+    std::cout << huffmanEncoding.size() << ' ' << encodedText.length() << std::endl;
+    for (auto& encoded : huffmanEncoding) {
         std::cout << encoded.first << ": " << encoded.second << std::endl;
     }
-    std::cout << encoded_text << std::endl;
+    std::cout << encodedText << std::endl;
 
-    return 0;
+    return EXIT_SUCCESS;
 }

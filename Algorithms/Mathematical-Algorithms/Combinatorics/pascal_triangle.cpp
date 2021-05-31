@@ -25,5 +25,5 @@ int main() {
     std::cin >> n;
     PascalTriangle(n);
 
-    return 0;
+    return EXIT_SUCCESS;
 }

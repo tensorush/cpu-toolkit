@@ -8,10 +8,10 @@
 #include <string>
 #include <stack>
 
-bool BalancedBracketSequence(const std::string& str) {
+bool BalancedBracketSequence(const std::string& string) {
     std::stack<char> stack;
     std::string open = "([{", close = ")]}";
-    for (const char& c : str) {
+    for (const char& c : string) {
         if (open.find(c) != std::string::npos) {
             stack.push(c);
         } else if (close.find(c) != std::string::npos) {
@@ -23,9 +23,9 @@ bool BalancedBracketSequence(const std::string& str) {
 }
 
 int main() {
-    std::string str;
-    std::cin >> str;
-    std::cout << BalancedBracketSequence(str) << std::endl;
+    std::string string;
+    std::getline(std::cin, string);
+    std::cout << BalancedBracketSequence(string) << std::endl;
     
-    return 0;
+    return EXIT_SUCCESS;
 }

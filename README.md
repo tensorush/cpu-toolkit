@@ -1,6 +1,6 @@
 # :man_technologist: :toolbox: **Computer Scientist's Toolkit**
 
-[![PRs Welcome](https://img.shields.io/badge/PRs-welcome-brightgreen.svg?style=for-the-badge)](https://github.com/geotrush/CS-Essentials-Toolkit/pulls)
+[![PRs Welcome](https://img.shields.io/badge/PRs-welcome-brightgreen.svg?style=for-the-badge)](https://github.com/geotrush/Computer-Scientists-Toolkit/pulls)
 [![Contributors][contributors-shield]][contributors-url]
 [![Issues][issues-shield]][issues-url]
 [![Stargazers][stars-shield]][stars-url]
@@ -52,7 +52,13 @@
 
     - ### :abacus: [Number Theory](https://github.com/geotrush/Computer-Scientists-Toolkit/blob/master/Algorithms/Mathematical-Algorithms/Number-Theory)
 
+    - ### :twisted_rightwards_arrows: [Bit Manipulation](https://github.com/geotrush/Computer-Scientists-Toolkit/blob/master/Algorithms/Mathematical-Algorithms/Bit-Manipulation)
+
     - ### :game_die: [Probability Theory](https://github.com/geotrush/Computer-Scientists-Toolkit/blob/master/Algorithms/Mathematical-Algorithms/Probability-Theory)
+
+    - ### :1234: [Numerical Analysis](https://github.com/geotrush/Computer-Scientists-Toolkit/blob/master/Algorithms/Mathematical-Algorithms/Numerical-Analysis)
+
+    - ### :globe_with_meridians: [Computational Geometry](https://github.com/geotrush/Computer-Scientists-Toolkit/blob/master/Algorithms/Mathematical-Algorithms/Computational-Geometry)
 
 
 - ### :chains: [Dynamic Programming Algorithms](https://github.com/geotrush/Computer-Scientists-Toolkit/blob/master/Algorithms/Dynamic-Programming-Algorithms)
@@ -86,6 +92,8 @@
 - ### [Data Structures Cheatsheet](https://www.clear.rice.edu/comp160/data_cheat.html)
 
 - ### [The Arcane Algorithm Archive](https://www.algorithm-archive.org/)
+
+- ### [Programming Blog by Alesiani Marco](https://marcodiiga.github.io/archive/)
 
 - ### [The Sound of Sorting by Timo Bingmann](https://panthema.net/2013/sound-of-sorting/)
 

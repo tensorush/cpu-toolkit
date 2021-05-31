@@ -15,9 +15,9 @@ bool MatrixInverse(std::vector<std::vector<double>>& matrix, std::vector<std::ve
         // Partial pivoting
         int pivot = row;
         for (int i = row + 1; i < n; ++i) {
-            if (fabs(matrix[i][col]) > fabs(matrix[pivot][col])) pivot = i;
+            if (abs(matrix[i][col]) > abs(matrix[pivot][col])) pivot = i;
         }
-        if (fabs(matrix[pivot][col]) < EPS) {
+        if (abs(matrix[pivot][col]) < EPS) {
             isInverse = false;
             break;
         }
@@ -26,7 +26,7 @@ bool MatrixInverse(std::vector<std::vector<double>>& matrix, std::vector<std::ve
             inverse[row].swap(inverse[pivot]);
         }
         // Reduced row echelon form
-        if (fabs(matrix[row][col] - 1) > EPS) {
+        if (abs(matrix[row][col] - 1) > EPS) {
             for (int j = n - 1; j >= 0; --j) {
                 inverse[row][j] /= matrix[row][col];
             }
@@ -35,7 +35,7 @@ bool MatrixInverse(std::vector<std::vector<double>>& matrix, std::vector<std::ve
             }
         }
         for (int i = 0; i < n; ++i) {
-            if (i != row && fabs(matrix[i][col]) > EPS) {
+            if (i != row && abs(matrix[i][col]) > EPS) {
                 for (int j = n - 1; j >= 0; --j) {
                     inverse[i][j] -= inverse[row][j] * matrix[i][col];
                 }
@@ -72,5 +72,5 @@ int main() {
         std::cout << "Matrix is singular" << std::endl;
     }
 
-    return 0;
+    return EXIT_SUCCESS;
 }

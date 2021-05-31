@@ -36,12 +36,13 @@ auto RabinKarpAlgorithm(const std::string& pattern, const std::string& text) {
 
 int main() {
     std::string pattern, text;
-    std::cin >> pattern >> text;
+    std::getline(std::cin, pattern);
+    std::getline(std::cin, text);
     auto matchPositions = RabinKarpAlgorithm(pattern, text);
     for (const size_t& i : matchPositions) {
         std::cout << i << ' ';
     }
     std::cout << std::endl;
 
-    return 0;
+    return EXIT_SUCCESS;
 }

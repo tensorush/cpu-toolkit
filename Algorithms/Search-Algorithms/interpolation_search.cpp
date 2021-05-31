@@ -39,5 +39,5 @@ int main() {
     }
     std::cout << InterpolationSearch(array, key) << std::endl;
 
-    return 0;
+    return EXIT_SUCCESS;
 }

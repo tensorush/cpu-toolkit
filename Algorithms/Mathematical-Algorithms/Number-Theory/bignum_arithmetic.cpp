@@ -122,5 +122,5 @@ int main() {
     BigInt bignum = 1628346523748236424;
     std::cout << bignum;
 
-    return 0;
+    return EXIT_SUCCESS;
 }

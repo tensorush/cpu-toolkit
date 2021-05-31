@@ -8,33 +8,63 @@
     ---------------------------------------------------------------
 */
 #include <iostream>
+#include <vector>
 #include <cmath>
 
-enum Algorithm {ImplicitFormula, MatrixExponentiation, ExplicitFormula};
+enum class Algorithm {ImplicitFormula = 0, MatrixExponentiation = 1, ExplicitFormula = 2};
 
-unsigned FibonacciNumber(unsigned n, const Algorithm& algorithm = MatrixExponentiation) {
-    if (n == 0) return 0;
-    if (n == 1 || n == 2) return 1;
-    if (algorithm == MatrixExponentiation) {
-        // TODO
-    } else if (algorithm == ImplicitFormula) {
-        unsigned prev = 0, cur = 1, next;
-        while (--n) {
-            next = prev + cur;
-            prev = cur;
-            cur = next;
-        }
-        return cur;
-    } else if (algorithm == ExplicitFormula) {
-        double goldenRatio = (1 + sqrt(5)) / 2;
-        return round(pow(goldenRatio, n) / sqrt(5));
+unsigned FibonacciNumber(const Algorithm& algorithm, unsigned n) {
+    unsigned prev = 0, cur = 1, next = 1;
+    std::vector<std::vector<unsigned>> dotProducts, recurrence = {{1, 1}, {1, 0}}, fibonacci = {{1, 1}, {1, 1}};
+    if (n == 0) return prev;
+    if (n == 1) return cur;
+    if (n == 2) return next;
+    switch (algorithm) {
+        case Algorithm::MatrixExponentiation:
+            n -= 3;
+            while (n) {
+                if (n % 2 == 1) {
+                    dotProducts = {{0, 0}, {0, 0}};
+                    for (unsigned i = 0; i < 2; ++i) {
+                        for (unsigned j = 0; j < 2; ++j) {
+                            for (unsigned k = 0; k < 2; ++k) {
+                                dotProducts[i][k] += fibonacci[i][j] * recurrence[j][k];
+                            }
+                        }
+                    }
+                    fibonacci = dotProducts;
+                }
+                dotProducts = {{0, 0}, {0, 0}};
+                for (unsigned i = 0; i < 2; ++i) {
+                    for (unsigned j = 0; j < 2; ++j) {
+                        for (unsigned k = 0; k < 2; ++k) {
+                            dotProducts[i][k] += recurrence[i][j] * recurrence[j][k];
+                        }
+                    }
+                }
+                recurrence = dotProducts;
+                n /= 2;
+            }
+            cur = fibonacci[0][0] + fibonacci[0][1];
+            break;
+        case Algorithm::ImplicitFormula:
+            while (--n) {
+                next = prev + cur;
+                prev = cur;
+                cur = next;
+            }
+            break;
+        case Algorithm::ExplicitFormula:
+            double goldenRatio = (1 + sqrt(5)) / 2;
+            cur = round(pow(goldenRatio, n) / sqrt(5));
     }
+    return cur;
 }
 
 int main() {
-    unsigned n;
-    std::cin >> n;
-    std::cout << FibonacciNumber(n) << std::endl;
+    unsigned algorithm, n;
+    std::cin >> algorithm >> n;
+    std::cout << FibonacciNumber(static_cast<Algorithm>(algorithm), n) << std::endl;
 
-    return 0;
+    return EXIT_SUCCESS;
 }

@@ -23,5 +23,5 @@ int main() {
     std::cin >> number;
     std::cout << GrayCode(number) << ' ' << ReverseGrayCode(GrayCode(number)) << std::endl;
 
-    return 0;
+    return EXIT_SUCCESS;
 }

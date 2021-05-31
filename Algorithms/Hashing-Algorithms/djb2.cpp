@@ -20,5 +20,5 @@ int main() {
     std::cin >> key;
     std::cout << DJB2(key);
     
-    return 0;
+    return EXIT_SUCCESS;
 }

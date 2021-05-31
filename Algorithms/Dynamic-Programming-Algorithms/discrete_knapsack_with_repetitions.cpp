@@ -1,6 +1,6 @@
 /*
-    Discrete Knapsack With Repetitions
-    -------------------------------------------
+    Discrete Knapsack With Repetitions (Unbounded Knapsack Problem)
+    ---------------------------------------------------------------
     Time: O(numItems*2^(log(knapsackCapacity)))
     Space: O(knapsackCapacity)
 */
@@ -36,5 +36,5 @@ int main() {
     std::cout << std::setprecision(3) << std::fixed
               << DiscreteKnapsackWithRepetitions(items, knapsackCapacity) << std::endl;
 
-    return 0;
+    return EXIT_SUCCESS;
 }

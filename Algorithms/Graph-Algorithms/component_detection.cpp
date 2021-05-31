@@ -1,6 +1,6 @@
 /*
-    Component Search
-    ----------------
+    Component Detection
+    -------------------
     Time: O(n+m)
     Space: O(n)
 */
@@ -11,14 +11,14 @@
 #include <stack>
 #include <list>
 
-class Graph {
+class Graph final {
 public:
     Graph(const size_t& n) : visited(n), adjLists(n) {}
     void addEdge(const size_t& v_1, const size_t& v_2) {
         adjLists[v_1].emplace(v_2);
         adjLists[v_2].emplace(v_1);
     }
-    auto ComponentSearch() {
+    auto ComponentDetection() {
         // components.clear();
         for (size_t vertex = 0; vertex < adjLists.size(); ++vertex) {
             if (!visited[vertex]) {
@@ -53,7 +53,7 @@ int main() {
     Graph graph(4);
     graph.addEdge(0, 2);
     graph.addEdge(1, 3);
-    auto components = graph.ComponentSearch();
+    auto components = graph.ComponentDetection();
     for (const std::list<size_t>& component : components) {
         for (const size_t& vertex : component) {
             std::cout << vertex << ' ';
@@ -61,5 +61,5 @@ int main() {
         std::cout << std::endl;
     }
 
-    return 0;
+    return EXIT_SUCCESS;
 }

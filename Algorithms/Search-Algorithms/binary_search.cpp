@@ -27,5 +27,5 @@ int main() {
     }
     std::cout << BinarySearch(array, key) << std::endl;
 
-    return 0;
+    return EXIT_SUCCESS;
 }

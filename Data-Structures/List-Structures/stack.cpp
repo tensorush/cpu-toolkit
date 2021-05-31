@@ -10,42 +10,42 @@
 #include <iostream>
 
 template<typename T>
-class Stack {
+class Stack final {
 public:
-    Stack(size_t _capacity = 1024) : size(0), capacity(_capacity), stack(new T[_capacity]) {}
+    Stack(const size_t& capacity = 1024) : _size(0), _capacity(capacity), stack(new T[capacity]) {}
     ~Stack() { delete[] stack; }
     size_t get_size() const {
-        return size;
+        return _size;
     }
     size_t get_capacity() const {
-        return capacity;
+        return _capacity;
     }
     bool empty() const {
-        return (size == 0);
+        return (_size == 0);
     }
     const T& top() const {
         if (empty()) throw stack_empty;
-        return stack[size - 1];
+        return stack[_size - 1];
     }
     void push_back(const T& object) {
-        if (size == capacity) throw stack_out_of_bound;
-        stack[size++] = object;
+        if (_size == _capacity) throw stack_out_of_bound;
+        stack[_size++] = object;
     }
     T pop_back() {
         if (empty()) throw stack_empty;
-        return stack[--size];
+        return stack[--_size];
     }
     void print(std::ostream& out = std::cout) const {
         if (empty()) throw stack_empty;
-        for (int64_t i = size - 1; i >= 0; --i) {
+        for (int64_t i = _size - 1; i >= 0; --i) {
             out << stack[i] << ' ';
         }
         out << std::endl;
     }
 private:
     T* stack;
-    size_t size;
-    size_t capacity;
+    size_t _size;
+    size_t _capacity;
     class EmptyException : public std::exception {
         virtual const char* what() const throw() {
             return "Stack is empty";
@@ -68,5 +68,5 @@ int main() {
               << stack.empty() << std::endl;
     stack.print();
 
-    return 0;
+    return EXIT_SUCCESS;
 }

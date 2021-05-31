@@ -20,5 +20,5 @@ int main() {
     std::cin >> numPeople >> hopSize;
     std::cout << JosephusProblem(numPeople, hopSize) << std::endl;
 
-    return 0;
+    return EXIT_SUCCESS;
 }
