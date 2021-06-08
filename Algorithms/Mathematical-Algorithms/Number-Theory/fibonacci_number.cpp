@@ -55,8 +55,8 @@ unsigned FibonacciNumber(const Algorithm& algorithm, unsigned n) {
             }
             break;
         case Algorithm::ExplicitFormula:
-            double goldenRatio = (1 + sqrt(5)) / 2;
-            cur = round(pow(goldenRatio, n) / sqrt(5));
+            double goldenRatio = (1 + std::sqrt(5)) / 2;
+            cur = std::round(std::pow(goldenRatio, n) / std::sqrt(5));
     }
     return cur;
 }

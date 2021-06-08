@@ -7,7 +7,6 @@
 #include <algorithm>
 #include <iostream>
 #include <vector>
-#include <cmath>
 
 template<typename T>
 auto BucketSort(std::vector<T>& array, const int& n) {

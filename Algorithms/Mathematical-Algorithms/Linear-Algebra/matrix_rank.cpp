@@ -13,26 +13,26 @@ double MatrixRank(std::vector<std::vector<double>>& matrix, const double& EPS = 
     int rank = (n < m)?(n):(m);
     for (int row = 0, col = 0; row < n && col < m; ++col) {
         // Pivoting
-        if (abs(matrix[row][col]) < EPS) {
+        if (std::abs(matrix[row][col]) < EPS) {
             for (int pivot = row + 1; pivot < n; ++pivot) {
-                if (abs(matrix[pivot][col]) > EPS) {
+                if (std::abs(matrix[pivot][col]) > EPS) {
                     matrix[row].swap(matrix[pivot]);
                     break;
                 }
             }
-            if (abs(matrix[row][col]) < EPS) {
+            if (std::abs(matrix[row][col]) < EPS) {
                 --rank;
                 continue;
             }
         }
         // Forward elimination (row echelon form)
-        if (abs(matrix[row][col] - 1) > EPS) {
+        if (std::abs(matrix[row][col] - 1) > EPS) {
             for (int j = m - 1; j >= col; --j) {
                 matrix[row][j] /= matrix[row][col];
             }
         }
         for (int i = row + 1; i < n; ++i) {
-            if (abs(matrix[i][col]) > EPS) {
+            if (std::abs(matrix[i][col]) > EPS) {
                 for (int j = m - 1; j >= col; --j) {
                     matrix[i][j] -= matrix[row][j] * matrix[i][col];
                 }
@@ -48,8 +48,8 @@ int main() {
     std::cin >> n >> m;
     std::vector<std::vector<double>> matrix(n, std::vector<double>(m));
     for (std::vector<double>& row : matrix) {
-        for (double& col : row) {
-            std::cin >> col;
+        for (double& element : row) {
+            std::cin >> element;
         }
     }
     std::cout << MatrixRank(matrix) << std::endl;

@@ -6,7 +6,6 @@
 */
 #include <iostream>
 #include <vector>
-#include <cmath>
 
 template<typename T>
 void MatrixTranspose(const std::vector<std::vector<T>>& matrix, std::vector<std::vector<T>>& transpose) {
@@ -23,14 +22,14 @@ int main() {
     std::cin >> n >> m;
     std::vector<std::vector<double>> matrix(n, std::vector<double>(m)), transpose(m, std::vector<double>(n));
     for (std::vector<double>& row : matrix) {
-        for (double& col : row) {
-            std::cin >> col;
+        for (double& element : row) {
+            std::cin >> element;
         }
     }
     MatrixTranspose(matrix, transpose);
     for (std::vector<double>& row : transpose) {
-        for (double& col : row) {
-            std::cout << col << ' ';
+        for (double& element : row) {
+            std::cout << element << ' ';
         }
         std::cout << std::endl;
     }

@@ -17,9 +17,7 @@ double AngleBetween3DVectors(const Vector& U, const Vector& V) {
     crossProduct.x = U.y * V.z - V.y * U.z;
     crossProduct.y = U.x * V.z - V.x * U.z;
     crossProduct.z = U.x * V.y - V.x * U.y;
-    double directedArea = sqrt(pow(crossProduct.x, 2) +
-                               pow(crossProduct.y, 2) +
-                               pow(crossProduct.z, 2));
+    double directedArea = std::hypot(crossProduct.x, crossProduct.y, crossProduct.z);
 	return std::atan2(directedArea, dotProduct);
 }
 

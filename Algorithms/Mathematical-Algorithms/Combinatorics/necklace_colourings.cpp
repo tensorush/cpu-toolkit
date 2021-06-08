@@ -19,7 +19,7 @@ unsigned EuclideanAlgorithm(unsigned a, unsigned b) {
 unsigned NecklaceColourings(const unsigned& n, const unsigned& k) {
     unsigned numColourings = 0;
     for (unsigned i = 1; i <= n; ++i) {
-        numColourings += pow(k, EuclideanAlgorithm(i, n));
+        numColourings += std::pow(k, EuclideanAlgorithm(i, n));
     }
     return numColourings / n;
 }

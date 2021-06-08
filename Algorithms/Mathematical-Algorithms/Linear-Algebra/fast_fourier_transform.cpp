@@ -4,9 +4,9 @@
     Time: O(n log(n))
     Space: O(1)
 */
-#define _USE_MATH_DEFINES
 #include <iostream>
 #include <complex>
+#include <numbers>
 #include <vector>
 #include <cmath>
 
@@ -21,8 +21,8 @@ void FastFourierTransform(std::vector<std::complex<double>>& array, const bool& 
 		if (i < j) std::swap(array[i], array[j]);
 	}
 	for (size_t length = 2; length <= n; length <<= 1) {
-		double angle = 2 * M_PI / length * ((invert)?(-1):(1));
-		std::complex<double> w_length(cos(angle), sin(angle));
+		double angle = 2 * pi_v<double> / length * ((invert)?(-1):(1));
+		std::complex<double> w_length(std::cos(angle), std::sin(angle));
 		for (size_t i = 0; i < n; i += length) {
 			std::complex<double> w(1, 0);
 			for (size_t j = 0; j < length / 2; ++j) {

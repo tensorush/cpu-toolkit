@@ -6,7 +6,6 @@
 */
 #include <iostream>
 #include <vector>
-#include <cmath>
 
 template<typename T>
 auto MatrixMultiplication(const std::vector<std::vector<T>>& A, const std::vector<std::vector<T>>& B) {
@@ -37,8 +36,8 @@ int main() {
     std::cin >> n >> power;
     std::vector<std::vector<double>> matrix(n, std::vector<double>(n)), exponent(n, std::vector<double>(n));
     for (std::vector<double>& row : matrix) {
-        for (double& col : row) {
-            std::cin >> col;
+        for (double& element : row) {
+            std::cin >> element;
         }
     }
     for (size_t i = 0; i < n; ++i) {
@@ -46,8 +45,8 @@ int main() {
     }
     MatrixExponentiation(matrix, exponent, power);
     for (std::vector<double>& row : exponent) {
-        for (double& col : row) {
-            std::cout << col << ' ';
+        for (double& element : row) {
+            std::cout << element << ' ';
         }
         std::cout << std::endl;
     }

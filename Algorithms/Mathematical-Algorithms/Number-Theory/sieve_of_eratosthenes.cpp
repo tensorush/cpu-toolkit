@@ -11,7 +11,7 @@
 auto SieveOfEratosthenes(const unsigned& bound) {
     std::vector<bool> sieve(bound + 1, true);
     sieve[0] = sieve[1] = false;
-    unsigned maxPrime = sqrt(bound);
+    unsigned maxPrime = std::sqrt(bound);
     for (unsigned p = 2; p <= maxPrime; ++p) {
         if (sieve[p] == true) {
             for (unsigned i = p * p; i <= bound; i += p) {

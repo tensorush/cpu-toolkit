@@ -23,7 +23,7 @@ auto PolynomialSolver(const Equation& equation, const std::vector<double>& polyn
             if (polynomial[2] != 0) {
                 double mean = -polynomial[1] / polynomial[2] / 2, squaredDistance = mean * mean - polynomial[0] / polynomial[2];
                 if (squaredDistance > 0) {
-                    double distance = sqrt(squaredDistance);
+                    double distance = std::sqrt(squaredDistance);
                     solutions.emplace_back(mean + distance);
                     solutions.emplace_back(mean - distance);
                 } else if (squaredDistance == 0) {

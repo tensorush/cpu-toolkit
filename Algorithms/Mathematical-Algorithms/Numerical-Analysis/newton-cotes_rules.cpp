@@ -15,41 +15,41 @@
 enum class Rule {Trapezoidal = 0, SimpsonFirst = 1, SimpsonSecond = 2, Boole = 3};
 
 double NewtonCotesRules(std::function<double (const double&)> Function, const Rule& rule, const double& a, const double& b, const unsigned& n) {
-    double integral = 0, h = (b - a) / n;
+    double integral = 0, step = (b - a) / n;
     switch (rule) {
         case Rule::Trapezoidal:
             integral += (Function(a) + Function(b)) / 2;
             for (unsigned i = 1; i < n; ++i) {
-                integral += Function(a + h * i);
+                integral += Function(a + step * i);
             }
-            integral *= h;
+            integral *= step;
             break;
         case Rule::SimpsonFirst:
             integral += Function(a) + Function(b);
             for (unsigned i = 1; i < n; ++i) {
-                integral += Function(a + h * i) * ((i % 2 == 0)?(2):(4));
+                integral += Function(a + step * i) * ((i % 2 == 0)?(2):(4));
             }
-            integral *= h / 3;
+            integral *= step / 3;
             break;
         case Rule::SimpsonSecond:
             integral += Function(a) + Function(b);
             for (unsigned i = 1; i < n; ++i) {
-                integral += Function(a + h * i) * ((i % 3 == 0)?(2):(3));
+                integral += Function(a + step * i) * ((i % 3 == 0)?(2):(3));
             }
-            integral *= 3 * h / 8;
+            integral *= 3 * step / 8;
             break;
         case Rule::Boole:
             integral += 7 * (Function(a) + Function(b));
             for (unsigned i = 1; i < n; i += 2) {
-                integral += 32 * Function(a + h * i);
+                integral += 32 * Function(a + step * i);
             }
             for (unsigned i = 2; i < n; i += 4) {
-                integral += 12 * Function(a + h * i);
+                integral += 12 * Function(a + step * i);
             }
             for (unsigned i = 4; i < n; i += 4) {
-                integral += 14 * Function(a + h * i);
+                integral += 14 * Function(a + step * i);
             }
-            integral *= 2 * h / 45;
+            integral *= 2 * step / 45;
     }
     return integral;
 }

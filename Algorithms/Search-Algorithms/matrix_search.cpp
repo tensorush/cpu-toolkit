@@ -30,8 +30,8 @@ int main() {
     std::cin >> n >> m >> key;
     std::vector<std::vector<int>> matrix(n, std::vector<int>(m));
     for (std::vector<int>& row : matrix) {
-        for (int& col : row) {
-            std::cin >> col;
+        for (int& element : row) {
+            std::cin >> element;
         }
     }
     auto [row, col] = MatrixSearch(matrix, key);

@@ -9,7 +9,7 @@
 #include <cmath>
 
 int BabyStepGiantStepAlgorithm(const unsigned& a, const unsigned& b, const unsigned& m) {
-    unsigned n = sqrt(m) + 1, NthPowerOfA = 1;
+    unsigned n = std::sqrt(m) + 1, NthPowerOfA = 1;
     for (unsigned i = 0; i < n; ++i) {
         NthPowerOfA = (NthPowerOfA * a) % m;
     }

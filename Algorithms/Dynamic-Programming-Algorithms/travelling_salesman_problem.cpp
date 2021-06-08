@@ -10,8 +10,7 @@
 #include <cmath>
 
 double Distance(const unsigned& a, const unsigned& b, const std::vector<double>& x, const std::vector<double>& y) {
-    double dx = x[a] - x[b], dy = y[a] - y[b];
-    return sqrt(dx * dx + dy * dy);
+    return std::hypot(x[a] - x[b], y[a] - y[b]);
 }
 
 double TravellingSalesmanProblem(const unsigned& n, const std::vector<double>& x, const std::vector<double>& y) {

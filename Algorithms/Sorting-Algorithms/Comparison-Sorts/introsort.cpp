@@ -82,7 +82,7 @@ int main() {
     while (std::cin >> element) {
         array.emplace_back(element);
     }
-    Introsort(array, 0, array.size() - 1, 2 * log(array.size()));
+    Introsort(array, 0, array.size() - 1, 2 * std::log(array.size()));
     for (const int& element : array) {
         std::cout << element << ' ';
     }

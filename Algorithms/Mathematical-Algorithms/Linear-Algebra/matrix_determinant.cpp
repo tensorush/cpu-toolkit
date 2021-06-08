@@ -15,9 +15,9 @@ double MatrixDeterminant(std::vector<std::vector<double>>& matrix, const double&
         // Partial pivoting
         int pivot = row;
         for (int i = row + 1; i < n; ++i) {
-            if (abs(matrix[i][col]) > abs(matrix[pivot][col])) pivot = i;
+            if (std::abs(matrix[i][col]) > std::abs(matrix[pivot][col])) pivot = i;
         }
-        if (abs(matrix[pivot][col]) < EPS) {
+        if (std::abs(matrix[pivot][col]) < EPS) {
             det = 0;
             break;
         }
@@ -28,13 +28,13 @@ double MatrixDeterminant(std::vector<std::vector<double>>& matrix, const double&
             det *= matrix[row][col];
         }
         // Reduced row echelon form
-        if (abs(matrix[row][col] - 1) > EPS) {
+        if (std::abs(matrix[row][col] - 1) > EPS) {
             for (int j = n - 1; j >= col; --j) {
                 matrix[row][j] /= matrix[row][col];
             }
         }
         for (int i = 0; i < n; ++i) {
-            if (i != row && abs(matrix[i][col]) > EPS) {
+            if (i != row && std::abs(matrix[i][col]) > EPS) {
                 for (int j = n - 1; j >= col; --j) {
                     matrix[i][j] -= matrix[row][j] * matrix[i][col];
                 }
@@ -49,8 +49,8 @@ int main() {
     std::cin >> n;
     std::vector<std::vector<double>> matrix(n, std::vector<double>(n));
     for (std::vector<double>& row : matrix) {
-        for (double& col : row) {
-            std::cin >> col;
+        for (double& element : row) {
+            std::cin >> element;
         }
     }
     std::cout << MatrixDeterminant(matrix) << std::endl;

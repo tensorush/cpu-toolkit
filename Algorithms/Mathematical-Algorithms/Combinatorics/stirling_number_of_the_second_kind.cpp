@@ -19,11 +19,11 @@ unsigned Factorial(const unsigned& n) {
 unsigned StirlingNumberOfTheSecondKind(const unsigned& n, const unsigned& k) {
     double summand, stirling = 0;
 	for (unsigned i = 0; i <= k; ++i) {
-		summand = pow(k - i, n) / Factorial(k - i) / Factorial(i);
+		summand = std::pow(k - i, n) / Factorial(k - i) / Factorial(i);
         if (i % 2 == 1) summand *= -1;
         stirling += summand;
     }
-	return round(stirling);
+	return std::round(stirling);
 }
 
 int main() {
