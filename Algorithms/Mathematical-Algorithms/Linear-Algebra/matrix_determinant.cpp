@@ -8,34 +8,47 @@
 #include <vector>
 #include <cmath>
 
-double MatrixDeterminant(std::vector<std::vector<double>>& matrix, const double& EPS = 1e-9) {
+double MatrixDeterminant(std::vector<std::vector<double>> &matrix, const double &EPS = 1e-9)
+{
     double det = 1;
     int n = matrix.size();
-    for (int row = 0, col = 0; row < n; ++row, ++col) {
+    for (int row = 0, col = 0; row < n; ++row, ++col)
+    {
         // Partial pivoting
         int pivot = row;
-        for (int i = row + 1; i < n; ++i) {
-            if (std::abs(matrix[i][col]) > std::abs(matrix[pivot][col])) pivot = i;
+        for (int i = row + 1; i < n; ++i)
+        {
+            if (std::abs(matrix[i][col]) > std::abs(matrix[pivot][col]))
+                pivot = i;
         }
-        if (std::abs(matrix[pivot][col]) < EPS) {
+        if (std::abs(matrix[pivot][col]) < EPS)
+        {
             det = 0;
             break;
         }
-        if (row != pivot) {
+        if (row != pivot)
+        {
             matrix[row].swap(matrix[pivot]);
             det *= -matrix[row][col];
-        } else {
+        }
+        else
+        {
             det *= matrix[row][col];
         }
         // Reduced row echelon form
-        if (std::abs(matrix[row][col] - 1) > EPS) {
-            for (int j = n - 1; j >= col; --j) {
+        if (std::abs(matrix[row][col] - 1) > EPS)
+        {
+            for (int j = n - 1; j >= col; --j)
+            {
                 matrix[row][j] /= matrix[row][col];
             }
         }
-        for (int i = 0; i < n; ++i) {
-            if (i != row && std::abs(matrix[i][col]) > EPS) {
-                for (int j = n - 1; j >= col; --j) {
+        for (int i = 0; i < n; ++i)
+        {
+            if (i != row && std::abs(matrix[i][col]) > EPS)
+            {
+                for (int j = n - 1; j >= col; --j)
+                {
                     matrix[i][j] -= matrix[row][j] * matrix[i][col];
                 }
             }
@@ -44,12 +57,15 @@ double MatrixDeterminant(std::vector<std::vector<double>>& matrix, const double&
     return det;
 }
 
-int main() {
+int main()
+{
     unsigned n;
     std::cin >> n;
     std::vector<std::vector<double>> matrix(n, std::vector<double>(n));
-    for (std::vector<double>& row : matrix) {
-        for (double& element : row) {
+    for (std::vector<double> &row : matrix)
+    {
+        for (double &element : row)
+        {
             std::cin >> element;
         }
     }

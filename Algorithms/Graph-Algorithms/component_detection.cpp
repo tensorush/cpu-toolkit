@@ -11,51 +11,64 @@
 #include <stack>
 #include <list>
 
-class Graph final {
+class Graph final
+{
 public:
-    Graph(const size_t& n) : visited(n), adjLists(n) {}
-    void addEdge(const size_t& v_1, const size_t& v_2) {
+    Graph(const unsigned &n) : visited(n), adjLists(n) {}
+    void addEdge(const unsigned &v_1, const unsigned &v_2)
+    {
         adjLists[v_1].emplace(v_2);
         adjLists[v_2].emplace(v_1);
     }
-    auto ComponentDetection() {
+    auto ComponentDetection()
+    {
         // components.clear();
-        for (size_t vertex = 0; vertex < adjLists.size(); ++vertex) {
-            if (!visited[vertex]) {
-                std::list<size_t> component;
+        for (unsigned vertex = 0; vertex < adjLists.size(); ++vertex)
+        {
+            if (visited[vertex] == false)
+            {
+                std::list<unsigned> component;
                 DepthFirstSearch(vertex, component);
                 components.emplace_back(component);
             }
         }
         return components;
     }
+
 private:
-    void DepthFirstSearch(size_t vertex, std::list<size_t>& component) {
+    void DepthFirstSearch(unsigned vertex, std::list<unsigned> &component)
+    {
         // visited.assign(visited.size(), false);
-        std::stack<size_t> stack;
+        std::stack<unsigned> stack;
         stack.emplace(vertex);
-        while (!stack.empty()) {
+        while (stack.empty() == false)
+        {
             vertex = stack.top();
             stack.pop();
             visited[vertex] = true;
             component.emplace_back(vertex);
-            for (const size_t& next : adjLists[vertex]) {
-                if (!visited[next]) stack.emplace(next);
+            for (const unsigned &next : adjLists[vertex])
+            {
+                if (visited[next] == false)
+                    stack.emplace(next);
             }
         }
     }
     std::vector<bool> visited;
-    std::list<std::list<size_t>> components;
-    std::unordered_map<size_t, std::unordered_multiset<size_t>> adjLists;
+    std::list<std::list<unsigned>> components;
+    std::unordered_map<unsigned, std::unordered_multiset<unsigned>> adjLists;
 };
 
-int main() {
+int main()
+{
     Graph graph(4);
     graph.addEdge(0, 2);
     graph.addEdge(1, 3);
     auto components = graph.ComponentDetection();
-    for (const std::list<size_t>& component : components) {
-        for (const size_t& vertex : component) {
+    for (const std::list<unsigned> &component : components)
+    {
+        for (const unsigned &vertex : component)
+        {
             std::cout << vertex << ' ';
         }
         std::cout << std::endl;

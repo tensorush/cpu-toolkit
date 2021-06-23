@@ -11,42 +11,52 @@
 #include <stack>
 #include <list>
 
-class Graph final {
+class Graph final
+{
 public:
-    Graph(const size_t& n) : visited(n), adjLists(n) {}
-    void addEdge(const size_t& v_1, const size_t& v_2) {
+    Graph(const unsigned &n) : visited(n), adjLists(n) {}
+    void addEdge(const unsigned &v_1, const unsigned &v_2)
+    {
         adjLists[v_1].emplace(v_2);
         adjLists[v_2].emplace(v_1);
     }
-    auto DepthFirstSearch(size_t vertex) {
+    auto DepthFirstSearch(unsigned vertex)
+    {
         // dfs.clear();
         // visited.assign(visited.size(), false);
-        std::stack<size_t> stack;
+        std::stack<unsigned> stack;
         stack.emplace(vertex);
-        while (!stack.empty()) {
+        while (stack.empty() == false)
+        {
             vertex = stack.top();
             stack.pop();
-            if (!visited[vertex]) dfs.emplace_back(vertex);
+            if (visited[vertex] == false)
+                dfs.emplace_back(vertex);
             visited[vertex] = true;
-            for (const size_t& next : adjLists[vertex]) {
-                if (!visited[next]) stack.emplace(next);
+            for (const unsigned &next : adjLists[vertex])
+            {
+                if (visited[next] == false)
+                    stack.emplace(next);
             }
         }
         return dfs;
     }
+
 private:
-    std::vector<size_t> dfs;
     std::vector<bool> visited;
-    std::unordered_map<size_t, std::unordered_multiset<size_t>> adjLists;
+    std::vector<unsigned> dfs;
+    std::unordered_map<unsigned, std::unordered_multiset<unsigned>> adjLists;
 };
 
-int main() {
+int main()
+{
     Graph graph(4);
     graph.addEdge(0, 2);
     graph.addEdge(0, 3);
     graph.addEdge(1, 2);
     auto dfs = graph.DepthFirstSearch(2);
-    for (const size_t& vertex : dfs) {
+    for (const unsigned &vertex : dfs)
+    {
         std::cout << vertex << ' ';
     }
     std::cout << std::endl;

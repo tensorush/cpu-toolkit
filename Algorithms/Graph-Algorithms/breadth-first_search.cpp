@@ -11,25 +11,31 @@
 #include <queue>
 #include <list>
 
-class Graph final {
+class Graph final
+{
 public:
-    Graph(const size_t& n) : parents(n, -1), visited(n), adjLists(n) {}
-    void addEdge(const size_t& v_1, const size_t& v_2) {
+    Graph(const unsigned &n) : parents(n, -1), visited(n), adjLists(n) {}
+    void addEdge(const unsigned &v_1, const unsigned &v_2)
+    {
         adjLists[v_1].emplace(v_2);
         adjLists[v_2].emplace(v_1);
     }
-    auto BreadthFirstSearch(size_t vertex) {
+    auto BreadthFirstSearch(unsigned vertex)
+    {
         // bfs.clear();
         // visited.assign(visited.size(), false);
-        std::queue<size_t> queue;
+        std::queue<unsigned> queue;
         queue.emplace(vertex);
         visited[vertex] = true;
-        while (!queue.empty()) {
+        while (queue.empty() == false)
+        {
             vertex = queue.front();
             queue.pop();
             bfs.emplace_back(vertex);
-            for (const size_t& next : adjLists[vertex]) {
-                if (!visited[next]) {
+            for (const unsigned &next : adjLists[vertex])
+            {
+                if (!visited[next])
+                {
                     queue.emplace(next);
                     visited[next] = true;
                     parents[next] = vertex;
@@ -38,35 +44,42 @@ public:
         }
         return bfs;
     }
-    auto ShortestPath(const size_t& source, const size_t& destination) {
+    auto ShortestPath(const unsigned &source, const unsigned &destination)
+    {
         // parents.assign(parents.size(), -1);
-        std::list<size_t> path;
+        std::list<unsigned> path;
         BreadthFirstSearch(source);
-        for (int cur = destination; cur >= 0; cur = parents[cur]) {
+        for (int cur = destination; cur >= 0; cur = parents[cur])
+        {
             path.emplace_front(cur);
         }
-        return (path.front() == source)?(std::make_pair(true, path)):(std::make_pair(false, path));
+        return (path.front() == source) ? (std::make_pair(true, path)) : (std::make_pair(false, path));
     }
+
 private:
-    std::vector<size_t> bfs;
     std::vector<int> parents;
     std::vector<bool> visited;
-    std::unordered_map<size_t, std::unordered_multiset<size_t>> adjLists;
+    std::vector<unsigned> bfs;
+    std::unordered_map<unsigned, std::unordered_multiset<unsigned>> adjLists;
 };
 
-int main() {
+int main()
+{
     Graph graph(4);
     graph.addEdge(0, 2);
     graph.addEdge(0, 3);
     graph.addEdge(1, 2);
     auto bfs = graph.BreadthFirstSearch(2);
-    for (const size_t& vertex : bfs) {
+    for (const unsigned &vertex : bfs)
+    {
         std::cout << vertex << ' ';
     }
     std::cout << std::endl;
     auto [exists, path] = graph.ShortestPath(0, 2);
-    if (exists) {
-        for (const size_t& vertex : path) {
+    if (exists)
+    {
+        for (const unsigned &vertex : path)
+        {
             std::cout << vertex << ' ';
         }
     }

@@ -8,16 +8,19 @@
 #include <iomanip>
 #include <cmath>
 
-unsigned CouponCollectorsProblem(const unsigned& numCoupons) {
-	double nthHarmonic = 1;
-    for (double i = numCoupons; i > 1; --i) {
+unsigned CouponCollectorsProblem(const unsigned &numCoupons)
+{
+    double nthHarmonic = 1;
+    for (double i = numCoupons; i > 1; --i)
+    {
         nthHarmonic += 1 / i;
     }
     unsigned numTrials = std::round(numCoupons * nthHarmonic);
-	return numTrials;
+    return numTrials;
 }
 
-int main() {
+int main()
+{
     unsigned numCoupons;
     std::cin >> numCoupons;
     std::cout << std::setprecision(3) << std::fixed

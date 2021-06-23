@@ -8,15 +8,20 @@
 #include <iostream>
 #include <vector>
 
-int DiceRollingProblem(const int& numDice, const int& numFaces, const int& targetSum) {
+int DiceRollingProblem(const int &numDice, const int &numFaces, const int &targetSum)
+{
     std::vector<std::vector<int>> sums(numDice + 1, std::vector<int>(targetSum + 1));
-    for (int sum = 1; sum <= std::min(numFaces, targetSum); ++sum) {
+    for (int sum = 1; sum <= std::min(numFaces, targetSum); ++sum)
+    {
         ++sums[1][sum];
     }
-    for (int dice = 2; dice <= numDice; ++dice) {
-        for (int sum = 1; sum <= targetSum; ++sum) {
+    for (int dice = 2; dice <= numDice; ++dice)
+    {
+        for (int sum = 1; sum <= targetSum; ++sum)
+        {
             int numWays = 0;
-            for (int value = 1; value <= numFaces && sum - value >= 0; ++value) {
+            for (int value = 1; value <= numFaces && sum - value >= 0; ++value)
+            {
                 numWays += sums[dice - 1][sum - value];
             }
             sums[dice][sum] = numWays;
@@ -25,7 +30,8 @@ int DiceRollingProblem(const int& numDice, const int& numFaces, const int& targe
     return sums[numDice][targetSum];
 }
 
-int main() {
+int main()
+{
     int numDice, numFaces, targetSum;
     std::cin >> numDice >> numFaces >> targetSum;
     std::cout << DiceRollingProblem(numDice, numFaces, targetSum) << std::endl;

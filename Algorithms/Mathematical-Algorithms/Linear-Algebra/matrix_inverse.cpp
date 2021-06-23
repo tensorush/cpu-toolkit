@@ -8,38 +8,51 @@
 #include <vector>
 #include <cmath>
 
-bool MatrixInverse(std::vector<std::vector<double>>& matrix, std::vector<std::vector<double>>& inverse, const double& EPS = 1e-9) {
+bool MatrixInverse(std::vector<std::vector<double>> &matrix, std::vector<std::vector<double>> &inverse, const double &EPS = 1e-9)
+{
     bool isInverse = true;
     int n = matrix.size();
-    for (int row = 0, col = 0; row < n; ++row, ++col) {
+    for (int row = 0, col = 0; row < n; ++row, ++col)
+    {
         // Partial pivoting
         int pivot = row;
-        for (int i = row + 1; i < n; ++i) {
-            if (std::abs(matrix[i][col]) > std::abs(matrix[pivot][col])) pivot = i;
+        for (int i = row + 1; i < n; ++i)
+        {
+            if (std::abs(matrix[i][col]) > std::abs(matrix[pivot][col]))
+                pivot = i;
         }
-        if (std::abs(matrix[pivot][col]) < EPS) {
+        if (std::abs(matrix[pivot][col]) < EPS)
+        {
             isInverse = false;
             break;
         }
-        if (row != pivot) {
+        if (row != pivot)
+        {
             matrix[row].swap(matrix[pivot]);
             inverse[row].swap(inverse[pivot]);
         }
         // Reduced row echelon form
-        if (std::abs(matrix[row][col] - 1) > EPS) {
-            for (int j = n - 1; j >= 0; --j) {
+        if (std::abs(matrix[row][col] - 1) > EPS)
+        {
+            for (int j = n - 1; j >= 0; --j)
+            {
                 inverse[row][j] /= matrix[row][col];
             }
-            for (int j = n - 1; j >= col; --j) {
+            for (int j = n - 1; j >= col; --j)
+            {
                 matrix[row][j] /= matrix[row][col];
             }
         }
-        for (int i = 0; i < n; ++i) {
-            if (i != row && std::abs(matrix[i][col]) > EPS) {
-                for (int j = n - 1; j >= 0; --j) {
+        for (int i = 0; i < n; ++i)
+        {
+            if (i != row && std::abs(matrix[i][col]) > EPS)
+            {
+                for (int j = n - 1; j >= 0; --j)
+                {
                     inverse[i][j] -= inverse[row][j] * matrix[i][col];
                 }
-                for (int j = n - 1; j >= col; --j) {
+                for (int j = n - 1; j >= col; --j)
+                {
                     matrix[i][j] -= matrix[row][j] * matrix[i][col];
                 }
             }
@@ -48,27 +61,36 @@ bool MatrixInverse(std::vector<std::vector<double>>& matrix, std::vector<std::ve
     return isInverse;
 }
 
-int main() {
+int main()
+{
     unsigned n;
     std::cin >> n;
     std::vector<std::vector<double>> matrix(n, std::vector<double>(n)), inverse(n, std::vector<double>(n));
-    for (std::vector<double>& row : matrix) {
-        for (double& element : row) {
+    for (std::vector<double> &row : matrix)
+    {
+        for (double &element : row)
+        {
             std::cin >> element;
         }
     }
-    for (unsigned i = 0; i < n; ++i) {
+    for (unsigned i = 0; i < n; ++i)
+    {
         inverse[i][i] = 1;
     }
     bool isInverse = MatrixInverse(matrix, inverse);
-    if (isInverse) {
-        for (std::vector<double>& row : inverse) {
-            for (double& element : row) {
+    if (isInverse)
+    {
+        for (std::vector<double> &row : inverse)
+        {
+            for (double &element : row)
+            {
                 std::cout << element << ' ';
             }
             std::cout << std::endl;
         }
-    } else {
+    }
+    else
+    {
         std::cout << "Matrix is singular" << std::endl;
     }
 

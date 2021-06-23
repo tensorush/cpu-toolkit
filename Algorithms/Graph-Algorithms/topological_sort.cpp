@@ -11,46 +11,58 @@
 #include <stack>
 #include <list>
 
-class DAG final {
+class DAG final
+{
 public:
-    DAG(const size_t& n) : visited(n), adjLists(n) {}
-    void addEdge(const size_t& source, const size_t& destination) {
+    DAG(const unsigned &n) : visited(n), adjLists(n) {}
+    void addEdge(const unsigned &source, const unsigned &destination)
+    {
         adjLists[source].emplace(destination);
     }
-    auto TopologicalSort() {
+    auto TopologicalSort()
+    {
         // sorted.clear();
-        for (size_t vertex = 0; vertex < adjLists.size(); ++vertex) {
-            if (!visited[vertex]) DepthFirstSearch(vertex);
+        for (unsigned vertex = 0; vertex < adjLists.size(); ++vertex)
+        {
+            if (visited[vertex] == false)
+                DepthFirstSearch(vertex);
         }
         return sorted;
     }
+
 private:
-    void DepthFirstSearch(size_t vertex) {
+    void DepthFirstSearch(unsigned vertex)
+    {
         // visited.assign(visited.size(), false);
-        std::stack<size_t> stack;
+        std::stack<unsigned> stack;
         stack.emplace(vertex);
-        while (!stack.empty()) {
+        while (stack.empty() == false)
+        {
             vertex = stack.top();
             stack.pop();
             visited[vertex] = true;
             sorted.emplace_front(vertex);
-            for (const size_t& next : adjLists[vertex]) {
-                if (!visited[next]) stack.emplace(next);
+            for (const unsigned &next : adjLists[vertex])
+            {
+                if (visited[next] == false)
+                    stack.emplace(next);
             }
         }
     }
-    std::list<size_t> sorted;
     std::vector<bool> visited;
-    std::unordered_map<size_t, std::unordered_multiset<size_t>> adjLists;
+    std::list<unsigned> sorted;
+    std::unordered_map<unsigned, std::unordered_multiset<unsigned>> adjLists;
 };
 
-int main() {
+int main()
+{
     DAG graph(4);
     graph.addEdge(0, 2);
     graph.addEdge(0, 3);
     graph.addEdge(1, 2);
     auto sorted = graph.TopologicalSort();
-    for (const size_t& vertex : sorted) {
+    for (const unsigned &vertex : sorted)
+    {
         std::cout << vertex << ' ';
     }
     std::cout << std::endl;

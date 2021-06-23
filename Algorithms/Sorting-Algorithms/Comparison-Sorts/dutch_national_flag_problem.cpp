@@ -7,30 +7,32 @@
 #include <iostream>
 #include <vector>
 
-template<typename T>
-void DutchNationalFlagProblem(std::vector<T>& array, size_t& mid) {
+template <typename T>
+void DutchNationalFlagProblem(std::vector<T> &array, size_t &mid)
+{
     int low = 0, equal = 0, high = array.size() - 1;
-    while (equal <= high) {
-        if (array[equal] < mid) {
+    while (equal <= high)
+    {
+        if (array[equal] < mid)
             std::swap(array[low++], array[equal++]);
-        } else if (array[equal] > mid) {
+        else if (array[equal] > mid)
             std::swap(array[equal], array[high--]);
-        } else {
+        else
             ++equal;
-        }
     }
 }
 
-int main() {
+int main()
+{
     size_t mid;
     std::cin >> mid;
     int element;
     std::vector<int> array;
-    while (std::cin >> element) {
+    while (std::cin >> element)
         array.emplace_back(element);
-    }
     DutchNationalFlagProblem(array, mid);
-    for (const int& element : array) {
+    for (const int &element : array)
+    {
         std::cout << element << ' ';
     }
     std::cout << std::endl;

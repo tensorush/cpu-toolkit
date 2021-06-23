@@ -1,5 +1,5 @@
 /*
-    Linked List
+    Doubly Linked List
     --------------------------------------------------------
     |   Access   |   Search   |  Insertion  |   Deletion   |
     --------------------------------------------------------
@@ -10,10 +10,11 @@
 #include <iostream>
 
 template<typename T>
-class LinkedList final {
+class DoublyLinkedList final {
+    // TODO: Fix this implementation
 public:
-    LinkedList() : size(0), head(nullptr), tail(nullptr) {}
-    ~LinkedList() { clear(); }
+    DoublyLinkedList() : size(0), head(nullptr), tail(nullptr) {}
+    ~DoublyLinkedList() { clear(); }
     size_t get_size() const {
         return size;
     }
@@ -124,7 +125,7 @@ public:
     }
 private:
     template <typename U = T>
-    class Node {
+    class Node final {
     public:
         Node() : value(0), prev(nullptr), next(nullptr) {}
         Node(const U& _value, Node<U>* _prev, Node<U>* _next) : value(_value), prev(_prev), next(_next) {}
@@ -132,25 +133,25 @@ private:
         U value;
         Node<U>* prev;
         Node<U>* next;
-        friend LinkedList<U>;
+        friend DoublyLinkedList<U>;
     };
     Node<T>* head;
     Node<T>* tail;
     size_t size;
     class LinkedListEmptyException : public std::exception {
         virtual const char* what() const throw() {
-            return "LinkedList is empty";
+            return "Doubly Linked List is empty";
         }
     } list_empty;
     class LinkedListOutOfBoundException : public std::exception {
         virtual const char* what() const throw() {
-            return "LinkedList index out of bound";
+            return "Doubly Linked List index out of bound";
         }
     } list_out_of_bound;
 };
 
 int main() {
-    LinkedList<int> list;
+    DoublyLinkedList<int> list;
     list.insert(3, 0);
     list.insert(7, 0);
     std::cout << list.get_size() << ' '
