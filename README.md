@@ -37,7 +37,7 @@
 
   - ### :2nd_place_medal: [Non-Comparison Sorts](https://github.com/tensorush/Computer-Scientists-Toolkit/blob/master/Algorithms/Sorting-Algorithms/Non-Comparison-Sorts)
 
-  - ### :3rd_place_medal: [Embarrassingly Inefficient Sorts](https://github.com/tensorush/Computer-Scientists-Toolkit/blob/master/Algorithms/Sorting-Algorithms/Embarassingly-Inefficient-Sorts)
+  - ### :3rd_place_medal: [Embarrassingly Inefficient Sorts](https://github.com/tensorush/Computer-Scientists-Toolkit/blob/master/Algorithms/Sorting-Algorithms/Embarrassingly-Inefficient-Sorts)
 
 - ### :closed_lock_with_key: [Hashing Algorithms](https://github.com/tensorush/Computer-Scientists-Toolkit/blob/master/Algorithms/Hashing-Algorithms)
 
