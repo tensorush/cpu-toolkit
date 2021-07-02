@@ -8,20 +8,16 @@
 #include <vector>
 
 template <typename T>
-void CombSort(std::vector<T> &array)
-{
+void CombSort(std::vector<T>& array) {
     bool swapped = false;
-    size_t gap = array.size();
+    unsigned gap = array.size();
     const double shrink = 1.3;
-    while (gap > 1 || swapped)
-    {
+    while (gap > 1 || swapped) {
         if (gap > 1)
-            gap = (size_t)(gap / shrink);
+            gap = (unsigned) (gap / shrink);
         swapped = false;
-        for (size_t i = 0; gap + i < array.size(); ++i)
-        {
-            if (array[i] > array[i + gap])
-            {
+        for (unsigned i = 0; gap + i < array.size(); ++i) {
+            if (array[i] > array[i + gap]) {
                 std::swap(array[i], array[i + gap]);
                 swapped = true;
             }
@@ -29,15 +25,13 @@ void CombSort(std::vector<T> &array)
     }
 }
 
-int main()
-{
+int main() {
     int element;
     std::vector<int> array;
     while (std::cin >> element)
         array.emplace_back(element);
     CombSort(array);
-    for (const int &element : array)
-    {
+    for (const int& element : array) {
         std::cout << element << ' ';
     }
     std::cout << std::endl;

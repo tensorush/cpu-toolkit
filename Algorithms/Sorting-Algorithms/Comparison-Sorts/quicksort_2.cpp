@@ -8,12 +8,11 @@
 #include <vector>
 
 template <typename T>
-void Quicksort2(std::vector<T> &array, const size_t &low, const size_t &high)
-{
+void Quicksort2(std::vector<T>& array, const unsigned& low, const unsigned& high) {
     if (low >= high)
         return;
     // "Median-of-Three" pivot selection strategy
-    size_t mid = low + (high - low) / 2;
+    unsigned mid = low + (high - low) / 2;
     if (array[high] < array[low])
         std::swap(array[high], array[low]);
     if (array[mid] < array[low])
@@ -22,9 +21,8 @@ void Quicksort2(std::vector<T> &array, const size_t &low, const size_t &high)
         std::swap(array[high], array[mid]);
     T pivot = array[mid];
     // Hoare's partitioning scheme
-    size_t i = low, j = high;
-    while (true)
-    {
+    unsigned i = low, j = high;
+    while (true) {
         while (array[i] < pivot)
             ++i;
         while (array[j] > pivot)
@@ -37,15 +35,13 @@ void Quicksort2(std::vector<T> &array, const size_t &low, const size_t &high)
     Quicksort2(array, j + 1, high);
 }
 
-int main()
-{
+int main() {
     int element;
     std::vector<int> array;
     while (std::cin >> element)
         array.emplace_back(element);
     Quicksort2(array, 0, array.size() - 1);
-    for (const int &element : array)
-    {
+    for (const int& element : array) {
         std::cout << element << ' ';
     }
     std::cout << std::endl;

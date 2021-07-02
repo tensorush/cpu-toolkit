@@ -9,31 +9,26 @@
 #include <vector>
 #include <string>
 
-auto RabinKarpAlgorithm(const std::string &pattern, const std::string &text)
-{
-    const unsigned prime = 53;
-    std::vector<unsigned> primePowers(std::max(pattern.length(), text.length()));
+auto RabinKarpAlgorithm(const std::string& pattern, const std::string& text) {
+    unsigned n = text.length(), m = pattern.length(), prime = 53;
+    std::vector<unsigned> primePowers(std::max(m, n));
     primePowers[0] = 1;
-    for (size_t i = 1; i < primePowers.size(); ++i)
-    {
+    for (unsigned i = 1; i < primePowers.size(); ++i) {
         primePowers[i] = primePowers[i - 1] * prime;
     }
-    std::vector<unsigned> prefixHashes(text.length());
-    for (size_t i = 0; i < text.length(); ++i)
-    {
+    std::vector<unsigned> prefixHashes(n);
+    for (unsigned i = 0; i < n; ++i) {
         prefixHashes[i] = (text[i] - 'a' + 1) * primePowers[i];
         if (i)
             prefixHashes[i] += prefixHashes[i - 1];
     }
     unsigned patternHash = 0;
-    for (size_t i = 0; i < pattern.length(); ++i)
-    {
+    for (unsigned i = 0; i < m; ++i) {
         patternHash += (pattern[i] - 'a' + 1) * primePowers[i];
     }
-    std::vector<size_t> matchPositions;
-    for (size_t i = 0; i + pattern.length() - 1 < text.length(); ++i)
-    {
-        unsigned curHash = prefixHashes[i + pattern.length() - 1];
+    std::vector<unsigned> matchPositions;
+    for (unsigned i = 0; i + m - 1 < n; ++i) {
+        unsigned curHash = prefixHashes[i + m - 1];
         if (i)
             curHash -= prefixHashes[i - 1];
         if (curHash == patternHash * primePowers[i])
@@ -42,14 +37,12 @@ auto RabinKarpAlgorithm(const std::string &pattern, const std::string &text)
     return matchPositions;
 }
 
-int main()
-{
+int main() {
     std::string pattern, text;
     std::getline(std::cin, pattern);
     std::getline(std::cin, text);
     auto matchPositions = RabinKarpAlgorithm(pattern, text);
-    for (const size_t &i : matchPositions)
-    {
+    for (const unsigned& i : matchPositions) {
         std::cout << i << ' ';
     }
     std::cout << std::endl;

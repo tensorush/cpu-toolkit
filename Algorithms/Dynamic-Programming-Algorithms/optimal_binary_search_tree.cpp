@@ -8,48 +8,40 @@
 #include <iostream>
 #include <vector>
 
-void SortNodesAndFrequenciesByNodes(std::vector<unsigned> &nodes, std::vector<unsigned> &frequencies)
-{
+void SortNodesAndFrequenciesByNodes(std::vector<unsigned>& nodes, std::vector<unsigned>& frequencies) {
     unsigned numNodes = nodes.size();
     std::vector<std::pair<unsigned, unsigned>> indices;
-    for (unsigned i = 0; i < numNodes; ++i)
-    {
+    for (unsigned i = 0; i < numNodes; ++i) {
         indices.emplace_back(std::make_pair(i, nodes[i]));
     }
-    std::sort(indices.begin(), indices.end(), [](const std::pair<unsigned, unsigned> &a, const std::pair<unsigned, unsigned> &b) -> bool
-              { return a.second < b.second; });
+    std::sort(indices.begin(), indices.end(), [](const std::pair<unsigned, unsigned>& a, const std::pair<unsigned, unsigned>& b) -> bool {
+        return a.second < b.second;
+    });
     std::vector<unsigned> sortedFrequencies;
-    for (unsigned i = 0; i < numNodes; ++i)
-    {
+    for (unsigned i = 0; i < numNodes; ++i) {
         sortedFrequencies.emplace_back(frequencies[indices[i].first]);
         nodes[i] = indices[i].second;
     }
     frequencies = sortedFrequencies;
 }
 
-unsigned OptimalBinarySearchTree(std::vector<unsigned> &nodes, std::vector<unsigned> &frequencies)
-{
+unsigned OptimalBinarySearchTree(std::vector<unsigned>& nodes, std::vector<unsigned>& frequencies) {
     unsigned numNodes = nodes.size();
     SortNodesAndFrequenciesByNodes(nodes, frequencies);
     std::vector<std::vector<unsigned>> matrix(numNodes, std::vector<unsigned>(numNodes));
-    for (unsigned i = 0; i < numNodes; ++i)
-    {
+    for (unsigned i = 0; i < numNodes; ++i) {
         matrix[i][i] = frequencies[i];
     }
     unsigned col, frequencySum, minFound, newMin, leftCost, rightCost;
-    for (unsigned cur = 2; cur <= numNodes; ++cur)
-    {
-        for (unsigned row = 0; row <= numNodes - cur; ++row)
-        {
+    for (unsigned cur = 2; cur <= numNodes; ++cur) {
+        for (unsigned row = 0; row <= numNodes - cur; ++row) {
             frequencySum = 0;
             col = row + cur - 1;
-            for (unsigned i = row; i <= col; ++i)
-            {
+            for (unsigned i = row; i <= col; ++i) {
                 frequencySum += frequencies[i];
             }
             minFound = UINT32_MAX;
-            for (unsigned i = row; i <= col; ++i)
-            {
+            for (unsigned i = row; i <= col; ++i) {
                 leftCost = 0;
                 rightCost = 0;
                 if (i - 1 >= row)
@@ -66,17 +58,14 @@ unsigned OptimalBinarySearchTree(std::vector<unsigned> &nodes, std::vector<unsig
     return matrix[0][numNodes - 1];
 }
 
-int main()
-{
+int main() {
     unsigned numNodes;
     std::cin >> numNodes;
     std::vector<unsigned> nodes, frequencies;
-    for (unsigned &node : nodes)
-    {
+    for (unsigned& node : nodes) {
         std::cin >> node;
     }
-    for (unsigned &frequency : frequencies)
-    {
+    for (unsigned& frequency : frequencies) {
         std::cin >> frequency;
     }
     std::cout << OptimalBinarySearchTree(nodes, frequencies) << std::endl;

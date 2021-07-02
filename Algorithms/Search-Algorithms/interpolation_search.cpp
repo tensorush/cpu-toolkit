@@ -8,12 +8,10 @@
 #include <vector>
 
 template <typename T>
-int InterpolationSearch(const std::vector<T> &array, const T &key)
-{
-    size_t left = 0, right = array.size() - 1;
-    while (array[left] < key && key < array[right])
-    {
-        size_t mid = left + (key - array[left]) * (right - left) / (array[right] - array[left]);
+int InterpolationSearch(const std::vector<T>& array, const T& key) {
+    unsigned left = 0, right = array.size() - 1;
+    while (array[left] < key && key < array[right]) {
+        unsigned mid = left + (key - array[left]) * (right - left) / (array[right] - array[left]);
         if (array[mid] < key)
             left = mid + 1;
         else if (array[mid] > key)
@@ -29,14 +27,12 @@ int InterpolationSearch(const std::vector<T> &array, const T &key)
         return -1;
 }
 
-int main()
-{
+int main() {
     int key;
     unsigned n;
     std::cin >> n >> key;
     std::vector<int> array(n);
-    for (int &element : array)
-    {
+    for (int& element : array) {
         std::cin >> element;
     }
     std::cout << InterpolationSearch(array, key) << std::endl;

@@ -8,13 +8,11 @@
 #include <vector>
 
 template <typename T>
-void SelectionSort(std::vector<T> &array)
-{
-    for (size_t i = 0; i < array.size(); ++i)
-    {
-        size_t minIndex = i;
-        for (size_t j = i + 1; j < array.size(); ++j)
-        {
+void SelectionSort(std::vector<T>& array) {
+    unsigned n = array.size();
+    for (unsigned i = 0; i < n; ++i) {
+        unsigned minIndex = i;
+        for (unsigned j = i + 1; j < n; ++j) {
             if (array[j] < array[minIndex])
                 minIndex = j;
         }
@@ -22,15 +20,13 @@ void SelectionSort(std::vector<T> &array)
     }
 }
 
-int main()
-{
+int main() {
     int element;
     std::vector<int> array;
     while (std::cin >> element)
         array.emplace_back(element);
     SelectionSort(array);
-    for (const int &element : array)
-    {
+    for (const int& element : array) {
         std::cout << element << ' ';
     }
     std::cout << std::endl;

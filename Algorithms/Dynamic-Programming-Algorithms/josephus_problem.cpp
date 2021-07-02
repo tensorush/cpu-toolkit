@@ -6,8 +6,7 @@
 */
 #include <iostream>
 
-int JosephusProblem(const unsigned &n, const unsigned &k)
-{
+int JosephusProblem(const unsigned& n, const unsigned& k) {
     if (n == 1)
         return 0;
     if (k == 1)
@@ -19,8 +18,7 @@ int JosephusProblem(const unsigned &n, const unsigned &k)
     return safeIndex;
 }
 
-int main()
-{
+int main() {
     unsigned numPeople, hopSize;
     std::cin >> numPeople >> hopSize;
     std::cout << JosephusProblem(numPeople, hopSize) << std::endl;

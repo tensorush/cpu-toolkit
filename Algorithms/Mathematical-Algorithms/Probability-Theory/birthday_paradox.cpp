@@ -7,8 +7,7 @@
 #include <iostream>
 #include <iomanip>
 
-double BirthdayParadox(unsigned numDays, unsigned numPeople)
-{
+double BirthdayParadox(unsigned numDays, unsigned numPeople) {
     double unoccupiedDays = numDays, noMatchProbability = 1;
     while (--numPeople)
         noMatchProbability *= --unoccupiedDays / numDays;
@@ -16,12 +15,11 @@ double BirthdayParadox(unsigned numDays, unsigned numPeople)
     return matchProbability;
 }
 
-int main()
-{
+int main() {
     unsigned numDays, numPeople;
     std::cin >> numDays >> numPeople;
     std::cout << std::setprecision(3) << std::fixed
-              << BirthdayParadox(numDays, numPeople) << std::endl;
+        << BirthdayParadox(numDays, numPeople) << std::endl;
 
     return EXIT_SUCCESS;
 }

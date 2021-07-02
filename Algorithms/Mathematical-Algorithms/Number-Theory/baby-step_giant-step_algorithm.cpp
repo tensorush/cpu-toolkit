@@ -8,25 +8,20 @@
 #include <iostream>
 #include <cmath>
 
-int BabyStepGiantStepAlgorithm(const unsigned &a, const unsigned &b, const unsigned &m)
-{
+int BabyStepGiantStepAlgorithm(const unsigned& a, const unsigned& b, const unsigned& m) {
     unsigned n = std::sqrt(m) + 1, NthPowerOfA = 1;
-    for (unsigned i = 0; i < n; ++i)
-    {
+    for (unsigned i = 0; i < n; ++i) {
         NthPowerOfA = (NthPowerOfA * a) % m;
     }
     std::unordered_map<unsigned, unsigned> values;
-    for (unsigned i = 1, cur = NthPowerOfA; i <= n; ++i)
-    {
+    for (unsigned i = 1, cur = NthPowerOfA; i <= n; ++i) {
         if (!values[cur])
             values[cur] = i;
         cur = (cur * NthPowerOfA) % m;
     }
     int power = -1;
-    for (unsigned i = 0, cur = b; i <= n; ++i)
-    {
-        if (values[cur])
-        {
+    for (unsigned i = 0, cur = b; i <= n; ++i) {
+        if (values[cur]) {
             power = values[cur] * n - i;
             if (power < m)
                 break;
@@ -36,8 +31,7 @@ int BabyStepGiantStepAlgorithm(const unsigned &a, const unsigned &b, const unsig
     return power;
 }
 
-int main()
-{
+int main() {
     unsigned a, b, m;
     std::cin >> a >> b >> m;
     std::cout << BabyStepGiantStepAlgorithm(a, b, m) << std::endl;

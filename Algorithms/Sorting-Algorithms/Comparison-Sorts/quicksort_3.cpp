@@ -8,8 +8,7 @@
 #include <vector>
 
 template <typename T>
-void Quicksort3(std::vector<T> &array, const size_t &low, const size_t &high)
-{
+void Quicksort3(std::vector<T>& array, const unsigned& low, const unsigned& high) {
     // Implementation is incomplete
     if (low >= high)
         return;
@@ -17,15 +16,11 @@ void Quicksort3(std::vector<T> &array, const size_t &low, const size_t &high)
     if (array[low] > array[high])
         std::swap(array[low], array[high]);
     T pivot_1 = array[low], pivot_2 = array[high];
-    size_t i, less = low + 1, greater = high - 1;
-    for (i = low + 1; i <= greater; ++i)
-    {
-        if (array[i] < pivot_1)
-        {
+    unsigned i, less = low + 1, greater = high - 1;
+    for (i = low + 1; i <= greater; ++i) {
+        if (array[i] < pivot_1) {
             std::swap(array[i], array[less++]);
-        }
-        else if (array[i] >= pivot_2)
-        {
+        } else if (array[i] >= pivot_2) {
             while (array[greater] > pivot_2 && i < greater)
                 --greater;
             std::swap(array[i], array[greater--]);
@@ -42,15 +37,13 @@ void Quicksort3(std::vector<T> &array, const size_t &low, const size_t &high)
     Quicksort3(array, i + 1, high);
 }
 
-int main()
-{
+int main() {
     int element;
     std::vector<int> array;
     while (std::cin >> element)
         array.emplace_back(element);
     Quicksort3(array, 0, array.size() - 1);
-    for (const int &element : array)
-    {
+    for (const int& element : array) {
         std::cout << element << ' ';
     }
     std::cout << std::endl;

@@ -6,17 +6,13 @@
 */
 #include <iostream>
 
-void PascalTriangle(const unsigned &n)
-{
+void PascalTriangle(const unsigned& n) {
     unsigned coef = 1;
-    for (unsigned i = 0; i < n; ++i)
-    {
-        for (unsigned numSpaces = 1; numSpaces <= n - i; ++numSpaces)
-        {
+    for (unsigned i = 0; i < n; ++i) {
+        for (unsigned numSpaces = 1; numSpaces <= n - i; ++numSpaces) {
             std::cout << "  ";
         }
-        for (unsigned k = 0; k <= i; ++k)
-        {
+        for (unsigned k = 0; k <= i; ++k) {
             coef = (k == 0 || i == 0) ? (1) : ((coef * (i - k + 1)) / k);
             std::cout << coef << "   ";
         }
@@ -24,8 +20,7 @@ void PascalTriangle(const unsigned &n)
     }
 }
 
-int main()
-{
+int main() {
     unsigned n;
     std::cin >> n;
     PascalTriangle(n);

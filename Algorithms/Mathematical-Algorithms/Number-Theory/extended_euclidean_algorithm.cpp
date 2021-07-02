@@ -6,10 +6,8 @@
 */
 #include <iostream>
 
-int ExtendedEuclideanAlgorithm(int a, int b, int &x, int &y)
-{
-    if (b == 0)
-    {
+int ExtendedEuclideanAlgorithm(int a, int b, int& x, int& y) {
+    if (b == 0) {
         x = 1;
         y = 0;
         return a;
@@ -21,13 +19,12 @@ int ExtendedEuclideanAlgorithm(int a, int b, int &x, int &y)
     return gcd;
 }
 
-int main()
-{
+int main() {
     int a, b, x, y;
     std::cin >> a >> b;
     int gcd = ExtendedEuclideanAlgorithm(a, b, x, y);
     std::cout << "a * x + b * y = gcd" << std::endl
-              << a << " * " << x << " + " << b << " * " << y << " = " << gcd << std::endl;
+        << a << " * " << x << " + " << b << " * " << y << " = " << gcd << std::endl;
 
     return EXIT_SUCCESS;
 }

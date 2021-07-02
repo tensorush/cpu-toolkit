@@ -8,27 +8,23 @@
 #include <vector>
 
 template <typename T>
-void BubbleSort(std::vector<T> &array)
-{
-    for (size_t i = 0; i < array.size() - 1; ++i)
-    {
-        for (size_t j = 0; j < array.size() - 1 - i; ++j)
-        {
+void BubbleSort(std::vector<T>& array) {
+    unsigned n = array.size();
+    for (unsigned i = 0; i < n - 1; ++i) {
+        for (unsigned j = 0; j < n - 1 - i; ++j) {
             if (array[j] > array[j + 1])
                 std::swap(array[j], array[j + 1]);
         }
     }
 }
 
-int main()
-{
+int main() {
     int element;
     std::vector<int> array;
     while (std::cin >> element)
         array.emplace_back(element);
     BubbleSort(array);
-    for (const int &element : array)
-    {
+    for (const int& element : array) {
         std::cout << element << ' ';
     }
     std::cout << std::endl;

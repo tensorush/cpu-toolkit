@@ -9,42 +9,34 @@
 #include <vector>
 #include <string>
 
-auto BoyerMooreAlgorithm(const std::string &pattern, const std::string &text)
-{
+auto BoyerMooreAlgorithm(const std::string& pattern, const std::string& text) {
     int n = text.length(), m = pattern.length();
     std::vector<int> badChars(256, -1);
-    for (int j = 0; j < m; ++j)
-    {
+    for (int j = 0; j < m; ++j) {
         badChars[static_cast<int>(pattern[j])] = j;
     }
     int i = 0, j = m - 1;
     std::vector<int> matchIndices;
-    while (i <= n - m)
-    {
+    while (i <= n - m) {
         j = m - 1;
         while (j >= 0 && pattern[j] == text[i + j])
             --j;
-        if (j < 0)
-        {
+        if (j < 0) {
             matchIndices.emplace_back(i);
             i += (i + m >= n) ? (1) : (m - badChars[text[i + m] - '\0']);
-        }
-        else
-        {
+        } else {
             i += std::max(1, j - badChars[text[i + j] - '\0']);
         }
     }
     return matchIndices;
 }
 
-int main()
-{
+int main() {
     std::string pattern, text;
     std::getline(std::cin, pattern);
     std::getline(std::cin, text);
     auto matchIndices = BoyerMooreAlgorithm(pattern, text);
-    for (const int &index : matchIndices)
-    {
+    for (const int& index : matchIndices) {
         std::cout << index << ' ';
     }
     std::cout << std::endl;

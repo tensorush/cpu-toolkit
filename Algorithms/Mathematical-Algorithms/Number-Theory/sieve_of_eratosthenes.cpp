@@ -8,17 +8,13 @@
 #include <vector>
 #include <cmath>
 
-auto SieveOfEratosthenes(const unsigned &bound)
-{
+auto SieveOfEratosthenes(const unsigned& bound) {
     std::vector<bool> sieve(bound + 1, true);
     sieve[0] = sieve[1] = false;
     unsigned maxPrime = std::sqrt(bound);
-    for (unsigned p = 2; p <= maxPrime; ++p)
-    {
-        if (sieve[p] == true)
-        {
-            for (unsigned i = p * p; i <= bound; i += p)
-            {
+    for (unsigned p = 2; p <= maxPrime; ++p) {
+        if (sieve[p] == true) {
+            for (unsigned i = p * p; i <= bound; i += p) {
                 sieve[i] = false;
             }
         }
@@ -26,13 +22,11 @@ auto SieveOfEratosthenes(const unsigned &bound)
     return sieve;
 }
 
-int main()
-{
+int main() {
     unsigned bound;
     std::cin >> bound;
     auto sieve = SieveOfEratosthenes(bound);
-    for (unsigned i = 2; i <= bound; ++i)
-    {
+    for (unsigned i = 2; i <= bound; ++i) {
         if (sieve[i])
             std::cout << i << ' ';
     }

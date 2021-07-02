@@ -6,19 +6,16 @@
 */
 #include <iostream>
 
-unsigned CatalanNumber(const unsigned &n)
-{
+unsigned CatalanNumber(const unsigned& n) {
     unsigned catalan = 1;
-    for (unsigned i = 0; i < n; ++i)
-    {
+    for (unsigned i = 0; i < n; ++i) {
         catalan *= 4 * i + 2;
         catalan /= i + 2;
     }
     return catalan;
 }
 
-int main()
-{
+int main() {
     unsigned n;
     std::cin >> n;
     std::cout << CatalanNumber(n) << std::endl;

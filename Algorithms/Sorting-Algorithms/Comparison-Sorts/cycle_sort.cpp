@@ -8,14 +8,12 @@
 #include <vector>
 
 template <typename T>
-void CycleSort(std::vector<T> &array)
-{
-    for (size_t start = 0; start <= array.size() - 2; ++start)
-    {
-        size_t pos = start;
+void CycleSort(std::vector<T>& array) {
+    unsigned n = array.size();
+    for (unsigned start = 0; start <= n - 2; ++start) {
+        unsigned pos = start;
         T element = array[start];
-        for (size_t i = start + 1; i < array.size(); ++i)
-        {
+        for (unsigned i = start + 1; i < n; ++i) {
             if (array[i] < element)
                 ++pos;
         }
@@ -25,11 +23,9 @@ void CycleSort(std::vector<T> &array)
             ++pos;
         if (pos != start)
             std::swap(element, array[pos]);
-        while (pos != start)
-        {
+        while (pos != start) {
             pos = start;
-            for (size_t i = start + 1; i < array.size(); ++i)
-            {
+            for (unsigned i = start + 1; i < n; ++i) {
                 if (array[i] < element)
                     ++pos;
             }
@@ -41,15 +37,13 @@ void CycleSort(std::vector<T> &array)
     }
 }
 
-int main()
-{
+int main() {
     int element;
     std::vector<int> array;
     while (std::cin >> element)
         array.emplace_back(element);
     CycleSort(array);
-    for (const int &element : array)
-    {
+    for (const int& element : array) {
         std::cout << element << ' ';
     }
     std::cout << std::endl;

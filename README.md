@@ -89,6 +89,8 @@
 
 - ### [Data Structures Cheatsheet](https://www.clear.rice.edu/comp160/data_cheat.html)
 
+- ### [Mathematics Source Library](http://www.mymathlib.com/)
+
 - ### [The Arcane Algorithm Archive](https://www.algorithm-archive.org/)
 
 - ### [Programming Blog by Alesiani Marco](https://marcodiiga.github.io/archive/)

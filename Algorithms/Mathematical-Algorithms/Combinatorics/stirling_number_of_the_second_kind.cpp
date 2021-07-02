@@ -7,23 +7,19 @@
 #include <iostream>
 #include <cmath>
 
-unsigned Factorial(const unsigned &n)
-{
+unsigned Factorial(const unsigned& n) {
     unsigned factorial = 1;
     if (n == 0 || n == 1)
         return factorial;
-    for (unsigned i = 2; i <= n; ++i)
-    {
+    for (unsigned i = 2; i <= n; ++i) {
         factorial *= i;
     }
     return factorial;
 }
 
-unsigned StirlingNumberOfTheSecondKind(const unsigned &n, const unsigned &k)
-{
+unsigned StirlingNumberOfTheSecondKind(const unsigned& n, const unsigned& k) {
     double summand, stirling = 0;
-    for (unsigned i = 0; i <= k; ++i)
-    {
+    for (unsigned i = 0; i <= k; ++i) {
         summand = std::pow(k - i, n) / Factorial(k - i) / Factorial(i);
         if (i % 2 == 1)
             summand *= -1;
@@ -32,8 +28,7 @@ unsigned StirlingNumberOfTheSecondKind(const unsigned &n, const unsigned &k)
     return std::round(stirling);
 }
 
-int main()
-{
+int main() {
     unsigned n, k;
     std::cin >> n >> k;
     std::cout << StirlingNumberOfTheSecondKind(n, k) << std::endl;

@@ -7,13 +7,11 @@
 #include <iostream>
 #include <cmath>
 
-struct Vector
-{
+struct Vector {
     double x, y, z;
 };
 
-double AngleBetween3DVectors(const Vector &U, const Vector &V)
-{
+double AngleBetween3DVectors(const Vector& U, const Vector& V) {
     double dotProduct = U.x * V.x + U.y * V.y + U.z * V.z;
     Vector crossProduct;
     crossProduct.x = U.y * V.z - V.y * U.z;
@@ -23,8 +21,7 @@ double AngleBetween3DVectors(const Vector &U, const Vector &V)
     return std::atan2(directedArea, dotProduct);
 }
 
-int main()
-{
+int main() {
     Vector U, V;
     std::cin >> U.x >> U.y >> U.z >> V.x >> V.y >> V.z;
     std::cout << AngleBetween3DVectors(U, V) << std::endl;

@@ -1,6 +1,6 @@
 /*
-    Newton's Method
-    -------------------
+    Newton-Raphson Method
+    ---------------------
     Error: O(1)
     Convergence: O(n^2)
 */
@@ -8,12 +8,10 @@
 #include <iostream>
 #include <cmath>
 
-auto NewtonMethod(std::function<double(const double &)> Function, std::function<double(const double &)> functionDerivative, double x, const double &EPS = 1e-9)
-{
+auto NewtonRaphsonMethod(std::function<double(const double&)> Function, std::function<double(const double&)> functionDerivative, double x, const double& EPS = 1e-9) {
     double x_prev;
     unsigned numIterations = 0;
-    do
-    {
+    do {
         x_prev = x;
         x -= Function(x) / functionDerivative(x);
         ++numIterations;
@@ -21,19 +19,16 @@ auto NewtonMethod(std::function<double(const double &)> Function, std::function<
     return std::make_pair(x, numIterations);
 }
 
-int main()
-{
+int main() {
     double x_0;
     std::cin >> x_0;
-    auto Function = [](const double &x) -> double
-    {
+    auto Function = [](const double& x) -> double {
         return std::pow(x, 2);
     };
-    auto functionDerivative = [](const double &x) -> double
-    {
+    auto functionDerivative = [](const double& x) -> double {
         return 2 * x;
     };
-    auto [root, numIterations] = NewtonMethod(Function, functionDerivative, x_0);
+    auto [root, numIterations] = NewtonRaphsonMethod(Function, functionDerivative, x_0);
     std::cout << root << ' ' << numIterations << std::endl;
 
     return EXIT_SUCCESS;

@@ -7,13 +7,10 @@
 #include <iostream>
 #include <string>
 
-bool PalindromeCheck(const std::string &string)
-{
+bool PalindromeCheck(const std::string& string) {
     bool isPalindrome = true;
-    for (int start = 0, end = string.length() - 1; start < end; ++start, --end)
-    {
-        if (string[start] != string[end])
-        {
+    for (int start = 0, end = string.length() - 1; start < end; ++start, --end) {
+        if (string[start] != string[end]) {
             isPalindrome = false;
             break;
         }
@@ -21,8 +18,7 @@ bool PalindromeCheck(const std::string &string)
     return isPalindrome;
 }
 
-int main()
-{
+int main() {
     std::string string;
     std::getline(std::cin, string);
     std::cout << std::boolalpha << PalindromeCheck(string) << std::endl;

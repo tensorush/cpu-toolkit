@@ -9,18 +9,15 @@
 #include <vector>
 #include <string>
 
-auto ZFunction(std::string str)
-{
-    size_t n_m = str.length();
-    std::vector<size_t> zFunction(n_m);
-    for (size_t i = 1, l = 0, r = 0; i < n_m; ++i)
-    {
+auto ZFunction(std::string str) {
+    unsigned n_m = str.length();
+    std::vector<unsigned> zFunction(n_m);
+    for (unsigned i = 1, l = 0, r = 0; i < n_m; ++i) {
         if (i <= r)
             zFunction[i] = std::min(zFunction[i - l], r - i + 1);
         while (i + zFunction[i] < n_m && str[zFunction[i]] == str[i + zFunction[i]])
             ++zFunction[i];
-        if (i + zFunction[i] - 1 > r)
-        {
+        if (i + zFunction[i] - 1 > r) {
             l = i;
             r = i + zFunction[i] - 1;
         }
@@ -28,15 +25,13 @@ auto ZFunction(std::string str)
     return zFunction;
 }
 
-int main()
-{
+int main() {
     std::string word, text;
     std::getline(std::cin, word);
     std::getline(std::cin, text);
     auto zFunction = ZFunction(word + '#' + text);
-    size_t n = text.length(), m = word.length();
-    for (size_t i = 0; i < n; ++i)
-    {
+    unsigned n = text.length(), m = word.length();
+    for (unsigned i = 0; i < n; ++i) {
         if (zFunction[m + 1 + i] == m)
             std::cout << "word = text[" << i << ".." << i + m - 1 << "]" << std::endl;
     }

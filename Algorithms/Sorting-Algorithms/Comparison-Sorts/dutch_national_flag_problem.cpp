@@ -8,11 +8,9 @@
 #include <vector>
 
 template <typename T>
-void DutchNationalFlagProblem(std::vector<T> &array, size_t &mid)
-{
+void DutchNationalFlagProblem(std::vector<T>& array, size_t& mid) {
     int low = 0, equal = 0, high = array.size() - 1;
-    while (equal <= high)
-    {
+    while (equal <= high) {
         if (array[equal] < mid)
             std::swap(array[low++], array[equal++]);
         else if (array[equal] > mid)
@@ -22,8 +20,7 @@ void DutchNationalFlagProblem(std::vector<T> &array, size_t &mid)
     }
 }
 
-int main()
-{
+int main() {
     size_t mid;
     std::cin >> mid;
     int element;
@@ -31,8 +28,7 @@ int main()
     while (std::cin >> element)
         array.emplace_back(element);
     DutchNationalFlagProblem(array, mid);
-    for (const int &element : array)
-    {
+    for (const int& element : array) {
         std::cout << element << ' ';
     }
     std::cout << std::endl;

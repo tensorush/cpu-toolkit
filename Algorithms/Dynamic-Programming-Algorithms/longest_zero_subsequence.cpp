@@ -9,15 +9,12 @@
 #include <iostream>
 #include <vector>
 
-unsigned LongestZeroSubsequence(const std::vector<int> &sequence)
-{
+unsigned LongestZeroSubsequence(const std::vector<int>& sequence) {
     std::unordered_map<int, unsigned> maxLengths, temp;
     maxLengths.emplace(0, 0);
     temp = maxLengths;
-    for (const int &element : sequence)
-    {
-        for (const auto &[subsum, maxLength] : maxLengths)
-        {
+    for (const int& element : sequence) {
+        for (const auto& [subsum, maxLength] : maxLengths) {
             unsigned defaultOption = 0;
             auto it = maxLengths.find(subsum + element);
             if (it != maxLengths.end())
@@ -29,13 +26,11 @@ unsigned LongestZeroSubsequence(const std::vector<int> &sequence)
     return maxLengths[0];
 }
 
-int main()
-{
+int main() {
     unsigned numElements;
     std::cin >> numElements;
     std::vector<int> sequence(numElements);
-    for (int &element : sequence)
-    {
+    for (int& element : sequence) {
         std::cin >> element;
     }
     std::cout << LongestZeroSubsequence(sequence) << std::endl;

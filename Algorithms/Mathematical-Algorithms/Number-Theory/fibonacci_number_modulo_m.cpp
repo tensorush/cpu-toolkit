@@ -6,8 +6,7 @@
 */
 #include <iostream>
 
-unsigned FibonacciNumberModuloM(const unsigned &n, const unsigned &m)
-{
+unsigned FibonacciNumberModuloM(const unsigned& n, const unsigned& m) {
     unsigned prev = 0, cur = 1, next = 1, pisanoPeriod = 0;
     if (n == 0)
         return prev;
@@ -15,16 +14,14 @@ unsigned FibonacciNumberModuloM(const unsigned &n, const unsigned &m)
         return cur;
     if (n == 2)
         return next;
-    do
-    {
+    do {
         next = (prev + cur) % m;
         prev = cur;
         cur = next;
         ++pisanoPeriod;
     } while (prev != 0 || cur != 1);
     prev = 0, cur = 1, next = 1;
-    for (unsigned remainder = n % pisanoPeriod; remainder > 1; --remainder)
-    {
+    for (unsigned remainder = n % pisanoPeriod; remainder > 1; --remainder) {
         next = (prev + cur) % m;
         prev = cur;
         cur = next;
@@ -32,8 +29,7 @@ unsigned FibonacciNumberModuloM(const unsigned &n, const unsigned &m)
     return cur;
 }
 
-int main()
-{
+int main() {
     unsigned n, m;
     std::cin >> n >> m;
     std::cout << FibonacciNumberModuloM(n, m) << std::endl;
