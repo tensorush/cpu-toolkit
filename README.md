@@ -7,6 +7,7 @@
 [![Forks][forks-shield]][forks-url]
 [![MIT License][license-shield]][license-url]
 
+[![Open in Visual Studio Code](https://open.vscode.dev/badges/open-in-vscode.svg)](https://open.vscode.dev/tensorush/Computer-Scientists-Toolkit)
 [![forthebadge](https://forthebadge.com/images/badges/works-on-my-machine.svg)](https://forthebadge.com)
 
 <p align="center">
@@ -33,13 +34,21 @@
 
 - ### :bar_chart: [Sorting Algorithms](https://github.com/tensorush/Computer-Scientists-Toolkit/blob/master/Algorithms/Sorting-Algorithms)
 
-  - ### :1st_place_medal: [Comparison Sorts](https://github.com/tensorush/Computer-Scientists-Toolkit/blob/master/Algorithms/Sorting-Algorithms/Comparison-Sorts)
+  - ### :wrestling: [Comparison Sorts](https://github.com/tensorush/Computer-Scientists-Toolkit/blob/master/Algorithms/Sorting-Algorithms/Comparison-Sorts)
 
-  - ### :2nd_place_medal: [Non-Comparison Sorts](https://github.com/tensorush/Computer-Scientists-Toolkit/blob/master/Algorithms/Sorting-Algorithms/Non-Comparison-Sorts)
+    - ### :1st_place_medal: [Linear Sorts](https://github.com/tensorush/Computer-Scientists-Toolkit/blob/master/Algorithms/Sorting-Algorithms/Comparison-Sorts/Linear-Sorts)
 
-  - ### :3rd_place_medal: [Embarrassingly Inefficient Sorts](https://github.com/tensorush/Computer-Scientists-Toolkit/blob/master/Algorithms/Sorting-Algorithms/Embarrassingly-Inefficient-Sorts)
+    - ### :2nd_place_medal: [Log-Linear Sorts](https://github.com/tensorush/Computer-Scientists-Toolkit/blob/master/Algorithms/Sorting-Algorithms/Comparison-Sorts/Log-Linear-Sorts)
+
+    - ### :3rd_place_medal: [Quadratic Sorts](https://github.com/tensorush/Computer-Scientists-Toolkit/blob/master/Algorithms/Sorting-Algorithms/Comparison-Sorts/Quadratic-Sorts)
+
+  - ### :lotus_position: [Non-Comparison Sorts](https://github.com/tensorush/Computer-Scientists-Toolkit/blob/master/Algorithms/Sorting-Algorithms/Non-Comparison-Sorts)
+
+  - ### :hankey: [Embarrassingly Inefficient Sorts](https://github.com/tensorush/Computer-Scientists-Toolkit/blob/master/Algorithms/Sorting-Algorithms/Embarrassingly-Inefficient-Sorts)
 
 - ### :closed_lock_with_key: [Hashing Algorithms](https://github.com/tensorush/Computer-Scientists-Toolkit/blob/master/Algorithms/Hashing-Algorithms)
+
+- ### :floppy_disk: [Compression Algorithms](https://github.com/tensorush/Computer-Scientists-Toolkit/blob/master/Algorithms/Compression-Algorithms)
 
 - ### :scroll: [Mathematical Algorithms](https://github.com/tensorush/Computer-Scientists-Toolkit/blob/master/Algorithms/Mathematical-Algorithms)
 
@@ -63,11 +72,11 @@
 
 ## :wrench: [Data Structures](https://github.com/tensorush/Computer-Scientists-Toolkit/blob/master/Data-Structures)
 
-- ### :bookmark_tabs: [List Structures](https://github.com/tensorush/Computer-Scientists-Toolkit/blob/master/Data-Structures/List-Structures)
+- ### :train: [List Structures](https://github.com/tensorush/Computer-Scientists-Toolkit/blob/master/Data-Structures/List-Structures)
 
-- ### :train: [Array Structures](https://github.com/tensorush/Computer-Scientists-Toolkit/blob/master/Data-Structures/Array-Structures)
+- ### :deciduous_tree: [Tree Structures](https://github.com/tensorush/Computer-Scientists-Toolkit/blob/master/Data-Structures/Tree-Structures)
 
-- ### :deciduous_tree: [Tree Structures (coming soon...)](https://github.com/tensorush/Computer-Scientists-Toolkit/blob/master/Data-Structures/Tree-Structures)
+- ### :bus: [Array Structures](https://github.com/tensorush/Computer-Scientists-Toolkit/blob/master/Data-Structures/Array-Structures)
 
 - ### :mount_fuji: [Heap Structures (coming soon...)](https://github.com/tensorush/Computer-Scientists-Toolkit/blob/master/Data-Structures/Heap-Structures)
 
@@ -83,6 +92,8 @@
 
 - ### [E-Maxx Algorithms](https://cp-algorithms.com/)
 
+- ### [Bit Twiddling Hacks](https://graphics.stanford.edu/~seander/bithacks.html)
+
 - ### [LiteratePrograms Wiki](https://www.literateprograms.org/)
 
 - ### [Algorithmic Cheatsheet](https://sinon.org/algorithms/)
@@ -91,19 +102,29 @@
 
 - ### [Mathematics Source Library](http://www.mymathlib.com/)
 
+- ### [Collection of C++ Algorithms](https://github.com/TheAlgorithms/C-Plus-Plus)
+
 - ### [The Arcane Algorithm Archive](https://www.algorithm-archive.org/)
+
+- ### [Programming Blog by Ivan Kutskir](http://blog.ivank.net/)
 
 - ### [Programming Blog by Alesiani Marco](https://marcodiiga.github.io/archive/)
 
 - ### [The Sound of Sorting by Timo Bingmann](https://panthema.net/2013/sound-of-sorting/)
 
-- ### [Cosmos Dataset held by OpenGenus Foundation](https://github.com/OpenGenus/cosmos)
+- ### [Dictionary of Algorithms and Data Structures](https://xlinux.nist.gov/dads/)
+
+- ### [Cosmos Codebase by OpenGenus Foundation](https://github.com/OpenGenus/cosmos)
+
+- ### [Algorithms and Data Structures by Ravi Mandliya](https://github.com/mandliya/algorithms_and_data_structures/)
+
+- ### [Algorithms and Data Structures by Douglas Harder](https://ece.uwaterloo.ca/~dwharder/aads/Algorithms/)
 
 - ### [Algorithms and Data Structures by Petar Veličković](https://github.com/PetarV-/Algorithms)
 
-- ### [Advanced Data Structures Lectures by Niema Moshiri](https://www.youtube.com/playlist?list=PLM_KIlU0WoXmkV4QB1Dg8PtJaHTdWHwRS)
+- ### [The Computer Science Handbook by Michael Young](https://www.thecshandbook.com/)
 
-- ### [Algorithm and Data Structures Problems by Ravi Mandliya](https://github.com/mandliya/algorithms_and_data_structures/)
+- ### [Advanced Data Structures Lectures by Niema Moshiri](https://www.youtube.com/playlist?list=PLM_KIlU0WoXmkV4QB1Dg8PtJaHTdWHwRS)
 
 - ### [Data Structure and Algorithm Tutorials offered by Programiz](https://www.programiz.com/dsa/)
 

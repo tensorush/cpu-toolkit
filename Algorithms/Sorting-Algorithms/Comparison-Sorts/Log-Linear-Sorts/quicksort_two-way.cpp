@@ -1,6 +1,6 @@
 /*
-    Quicksort with 2-Way Partitioning (unstable)
-    --------------------------------------------
+    Quicksort with Two-Way Partitioning (unstable)
+    ----------------------------------------------
     Time: Ω(n log(n)) Θ(n log(n)) O(n^2)
     Space: O(log(n))
 */
@@ -8,7 +8,7 @@
 #include <vector>
 
 template <typename T>
-void Quicksort2(std::vector<T>& array, const unsigned& low, const unsigned& high) {
+void QuicksortTwoWay(std::vector<T>& array, const unsigned& low, const unsigned& high) {
     if (low >= high)
         return;
     // "Median-of-Three" pivot selection strategy
@@ -31,8 +31,8 @@ void Quicksort2(std::vector<T>& array, const unsigned& low, const unsigned& high
             break;
         std::swap(array[i++], array[j--]);
     }
-    Quicksort2(array, low, j);
-    Quicksort2(array, j + 1, high);
+    QuicksortTwoWay(array, low, j);
+    QuicksortTwoWay(array, j + 1, high);
 }
 
 int main() {
@@ -40,7 +40,7 @@ int main() {
     std::vector<int> array;
     while (std::cin >> element)
         array.emplace_back(element);
-    Quicksort2(array, 0, array.size() - 1);
+    QuicksortTwoWay(array, 0, array.size() - 1);
     for (const int& element : array) {
         std::cout << element << ' ';
     }

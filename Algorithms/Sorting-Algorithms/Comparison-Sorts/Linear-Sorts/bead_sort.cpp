@@ -1,7 +1,9 @@
 /*
     Bead Sort (unstable)
-    --------------------
-    Time: O(sum(array))
+    ----------------------------
+    Physical Time: O(sqrt(n))
+    Hardware Time: O(n)
+    Software Time: O(sum(array))
     Space: O(n^2)
 */
 #include <iostream>

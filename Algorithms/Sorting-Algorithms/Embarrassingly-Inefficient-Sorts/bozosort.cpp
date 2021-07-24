@@ -1,7 +1,7 @@
 /*
-    Bogosort (unstable)
-    --------------------------
-    Time: Ω(n) Θ((n+1)!) O(∞)
+    Bozosort (unstable)
+    ----------------------
+    Time: Ω(n) Θ(n!) O(∞)
     Space: O(1)
 */
 #include <iostream>
@@ -26,13 +26,12 @@ bool IsSorted(const std::vector<T>& array) {
 }
 
 template <typename T>
-void Bogosort(std::vector<T>& array) {
+void Bozosort(std::vector<T>& array) {
     unsigned seed = std::chrono::system_clock::now().time_since_epoch().count();
     std::mt19937 generator(seed);
+    unsigned n = array.size();
     while (IsSorted(array) == false) {
-        for (unsigned i = 0, n = array.size(); i < n; ++i) {
-            std::swap(array[i], array[generator() % n]);
-        }
+        std::swap(array[generator() % n], array[generator() % n]);
     }
 }
 
@@ -41,7 +40,7 @@ int main() {
     std::vector<int> array;
     while (std::cin >> element)
         array.emplace_back(element);
-    Bogosort(array);
+    Bozosort(array);
     for (const int& element : array) {
         std::cout << element << ' ';
     }

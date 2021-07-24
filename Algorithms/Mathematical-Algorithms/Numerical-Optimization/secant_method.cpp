@@ -1,7 +1,6 @@
 /*
     Secant Method
     ---------------------
-    Error: O(1)
     Convergence: O(1.618)
 */
 #include <functional>

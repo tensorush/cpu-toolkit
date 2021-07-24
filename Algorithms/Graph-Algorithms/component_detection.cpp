@@ -9,7 +9,6 @@
 #include <iostream>
 #include <vector>
 #include <stack>
-#include <list>
 
 class Graph final {
 public:
@@ -22,7 +21,7 @@ public:
         // components.clear();
         for (unsigned vertex = 0; vertex < adjLists.size(); ++vertex) {
             if (visited[vertex] == false) {
-                std::list<unsigned> component;
+                std::vector<unsigned> component;
                 DepthFirstSearch(vertex, component);
                 components.emplace_back(component);
             }
@@ -31,7 +30,7 @@ public:
     }
 
 private:
-    void DepthFirstSearch(unsigned vertex, std::list<unsigned>& component) {
+    void DepthFirstSearch(unsigned vertex, std::vector<unsigned>& component) {
         // visited.assign(visited.size(), false);
         std::stack<unsigned> stack;
         stack.emplace(vertex);
@@ -47,7 +46,7 @@ private:
         }
     }
     std::vector<bool> visited;
-    std::list<std::list<unsigned>> components;
+    std::vector<std::vector<unsigned>> components;
     std::unordered_map<unsigned, std::unordered_multiset<unsigned>> adjLists;
 };
 
@@ -56,7 +55,7 @@ int main() {
     graph.addEdge(0, 2);
     graph.addEdge(1, 3);
     auto components = graph.ComponentDetection();
-    for (const std::list<unsigned>& component : components) {
+    for (const auto& component : components) {
         for (const unsigned& vertex : component) {
             std::cout << vertex << ' ';
         }

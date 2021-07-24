@@ -9,7 +9,6 @@
 #include <iostream>
 #include <vector>
 #include <stack>
-#include <list>
 
 class Graph final {
 public:

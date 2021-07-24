@@ -1,7 +1,7 @@
 /*
     Domino Tilings
-    --------------
-    Time: O(n*m)
+    ---------------------
+    Time: O(width*length)
     Space: O(1)
 */
 #include <iostream>
@@ -9,25 +9,25 @@
 #include <vector>
 #include <cmath>
 
-double DominoTilings(const unsigned& n, const unsigned& m) {
+double DominoTilings(const unsigned& width, const unsigned& length) {
     unsigned numWays = 0;
-    if ((n * m) % 2 != 0)
+    if ((width * length) % 2 != 0)
         return numWays;
     else
         ++numWays;
-    for (unsigned i = n; i > 0; --i) {
-        for (unsigned j = m; j > 0; --j) {
-            numWays *= std::hypot(2 * std::cos(i * pi_v<double> / (n + 1)),
-                2 * std::cos(j * pi_v<double> / (m + 1)));
+    for (unsigned i = width; i > 0; --i) {
+        for (unsigned j = length; j > 0; --j) {
+            numWays *= std::hypot(2 * std::cos(i * pi_v<double> / (width + 1)),
+                2 * std::cos(j * pi_v<double> / (length + 1)));
         }
     }
     return std::round(std::sqrt(numWays));
 }
 
 int main() {
-    unsigned n, m;
-    std::cin >> n >> m;
-    std::cout << DominoTilings(n, m) << std::endl;
+    unsigned width, length;
+    std::cin >> width >> length;
+    std::cout << DominoTilings(width, length) << std::endl;
 
     return EXIT_SUCCESS;
 }

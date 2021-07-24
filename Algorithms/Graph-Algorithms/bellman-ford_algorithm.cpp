@@ -7,18 +7,17 @@
 #include <algorithm>
 #include <iostream>
 #include <vector>
-#include <list>
 
 class WeightedDirectedGraph final {
 public:
-    WeightedDirectedGraph(const unsigned& n, const unsigned& m) : distances(n, INT32_MAX), parents(n, -1), edgeList(m) {}
+    WeightedDirectedGraph(const unsigned& n, const unsigned& m) : parents(n, -1), distances(n, INT32_MAX), edgeList(m) {}
     void addEdge(const unsigned& source, const unsigned& destination, const int& weight) {
         Edge edge = { source, destination, weight };
         edgeList.emplace_back(edge);
     }
     auto BellmanFordAlgorithm(const unsigned& source) {
-        // distances.assign(distances.size(), INT32_MAX);
         // parents.assign(distances.size(), -1);
+        // distances.assign(distances.size(), INT32_MAX);
         bool any;
         int vertex;
         distances[source] = 0;
@@ -55,9 +54,9 @@ private:
         unsigned source, destination;
         int weight;
     };
-    std::vector<int> distances;
     std::vector<int> parents;
-    std::list<Edge> edgeList;
+    std::vector<int> distances;
+    std::vector<Edge> edgeList;
 };
 
 int main() {

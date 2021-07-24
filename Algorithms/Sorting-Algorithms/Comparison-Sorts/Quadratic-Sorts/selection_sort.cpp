@@ -1,5 +1,5 @@
 /*
-    Selection Sort (stable)
+    Selection Sort (unstable)
     ---------------------------
     Time: Ω(n^2) Θ(n^2) O(n^2)
     Space: O(1)

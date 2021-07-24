@@ -4,7 +4,7 @@
     | Fletcher–Reeves Method | Polak–Ribière Method |
     -------------------------------------------------
     | Time: O(n^3)           |         O(n^3)       |
-    | Space: O(n)            |         O(n)         |
+    | Space: O(n)            |          O(n)        |
     -------------------------------------------------
 */
 #include <functional>

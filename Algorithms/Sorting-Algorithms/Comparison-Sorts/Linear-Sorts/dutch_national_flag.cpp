@@ -1,6 +1,6 @@
 /*
-    Dutch National Flag Problem (stable)
-    ------------------------------------
+    Dutch National Flag (stable)
+    ----------------------------
     Time: O(n)
     Space: O(1)
 */
@@ -8,7 +8,7 @@
 #include <vector>
 
 template <typename T>
-void DutchNationalFlagProblem(std::vector<T>& array, size_t& mid) {
+void DutchNationalFlag(std::vector<T>& array, size_t& mid) {
     int low = 0, equal = 0, high = array.size() - 1;
     while (equal <= high) {
         if (array[equal] < mid)
@@ -27,7 +27,7 @@ int main() {
     std::vector<int> array;
     while (std::cin >> element)
         array.emplace_back(element);
-    DutchNationalFlagProblem(array, mid);
+    DutchNationalFlag(array, mid);
     for (const int& element : array) {
         std::cout << element << ' ';
     }

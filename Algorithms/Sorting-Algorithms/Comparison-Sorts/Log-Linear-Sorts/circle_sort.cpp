@@ -1,7 +1,7 @@
 /*
     Circle Sort (unstable)
-    -------------------------------------------------
-    Time: Ω(n log(n)) Θ(n log(n)) O(n log(n) log(n))
+    --------------------------------------------
+    Time: Ω(n log(n)) Θ(n log(n)) O(n log(n)^2)
     Space: O(1)
 */
 #include <iostream>

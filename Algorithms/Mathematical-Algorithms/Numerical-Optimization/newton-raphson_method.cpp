@@ -1,7 +1,6 @@
 /*
     Newton-Raphson Method
     ---------------------
-    Error: O(1)
     Convergence: O(n^2)
 */
 #include <functional>

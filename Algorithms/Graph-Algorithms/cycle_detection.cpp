@@ -8,7 +8,6 @@
 #include <unordered_set>
 #include <iostream>
 #include <vector>
-#include <list>
 
 class Graph final {
 public:
@@ -33,7 +32,7 @@ private:
         if (colours[vertex] == BLACK)
             return;
         if (colours[vertex] == GRAY) {
-            std::list<unsigned> cycle = { vertex };
+            std::vector<unsigned> cycle = { vertex };
             for (unsigned cur = parents[vertex]; cur != vertex; cur = parents[cur]) {
                 cycle.emplace_back(cur);
             }
@@ -51,7 +50,7 @@ private:
     }
     std::vector<int> parents;
     std::vector<Colour> colours;
-    std::list<std::list<unsigned>> cycles;
+    std::vector<std::vector<unsigned>> cycles;
     std::unordered_map<unsigned, std::unordered_multiset<unsigned>> adjLists;
 };
 

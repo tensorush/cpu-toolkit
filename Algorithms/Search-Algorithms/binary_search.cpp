@@ -17,7 +17,7 @@ enum class Procedure {
 
 template <typename T>
 unsigned BinarySearch(const Procedure& procedure, const std::vector<T>& array, const T& key) {
-    unsigned found, mid, low = 0, high = array.size();
+    unsigned mid, low = 0, high = array.size();
     switch (procedure) {
         case Procedure::Basic:
             while (low < high) {
@@ -29,30 +29,26 @@ unsigned BinarySearch(const Procedure& procedure, const std::vector<T>& array, c
                 else
                     return mid;
             }
-            found = low;
             break;
         case Procedure::Bottenbruch:
             while (low < high) {
                 mid = (low + high + 1) / 2;
                 (array[mid] > key) ? (high = mid - 1) : (low = mid);
             }
-            found = low;
             break;
         case Procedure::Leftmost:
             while (low < high) {
                 mid = low + (high - low) / 2;
                 (array[mid] < key) ? (low = mid + 1) : (high = mid);
             }
-            found = low;
             break;
         case Procedure::Rightmost:
             while (low < high) {
-                mid = low + (high - low) / 2;
-                (array[mid] > key) ? (high = mid) : (low = mid + 1);
+                mid = (low + high + 1) / 2;
+                (array[mid] > key) ? (high = mid - 1) : (low = mid);
             }
-            found = high - 1;
     }
-    return found;
+    return low;
 }
 
 int main() {

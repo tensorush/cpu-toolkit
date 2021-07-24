@@ -7,16 +7,20 @@
 #include <iostream>
 
 int ExtendedEuclideanAlgorithm(int a, int b, int& x, int& y) {
-    if (b == 0) {
-        x = 1;
-        y = 0;
-        return a;
+    int quotient, temp, x_0 = y = 0, y_0 = x = 1;
+    while (b != 0) {
+        quotient = a / b;
+        temp = b;
+        b = a % b;
+        a = temp;
+        temp = x_0;
+        x_0 = x - quotient * x_0;
+        x = temp;
+        temp = y_0;
+        y_0 = y - quotient * y_0;
+        y = temp;
     }
-    int x_1, y_1;
-    int gcd = ExtendedEuclideanAlgorithm(b, a % b, x_1, y_1);
-    x = y_1;
-    y = x_1 - (a / b) * y_1;
-    return gcd;
+    return a;
 }
 
 int main() {
