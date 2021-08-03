@@ -16,7 +16,7 @@ template<typename T>
 class SinglyLinkedList final {
 public:
     SinglyLinkedList() : _size(0), _head(nullptr) {}
-    size_t getSize() const {
+    unsigned getSize() const {
         return _size;
     }
     bool empty() const {
@@ -26,7 +26,7 @@ public:
         if (index < 0 || index >= _size)
             throw singlyLinkedListOutOfBound;
         Node* cur = _head.get();
-        for (size_t i = 0; i < index; ++i) {
+        for (unsigned i = 0; i < index; ++i) {
             cur = cur->_next.get();
         }
         return cur->_value;
@@ -35,7 +35,7 @@ public:
         if (empty())
             throw singlyLinkedListEmpty;
         Node* cur = _head.get();
-        for (size_t i = 0; i < _size; ++i) {
+        for (unsigned i = 0; i < _size; ++i) {
             if (cur->_value == value)
                 return i;
             cur = cur->_next.get();
@@ -49,7 +49,7 @@ public:
             _head = std::make_unique<Node>(value, std::move(_head));
         } else {
             Node* cur = _head.get();
-            for (size_t i = 0; i < index - 1; ++i) {
+            for (unsigned i = 0; i < index - 1; ++i) {
                 cur = cur->_next.get();
             }
             cur->_next = std::make_unique<Node>(value, std::move(cur->_next));
@@ -67,7 +67,7 @@ public:
             _head = std::move(_head->_next);
         } else {
             Node* cur = _head.get();
-            for (size_t i = 0; i < index - 1; ++i) {
+            for (unsigned i = 0; i < index - 1; ++i) {
                 cur = cur->_next.get();
             }
             deleted = cur->_next->_value;
@@ -80,7 +80,7 @@ public:
         if (empty())
             throw singlyLinkedListEmpty;
         Node* cur = _head.get();
-        for (size_t i = 0; i < _size; ++i) {
+        for (unsigned i = 0; i < _size; ++i) {
             out << cur->_value << ' ';
             cur = cur->_next.get();
         }
@@ -95,7 +95,7 @@ private:
         std::unique_ptr<Node> _next;
         friend class SinglyLinkedList<T>;
     };
-    size_t _size;
+    unsigned _size;
     std::unique_ptr<Node> _head;
     class SinglyLinkedListEmptyException : public std::exception {
         const char* what() const throw() {

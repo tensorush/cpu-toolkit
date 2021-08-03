@@ -1,5 +1,5 @@
 /*
-    Domino Tilings
+    Domino Tiling
     ---------------------
     Time: O(width*length)
     Space: O(1)
@@ -9,7 +9,7 @@
 #include <vector>
 #include <cmath>
 
-double DominoTilings(const unsigned& width, const unsigned& length) {
+unsigned DominoTiling(const unsigned& width, const unsigned& length) {
     unsigned numWays = 0;
     if ((width * length) % 2 != 0)
         return numWays;
@@ -27,7 +27,7 @@ double DominoTilings(const unsigned& width, const unsigned& length) {
 int main() {
     unsigned width, length;
     std::cin >> width >> length;
-    std::cout << DominoTilings(width, length) << std::endl;
+    std::cout << DominoTiling(width, length) << std::endl;
 
     return EXIT_SUCCESS;
 }

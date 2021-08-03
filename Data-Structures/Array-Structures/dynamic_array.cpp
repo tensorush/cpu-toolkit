@@ -15,17 +15,17 @@
 template <typename T>
 class DynamicArray final {
 public:
-    static constexpr size_t DEFAULT_CAPACITY = 10;
-    static constexpr size_t DEFAULT_CAPACITY_MULTIPLIER = 2;
-    explicit DynamicArray(const T& initialValue, const size_t& capacity = DEFAULT_CAPACITY) : _size(capacity), _capacity(capacity), _array(std::make_unique<T[]>(capacity)) {
-        for (size_t i = 0; i < _size; ++i) {
+    static constexpr unsigned DEFAULT_CAPACITY = 10;
+    static constexpr unsigned DEFAULT_CAPACITY_MULTIPLIER = 2;
+    explicit DynamicArray(const T& initialValue, const unsigned& capacity = DEFAULT_CAPACITY) : _size(capacity), _capacity(capacity), _array(std::make_unique<T[]>(capacity)) {
+        for (unsigned i = 0; i < _size; ++i) {
             _array[i] = initialValue;
         }
     }
-    size_t getSize() const {
+    unsigned getSize() const {
         return _size;
     }
-    size_t getCapacity() const {
+    unsigned getCapacity() const {
         return _capacity;
     }
     bool empty() const {
@@ -38,7 +38,7 @@ public:
     }
     int64_t find(const T& value) const {
         int64_t index = -1;
-        for (size_t i = 0; i < _size; ++i) {
+        for (unsigned i = 0; i < _size; ++i) {
             if (_array[i] == value) {
                 index = i;
                 break;
@@ -52,7 +52,7 @@ public:
         if (_size == _capacity)
             _increaseCapacity();
         if (index < _size) {
-            for (size_t i = _size; i > index; --i) {
+            for (unsigned i = _size; i > index; --i) {
                 _array[i] = _array[i - 1];
             }
         }
@@ -64,7 +64,7 @@ public:
             throw dynamicArrayOutOfBound;
         const T deleted = _array[index];
         if (index < _size - 1) {
-            for (size_t i = index; i < _size - 1; ++i) {
+            for (unsigned i = index; i < _size - 1; ++i) {
                 _array[i] = _array[i + 1];
             }
         }
@@ -74,19 +74,19 @@ public:
     void print(std::ostream& out = std::cout) const {
         if (empty())
             throw dynamicArrayEmpty;
-        for (size_t i = 0; i < _size; ++i) {
+        for (unsigned i = 0; i < _size; ++i) {
             out << _array[i] << ' ';
         }
         out << std::endl;
     }
 private:
-    size_t _size;
-    size_t _capacity;
+    unsigned _size;
+    unsigned _capacity;
     std::unique_ptr<T[]> _array;
     void _increaseCapacity() {
         _capacity *= DEFAULT_CAPACITY_MULTIPLIER;
         std::unique_ptr<T[]> _newArray = std::make_unique<T[]>(_capacity);
-        for (size_t i = 0; i < _size; ++i) {
+        for (unsigned i = 0; i < _size; ++i) {
             _newArray[i] = _array[i];
         }
         _array = std::move(_newArray);

@@ -110,6 +110,8 @@
 
 - ### [Programming Blog by Alesiani Marco](https://marcodiiga.github.io/archive/)
 
+- ### [Computer Science Guides by CodePath](https://guides.codepath.com/compsci)
+
 - ### [The Sound of Sorting by Timo Bingmann](https://panthema.net/2013/sound-of-sorting/)
 
 - ### [Dictionary of Algorithms and Data Structures](https://xlinux.nist.gov/dads/)
@@ -121,6 +123,8 @@
 - ### [Algorithms and Data Structures by Douglas Harder](https://ece.uwaterloo.ca/~dwharder/aads/Algorithms/)
 
 - ### [Algorithms and Data Structures by Petar Veličković](https://github.com/PetarV-/Algorithms)
+
+- ### [Computer Science Courses by Dr. Shun Yan Cheung](http://www.mathcs.emory.edu/~cheung/Courses/)
 
 - ### [The Computer Science Handbook by Michael Young](https://www.thecshandbook.com/)
 

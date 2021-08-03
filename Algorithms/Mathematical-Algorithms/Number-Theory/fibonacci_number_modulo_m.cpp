@@ -12,8 +12,6 @@ unsigned FibonacciNumberModuloM(const unsigned& n, const unsigned& m) {
         return prev;
     if (n == 1)
         return cur;
-    if (n == 2)
-        return next;
     do {
         next = (prev + cur) % m;
         prev = cur;

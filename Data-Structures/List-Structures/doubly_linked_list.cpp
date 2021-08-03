@@ -16,7 +16,7 @@ template<typename T>
 class DoublyLinkedList final {
 public:
     DoublyLinkedList() : _size(0), _head(nullptr), _tail(nullptr) {}
-    size_t getSize() const {
+    unsigned getSize() const {
         return _size;
     }
     bool empty() const {
@@ -28,12 +28,12 @@ public:
         Node* cur;
         if (index < _size / 2) {
             cur = _head.get();
-            for (size_t i = 0; i < index; ++i) {
+            for (unsigned i = 0; i < index; ++i) {
                 cur = cur->_next.get();
             }
         } else {
             cur = _tail;
-            for (size_t i = 0; i > index; --i) {
+            for (unsigned i = 0; i > index; --i) {
                 cur = cur->_prev;
             }
         }
@@ -43,7 +43,7 @@ public:
         if (empty())
             throw doublyLinkedListEmpty;
         Node* cur = _head.get();
-        for (size_t i = 0; i < _size; ++i) {
+        for (unsigned i = 0; i < _size; ++i) {
             if (cur->_value == value)
                 return i;
             cur = cur->_next.get();
@@ -64,12 +64,12 @@ public:
             Node* cur;
             if (index < _size / 2) {
                 cur = _head.get();
-                for (size_t i = 0; i < index - 1; ++i) {
+                for (unsigned i = 0; i < index - 1; ++i) {
                     cur = cur->_next.get();
                 }
             } else {
                 cur = _tail;
-                for (size_t i = 0; i > index - 1; --i) {
+                for (unsigned i = 0; i > index - 1; --i) {
                     cur = cur->_prev;
                 }
             }
@@ -96,12 +96,12 @@ public:
             Node* cur;
             if (index < _size / 2) {
                 cur = _head.get();
-                for (size_t i = 0; i < index - 1; ++i) {
+                for (unsigned i = 0; i < index - 1; ++i) {
                     cur = cur->_next.get();
                 }
             } else {
                 cur = _tail;
-                for (size_t i = 0; i > index - 1; --i) {
+                for (unsigned i = 0; i > index - 1; --i) {
                     cur = cur->_prev;
                 }
             }
@@ -116,7 +116,7 @@ public:
         if (empty())
             throw doublyLinkedListEmpty;
         Node* cur = _head.get();
-        for (size_t i = 0; i < _size; ++i) {
+        for (unsigned i = 0; i < _size; ++i) {
             out << cur->_value << ' ';
             cur = cur->_next.get();
         }
@@ -132,7 +132,7 @@ private:
         std::unique_ptr<Node> _next;
         friend class DoublyLinkedList<T>;
     };
-    size_t _size;
+    unsigned _size;
     std::unique_ptr<Node> _head;
     Node* _tail;
     class DoublyLinkedListEmptyException : public std::exception {

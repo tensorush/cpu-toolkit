@@ -15,13 +15,13 @@
 template <typename T>
 class DynamicStack final {
 public:
-    static constexpr size_t DEFAULT_CAPACITY = 10;
-    static constexpr size_t DEFAULT_CAPACITY_MULTIPLIER = 2;
-    explicit DynamicStack(const size_t& capacity = DEFAULT_CAPACITY) : _size(0), _capacity(capacity), _stack(std::make_unique<T[]>(capacity)) {}
-    size_t getSize() const {
+    static constexpr unsigned DEFAULT_CAPACITY = 10;
+    static constexpr unsigned DEFAULT_CAPACITY_MULTIPLIER = 2;
+    explicit DynamicStack(const unsigned& capacity = DEFAULT_CAPACITY) : _size(0), _capacity(capacity), _stack(std::make_unique<T[]>(capacity)) {}
+    unsigned getSize() const {
         return _size;
     }
-    size_t getCapacity() const {
+    unsigned getCapacity() const {
         return _capacity;
     }
     bool empty() const {
@@ -48,19 +48,19 @@ public:
     void print(std::ostream& out = std::cout) const {
         if (empty())
             throw dynamicStackEmpty;
-        for (size_t i = 0; i < _size; ++i) {
+        for (unsigned i = 0; i < _size; ++i) {
             out << _stack[i] << ' ';
         }
         out << std::endl;
     }
 private:
-    size_t _size;
-    size_t _capacity;
+    unsigned _size;
+    unsigned _capacity;
     std::unique_ptr<T[]> _stack;
     void _increaseCapacity() {
         _capacity *= DEFAULT_CAPACITY_MULTIPLIER;
         std::unique_ptr<T[]> _newStack = std::make_unique<T[]>(_capacity);
-        for (size_t i = 0; i < _size; ++i) {
+        for (unsigned i = 0; i < _size; ++i) {
             _newStack[i] = _stack[i];
         }
         _stack = std::move(_newStack);

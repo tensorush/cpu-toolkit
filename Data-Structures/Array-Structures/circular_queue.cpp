@@ -15,15 +15,15 @@
 template <typename T>
 class CircularQueue final {
 public:
-    static constexpr size_t DEFAULT_CAPACITY = 10;
-    static constexpr size_t DEFAULT_CAPACITY_MULTIPLIER = 2;
-    explicit CircularQueue(const T& initialValue, const size_t& capacity = DEFAULT_CAPACITY) : _head(0), _tail(0), _size(1), _capacity(capacity), _queue(std::make_unique<T[]>(capacity)) {
+    static constexpr unsigned DEFAULT_CAPACITY = 10;
+    static constexpr unsigned DEFAULT_CAPACITY_MULTIPLIER = 2;
+    explicit CircularQueue(const T& initialValue, const unsigned& capacity = DEFAULT_CAPACITY) : _head(0), _tail(0), _size(1), _capacity(capacity), _queue(std::make_unique<T[]>(capacity)) {
         _queue[_head] = initialValue;
     }
-    size_t getSize() const {
+    unsigned getSize() const {
         return _size;
     }
-    size_t getCapacity() const {
+    unsigned getCapacity() const {
         return _capacity;
     }
     bool empty() const {
@@ -57,21 +57,21 @@ public:
     void print(std::ostream& out = std::cout) const {
         if (empty())
             throw circularQueueEmpty;
-        for (size_t i = _head; i != _tail; (i == _capacity - 1) ? (i = 0) : (++i)) {
+        for (unsigned i = _head; i != _tail; (i == _capacity - 1) ? (i = 0) : (++i)) {
             out << _queue[i] << ' ';
         }
         out << _queue[_tail] << std::endl;
     }
 private:
-    size_t _head;
-    size_t _tail;
-    size_t _size;
-    size_t _capacity;
+    unsigned _head;
+    unsigned _tail;
+    unsigned _size;
+    unsigned _capacity;
     std::unique_ptr<T[]> _queue;
     void _increaseCapacity() {
         _capacity *= DEFAULT_CAPACITY_MULTIPLIER;
         std::unique_ptr<T[]> _newQueue = std::make_unique<T[]>(_capacity);
-        for (size_t i = 0, j = _head; i < _size; ++i, (j == _size - 1) ? (j = 0) : (++j)) {
+        for (unsigned i = 0, j = _head; i < _size; ++i, (j == _size - 1) ? (j = 0) : (++j)) {
             _newQueue[i] = _queue[j];
         }
         _head = 0;
