@@ -65,7 +65,7 @@ public:
     bool remove(const T& value) {
         if (empty())
             throw binarySearchTreeEmpty;
-        Node* parent, * cur = _root.get();
+        Node* cur = _root.get(), * parent = nullptr;
         while (cur != nullptr) {
             if (value < cur->_value) {
                 parent = cur;
@@ -117,21 +117,21 @@ public:
     }
     bool isAVLBalanced() const {
         // Traverse Post-Order
-        std::stack<Node*> s;
+        std::stack<Node*> stack;
         Node* cur = _root.get();
         bool isAVLBalanced = true;
         int leftSubtreeHeight, rightSubtreeHeight;
         while (isAVLBalanced) {
             while (cur != nullptr) {
-                s.emplace(cur);
-                s.emplace(cur);
+                stack.emplace(cur);
+                stack.emplace(cur);
                 cur = cur->_left.get();
             }
-            if (s.empty())
+            if (stack.empty())
                 break;
-            cur = s.top();
-            s.pop();
-            if (s.empty() == false && s.top() == cur) {
+            cur = stack.top();
+            stack.pop();
+            if (stack.empty() == false && stack.top() == cur) {
                 cur = cur->_right.get();
             } else {
                 // Check AVL Balance Condition
@@ -152,18 +152,18 @@ public:
     void traversePreOrder(std::ostream& out = std::cout) const {
         if (empty())
             throw binarySearchTreeEmpty;
-        std::stack<Node*> s;
+        std::stack<Node*> stack;
         Node* cur = _root.get();
-        while (cur != nullptr || s.empty() == false) {
+        while (cur != nullptr || stack.empty() == false) {
             while (cur != nullptr) {
                 out << cur->_value << ' ';
                 if (cur->_right.get() != nullptr)
-                    s.emplace(cur->_right.get());
+                    stack.emplace(cur->_right.get());
                 cur = cur->_left.get();
             }
-            if (s.empty() == false) {
-                cur = s.top();
-                s.pop();
+            if (stack.empty() == false) {
+                cur = stack.top();
+                stack.pop();
             }
         }
         std::cout << std::endl;
@@ -171,15 +171,15 @@ public:
     void traverseInOrder(std::ostream& out = std::cout) const {
         if (empty())
             throw binarySearchTreeEmpty;
-        std::stack<Node*> s;
+        std::stack<Node*> stack;
         Node* cur = _root.get();
-        while (cur != nullptr || s.empty() == false) {
+        while (cur != nullptr || stack.empty() == false) {
             while (cur != nullptr) {
-                s.emplace(cur);
+                stack.emplace(cur);
                 cur = cur->_left.get();
             }
-            cur = s.top();
-            s.pop();
+            cur = stack.top();
+            stack.pop();
             out << cur->_value << ' ';
             cur = cur->_right.get();
         }
@@ -188,19 +188,19 @@ public:
     void traversePostOrder(std::ostream& out = std::cout) const {
         if (empty())
             throw binarySearchTreeEmpty;
-        std::stack<Node*> s;
+        std::stack<Node*> stack;
         Node* cur = _root.get();
         while (true) {
             while (cur != nullptr) {
-                s.emplace(cur);
-                s.emplace(cur);
+                stack.emplace(cur);
+                stack.emplace(cur);
                 cur = cur->_left.get();
             }
-            if (s.empty())
+            if (stack.empty())
                 break;
-            cur = s.top();
-            s.pop();
-            if (s.empty() == false && s.top() == cur) {
+            cur = stack.top();
+            stack.pop();
+            if (stack.empty() == false && stack.top() == cur) {
                 cur = cur->_right.get();
             } else {
                 out << cur->_value << ' ';
@@ -209,8 +209,23 @@ public:
         }
         std::cout << std::endl;
     }
+    void traverseLevelOrder(std::ostream& out = std::cout) const {
+        if (empty())
+            throw binarySearchTreeEmpty;
+        std::queue<Node*> queue;
+        queue.push(_root.get());
+        Node* cur;
+        while (queue.empty() == false) {
+            cur = queue.front();
+            queue.pop();
+            std::cout << cur->_value << ' ';
+            if (cur->_left != nullptr) queue.push(cur->_left.get());
+            if (cur->_right != nullptr) queue.push(cur->_right.get());
+        }
+        std::cout << std::endl;
+    }
 private:
-    struct Node {
+    class Node {
     public:
         explicit Node(const T& value) : _value(value), _left(nullptr), _right(nullptr) {}
     private:
@@ -224,21 +239,21 @@ private:
     unsigned getHeight(Node* cur) const {
         if (empty())
             throw binarySearchTreeEmpty;
-        std::queue<Node*> q;
-        q.emplace(cur);
+        std::queue<Node*> queue;
+        queue.emplace(cur);
         unsigned curLevelNodeCount, height = 0;
         while (true) {
-            curLevelNodeCount = q.size();
+            curLevelNodeCount = queue.size();
             if (curLevelNodeCount == 0)
                 break;
             ++height;
             while (curLevelNodeCount > 0) {
-                Node* cur = q.front();
-                q.pop();
+                Node* cur = queue.front();
+                queue.pop();
                 if (cur->_left != nullptr)
-                    q.emplace(cur->_left.get());
+                    queue.emplace(cur->_left.get());
                 if (cur->_right != nullptr)
-                    q.emplace(cur->_right.get());
+                    queue.emplace(cur->_right.get());
                 --curLevelNodeCount;
             }
         }
@@ -263,6 +278,7 @@ int main() {
     tree.traversePreOrder();
     tree.traverseInOrder();
     tree.traversePostOrder();
+    tree.traverseLevelOrder();
 
     return EXIT_SUCCESS;
 }

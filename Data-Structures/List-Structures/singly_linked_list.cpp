@@ -87,7 +87,7 @@ public:
         out << std::endl;
     }
 private:
-    struct Node {
+    class Node {
     public:
         explicit Node(const T& value, std::unique_ptr<Node>&& next = nullptr) : _value(value), _next(std::move(next)) {}
     private:

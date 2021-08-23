@@ -123,7 +123,7 @@ public:
         out << std::endl;
     }
 private:
-    struct Node {
+    class Node {
     public:
         explicit Node(const T& value, Node* prev = nullptr, std::unique_ptr<Node>&& next = nullptr) : _value(value), _prev(prev), _next(std::move(next)) {}
     private:

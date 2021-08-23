@@ -23,7 +23,6 @@ auto MatrixProduct(const std::vector<std::vector<T>>& A, const std::vector<std::
 
 template <typename T>
 void MatrixExponentiation(std::vector<std::vector<T>> A, std::vector<std::vector<T>>& B, unsigned power) {
-    unsigned n = A.size();
     while (power) {
         if (power % 2 == 1)
             B = MatrixProduct(B, A);

@@ -18,9 +18,9 @@
     <p><a href="https://twitter.com/etiennejcb/">Animation by Étienne Jacob</a></p>
 </h4>
 
-## :hammer_and_wrench: Bare essentials for studying Computer Science — Algorithms and Data Structures — which I've been researching, reimplementing and refining for quick reference.
+## :hammer_and_wrench: Bare essentials for studying Computer Science — Algorithms and Data Structures — that I've been researching, reimplementing and refining for quick reference.
 
-> ### Any contributions, corrections or optimizations are very welcome! :hugs:
+> ### _Any contributions, corrections or optimizations are very welcome!_ :hugs:
 
 ## :hammer: [Algorithms](https://github.com/tensorush/Computer-Scientists-Toolkit/blob/master/Algorithms)
 
@@ -86,65 +86,71 @@
 
 ## :bow: Acknowledgements
 
-- ### [Rosetta Code](https://rosettacode.org/wiki/Rosetta_Code/)
+- ### :card_file_box: [Rosetta Code](https://rosettacode.org/wiki/Rosetta_Code/)
 
-- ### [Big-O Cheatsheet](https://www.bigocheatsheet.com/)
+- ### :black_joker: [Big-O Cheatsheet](https://www.bigocheatsheet.com/)
 
-- ### [E-Maxx Algorithms](https://cp-algorithms.com/)
+- ### :card_file_box: [E-Maxx Algorithms](https://cp-algorithms.com/)
 
-- ### [Bit Twiddling Hacks](https://graphics.stanford.edu/~seander/bithacks.html)
+- ### :card_file_box: [Bit Twiddling Hacks](https://graphics.stanford.edu/~seander/bithacks.html)
 
-- ### [LiteratePrograms Wiki](https://www.literateprograms.org/)
+- ### :card_file_box: [LiteratePrograms Wiki](https://www.literateprograms.org/)
 
-- ### [Algorithmic Cheatsheet](https://sinon.org/algorithms/)
+- ### :black_joker: [Algorithmic Cheatsheet](https://sinon.org/algorithms/)
 
-- ### [Data Structures Cheatsheet](https://www.clear.rice.edu/comp160/data_cheat.html)
+- ### :black_joker: [Data Structures Cheatsheet](https://www.clear.rice.edu/comp160/data_cheat.html)
 
-- ### [Mathematics Source Library](http://www.mymathlib.com/)
+- ### :card_file_box: [Mathematics Source Library](http://www.mymathlib.com/)
 
-- ### [Collection of C++ Algorithms](https://github.com/TheAlgorithms/C-Plus-Plus)
+- ### :man_technologist: [Collection of C++ Algorithms](https://github.com/TheAlgorithms/C-Plus-Plus)
 
-- ### [The Arcane Algorithm Archive](https://www.algorithm-archive.org/)
+- ### :card_file_box: [The Arcane Algorithm Archive](https://www.algorithm-archive.org/)
 
-- ### [Programming Blog by Ivan Kutskir](http://blog.ivank.net/)
+- ### :thought_balloon: [Programming Blog by Ivan Kutskir](http://blog.ivank.net/)
 
-- ### [Programming Blog by Alesiani Marco](https://marcodiiga.github.io/archive/)
+- ### :thought_balloon: [Programming Blog by Alesiani Marco](https://marcodiiga.github.io/archive/)
 
-- ### [Computer Science Guides by CodePath](https://guides.codepath.com/compsci)
+- ### :card_file_box: [Computer Science Guides by CodePath](https://guides.codepath.com/compsci)
 
-- ### [The Sound of Sorting by Timo Bingmann](https://panthema.net/2013/sound-of-sorting/)
+- ### :card_file_box: [The Sound of Sorting by Timo Bingmann](https://panthema.net/2013/sound-of-sorting/)
 
-- ### [Dictionary of Algorithms and Data Structures](https://xlinux.nist.gov/dads/)
+- ### :card_file_box: [Dictionary of Algorithms and Data Structures](https://xlinux.nist.gov/dads/)
 
-- ### [Cosmos Codebase by OpenGenus Foundation](https://github.com/OpenGenus/cosmos)
+- ### :man_technologist: [Cosmos Codebase by OpenGenus Foundation](https://github.com/OpenGenus/cosmos)
 
-- ### [Algorithms and Data Structures by Ravi Mandliya](https://github.com/mandliya/algorithms_and_data_structures/)
+- ### :man_technologist: [Algorithms and Data Structures by Ravi Mandliya](https://github.com/mandliya/algorithms_and_data_structures/)
 
-- ### [Algorithms and Data Structures by Douglas Harder](https://ece.uwaterloo.ca/~dwharder/aads/Algorithms/)
+- ### :writing_hand: [Computational Geometry Course Notes by David Mount](https://www.cse.cuhk.edu.hk/~taoyf/course/5010/notes/mount-cg2.pdf)
 
-- ### [Algorithms and Data Structures by Petar Veličković](https://github.com/PetarV-/Algorithms)
+- ### :card_file_box: [Algorithms and Data Structures by Douglas Harder](https://ece.uwaterloo.ca/~dwharder/aads/Algorithms/)
 
-- ### [Computer Science Courses by Dr. Shun Yan Cheung](http://www.mathcs.emory.edu/~cheung/Courses/)
+- ### :man_technologist: [Algorithms and Data Structures by Petar Veličković](https://github.com/PetarV-/Algorithms)
 
-- ### [The Computer Science Handbook by Michael Young](https://www.thecshandbook.com/)
+- ### :card_file_box: [Computer Science Courses by Dr. Shun Yan Cheung](http://www.mathcs.emory.edu/~cheung/Courses/)
 
-- ### [Advanced Data Structures Lectures by Niema Moshiri](https://www.youtube.com/playlist?list=PLM_KIlU0WoXmkV4QB1Dg8PtJaHTdWHwRS)
+- ### :book: [The Computer Science Handbook by Michael Young](https://www.thecshandbook.com/)
 
-- ### [Data Structure and Algorithm Tutorials offered by Programiz](https://www.programiz.com/dsa/)
+- ### :tv: [Advanced Data Structures Lectures by Niema Moshiri](https://www.youtube.com/playlist?list=PLM_KIlU0WoXmkV4QB1Dg8PtJaHTdWHwRS)
 
-- ### [Collection of Algorithms and Data Structures by William Fiset](https://github.com/williamfiset/Algorithms/)
+- ### :tv: [Computational Geometry Course by Philipp Kindermann](https://www.youtube.com/playlist?list=PLubYOWSl9mIvTio-1bXWnhE9LdeXfox1z)
 
-- ### [COS226 Undergraduate Course offered by Princeton University](https://www.cs.princeton.edu/courses/archive/fall20/cos226/syllabus.php)
+- ### :card_file_box: [Data Structure and Algorithm Tutorials offered by Programiz](https://www.programiz.com/dsa/)
 
-- ### [Algorithms Coursera Specialization offered by Stanford University](https://www.coursera.org/specializations/algorithms/)
+- ### :man_technologist: [Collection of Algorithms and Data Structures by William Fiset](https://github.com/williamfiset/Algorithms/)
 
-- ### [Algorithms Coursera Specialization offered by Princeton University](https://www.coursera.org/learn/algorithms-part1/)
+- ### :card_file_box: [COS226 Undergraduate Course offered by Princeton University](https://www.cs.princeton.edu/courses/archive/fall20/cos226/syllabus.php)
 
-- ### [Collection of Algorithms and Data Structures by Andrei Navumenka](https://github.com/indy256/codelibrary/)
+- ### :man_teacher: [Algorithms Coursera Specialization offered by Stanford University](https://www.coursera.org/specializations/algorithms/)
 
-- ### [Data Structures and Algorithms Coursera Specialization offered by University of California, San Diego (UCSD) and HSE University](https://www.coursera.org/specializations/data-structures-algorithms/)
+- ### :man_teacher: [Algorithms Coursera Specialization offered by Princeton University](https://www.coursera.org/learn/algorithms-part1/)
 
-- ### [Data Structures Stepik Course offered by University of California, San Diego (UCSD), the University of San Diego (USD) and the University of Puerto Rico (UPR)](https://www.cs.princeton.edu/courses/archive/fall20/cos226/syllabus.php)
+- ### :man_technologist: [Collection of Algorithms and Data Structures by Andrei Navumenka](https://github.com/indy256/codelibrary/)
+
+- ### :man_teacher: [MIT 6.006 Introduction to Algorithms Course by Erik Demaine and Srini Devadas](https://ocw.mit.edu/courses/electrical-engineering-and-computer-science/6-006-introduction-to-algorithms-fall-2011/)
+
+- ### :man_teacher: [Data Structures and Algorithms Coursera Specialization offered by University of California, San Diego (UCSD) and HSE University](https://www.coursera.org/specializations/data-structures-algorithms/)
+
+- ### :man_teacher: [Data Structures Stepik Course offered by University of California, San Diego (UCSD), the University of San Diego (USD) and the University of Puerto Rico (UPR)](https://stepik.org/course/579/promo)
 
 <!-- MARKDOWN LINKS -->
 
