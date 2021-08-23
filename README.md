@@ -120,8 +120,6 @@
 
 - ### :man_technologist: [Algorithms and Data Structures by Ravi Mandliya](https://github.com/mandliya/algorithms_and_data_structures/)
 
-- ### :writing_hand: [Computational Geometry Course Notes by David Mount](https://www.cse.cuhk.edu.hk/~taoyf/course/5010/notes/mount-cg2.pdf)
-
 - ### :card_file_box: [Algorithms and Data Structures by Douglas Harder](https://ece.uwaterloo.ca/~dwharder/aads/Algorithms/)
 
 - ### :man_technologist: [Algorithms and Data Structures by Petar Veličković](https://github.com/PetarV-/Algorithms)
@@ -131,6 +129,8 @@
 - ### :book: [The Computer Science Handbook by Michael Young](https://www.thecshandbook.com/)
 
 - ### :tv: [Advanced Data Structures Lectures by Niema Moshiri](https://www.youtube.com/playlist?list=PLM_KIlU0WoXmkV4QB1Dg8PtJaHTdWHwRS)
+
+- ### :writing_hand: [Computational Geometry Course Notes by David Mount](https://www.cse.cuhk.edu.hk/~taoyf/course/5010/notes/mount-cg2.pdf)
 
 - ### :tv: [Computational Geometry Course by Philipp Kindermann](https://www.youtube.com/playlist?list=PLubYOWSl9mIvTio-1bXWnhE9LdeXfox1z)
 
