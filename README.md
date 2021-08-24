@@ -24,31 +24,15 @@
 
 ## :hammer: [Algorithms](https://github.com/tensorush/Computer-Scientists-Toolkit/blob/master/Algorithms)
 
+- ### :floppy_disk: [Compression Algorithms](https://github.com/tensorush/Computer-Scientists-Toolkit/blob/master/Algorithms/Compression-Algorithms)
+
+- ### :chains: [Dynamic Programming Algorithms](https://github.com/tensorush/Computer-Scientists-Toolkit/blob/master/Algorithms/Dynamic-Programming-Algorithms)
+
 - ### :diamond_shape_with_a_dot_inside: [Graph Algorithms](https://github.com/tensorush/Computer-Scientists-Toolkit/blob/master/Algorithms/Graph-Algorithms)
-
-- ### :dna: [String Algorithms](https://github.com/tensorush/Computer-Scientists-Toolkit/blob/master/Algorithms/String-Algorithms)
-
-- ### :mag: [Search Algorithms](https://github.com/tensorush/Computer-Scientists-Toolkit/blob/master/Algorithms/Search-Algorithms)
 
 - ### :moneybag: [Greedy Algorithms](https://github.com/tensorush/Computer-Scientists-Toolkit/blob/master/Algorithms/Greedy-Algorithms)
 
-- ### :bar_chart: [Sorting Algorithms](https://github.com/tensorush/Computer-Scientists-Toolkit/blob/master/Algorithms/Sorting-Algorithms)
-
-  - ### :wrestling: [Comparison Sorts](https://github.com/tensorush/Computer-Scientists-Toolkit/blob/master/Algorithms/Sorting-Algorithms/Comparison-Sorts)
-
-    - ### :1st_place_medal: [Linear Sorts](https://github.com/tensorush/Computer-Scientists-Toolkit/blob/master/Algorithms/Sorting-Algorithms/Comparison-Sorts/Linear-Sorts)
-
-    - ### :2nd_place_medal: [Log-Linear Sorts](https://github.com/tensorush/Computer-Scientists-Toolkit/blob/master/Algorithms/Sorting-Algorithms/Comparison-Sorts/Log-Linear-Sorts)
-
-    - ### :3rd_place_medal: [Quadratic Sorts](https://github.com/tensorush/Computer-Scientists-Toolkit/blob/master/Algorithms/Sorting-Algorithms/Comparison-Sorts/Quadratic-Sorts)
-
-  - ### :lotus_position: [Non-Comparison Sorts](https://github.com/tensorush/Computer-Scientists-Toolkit/blob/master/Algorithms/Sorting-Algorithms/Non-Comparison-Sorts)
-
-  - ### :hankey: [Embarrassingly Inefficient Sorts](https://github.com/tensorush/Computer-Scientists-Toolkit/blob/master/Algorithms/Sorting-Algorithms/Embarrassingly-Inefficient-Sorts)
-
 - ### :closed_lock_with_key: [Hashing Algorithms](https://github.com/tensorush/Computer-Scientists-Toolkit/blob/master/Algorithms/Hashing-Algorithms)
-
-- ### :floppy_disk: [Compression Algorithms](https://github.com/tensorush/Computer-Scientists-Toolkit/blob/master/Algorithms/Compression-Algorithms)
 
 - ### :scroll: [Mathematical Algorithms](https://github.com/tensorush/Computer-Scientists-Toolkit/blob/master/Algorithms/Mathematical-Algorithms)
 
@@ -68,7 +52,25 @@
 
   - ### :globe_with_meridians: [Computational Geometry](https://github.com/tensorush/Computer-Scientists-Toolkit/blob/master/Algorithms/Mathematical-Algorithms/Computational-Geometry)
 
-- ### :chains: [Dynamic Programming Algorithms](https://github.com/tensorush/Computer-Scientists-Toolkit/blob/master/Algorithms/Dynamic-Programming-Algorithms)
+- ### :jigsaw: [Puzzle Solving Algorithms](https://github.com/tensorush/Computer-Scientists-Toolkit/blob/master/Algorithms/Puzzle-Solving-Algorithms)
+
+- ### :mag: [Search Algorithms](https://github.com/tensorush/Computer-Scientists-Toolkit/blob/master/Algorithms/Search-Algorithms)
+
+- ### :bar_chart: [Sorting Algorithms](https://github.com/tensorush/Computer-Scientists-Toolkit/blob/master/Algorithms/Sorting-Algorithms)
+
+  - ### :wrestling: [Comparison Sorts](https://github.com/tensorush/Computer-Scientists-Toolkit/blob/master/Algorithms/Sorting-Algorithms/Comparison-Sorts)
+
+    - ### :1st_place_medal: [Linear Sorts](https://github.com/tensorush/Computer-Scientists-Toolkit/blob/master/Algorithms/Sorting-Algorithms/Comparison-Sorts/Linear-Sorts)
+
+    - ### :2nd_place_medal: [Log-Linear Sorts](https://github.com/tensorush/Computer-Scientists-Toolkit/blob/master/Algorithms/Sorting-Algorithms/Comparison-Sorts/Log-Linear-Sorts)
+
+    - ### :3rd_place_medal: [Quadratic Sorts](https://github.com/tensorush/Computer-Scientists-Toolkit/blob/master/Algorithms/Sorting-Algorithms/Comparison-Sorts/Quadratic-Sorts)
+
+  - ### :lotus_position: [Non-Comparison Sorts](https://github.com/tensorush/Computer-Scientists-Toolkit/blob/master/Algorithms/Sorting-Algorithms/Non-Comparison-Sorts)
+
+  - ### :hankey: [Embarrassingly Inefficient Sorts](https://github.com/tensorush/Computer-Scientists-Toolkit/blob/master/Algorithms/Sorting-Algorithms/Embarrassingly-Inefficient-Sorts)
+
+- ### :dna: [String Algorithms](https://github.com/tensorush/Computer-Scientists-Toolkit/blob/master/Algorithms/String-Algorithms)
 
 ## :wrench: [Data Structures](https://github.com/tensorush/Computer-Scientists-Toolkit/blob/master/Data-Structures)
 
