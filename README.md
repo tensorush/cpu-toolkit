@@ -84,7 +84,7 @@
 
 - ### :slot_machine: [Probabilistic Structures (coming soon...)](https://github.com/tensorush/Computer-Scientists-Toolkit/blob/master/Data-Structures/Probabilistic-Structures)
 
-## :bow: Acknowledgements
+## :man_teacher: Learning Resources
 
 - ### :card_file_box: [Rosetta Code](https://rosettacode.org/wiki/Rosetta_Code/)
 
@@ -102,6 +102,8 @@
 
 - ### :card_file_box: [Mathematics Source Library](http://www.mymathlib.com/)
 
+- ### :book: [Algorithms by Jeff Erickson](http://jeffe.cs.illinois.edu/teaching/algorithms/book/Algorithms-JeffE.pdf)
+
 - ### :man_technologist: [Collection of C++ Algorithms](https://github.com/TheAlgorithms/C-Plus-Plus)
 
 - ### :card_file_box: [The Arcane Algorithm Archive](https://www.algorithm-archive.org/)
@@ -117,6 +119,8 @@
 - ### :card_file_box: [Dictionary of Algorithms and Data Structures](https://xlinux.nist.gov/dads/)
 
 - ### :man_technologist: [Cosmos Codebase by OpenGenus Foundation](https://github.com/OpenGenus/cosmos)
+
+- ### :man_technologist: [Algorithms by Robert Sedgewick and Kevin Wayne](https://algs4.cs.princeton.edu/code/)
 
 - ### :man_technologist: [Algorithms and Data Structures by Ravi Mandliya](https://github.com/mandliya/algorithms_and_data_structures/)
 
@@ -147,6 +151,8 @@
 - ### :man_technologist: [Collection of Algorithms and Data Structures by Andrei Navumenka](https://github.com/indy256/codelibrary/)
 
 - ### :man_teacher: [MIT 6.006 Introduction to Algorithms Course by Erik Demaine and Srini Devadas](https://ocw.mit.edu/courses/electrical-engineering-and-computer-science/6-006-introduction-to-algorithms-fall-2011/)
+
+- ### :man_teacher: [MIT 6.042 Mathematics for Computer Science by Albert Meyer and Adam Chlipala](https://ocw.mit.edu/courses/electrical-engineering-and-computer-science/6-042j-mathematics-for-computer-science-spring-2015/index.htm)
 
 - ### :man_teacher: [Data Structures and Algorithms Coursera Specialization offered by University of California, San Diego (UCSD) and HSE University](https://www.coursera.org/specializations/data-structures-algorithms/)
 
