@@ -1,6 +1,6 @@
 /*
-    9x9 Sudoku Solver
-    -----------------
+    Sudoku
+    ------
 */
 #include <algorithm>
 #include <iostream>
@@ -48,7 +48,7 @@ public:
             }
         }
     }
-    void write(std::ostream& out) const {
+    void print(std::ostream& out = std::cout) const {
         unsigned width = 1;
         for (unsigned row = 0; row < _cells.size(); ++row) {
             width = std::max(width, 1 + _cells[row].count());
@@ -73,7 +73,7 @@ public:
         Cell cell = sudoku->_getCell(minRowCount);
         for (unsigned i = 1; i <= 9; ++i) {
             if (cell.isVacant(i)) {
-                std::unique_ptr<Sudoku> sudoku_2(new Sudoku(*sudoku));
+                std::unique_ptr<Sudoku> sudoku_2 = std::make_unique<Sudoku>(*sudoku);
                 if (sudoku_2->_assign(minRowCount, i)) {
                     std::unique_ptr<Sudoku> sudoku_3 = solve(std::move(sudoku_2));
                     if (sudoku_3)
@@ -183,16 +183,14 @@ private:
 std::vector<std::vector<unsigned>> Sudoku::_group(27), Sudoku::_neighbours(81), Sudoku::_groupsOf(81);
 
 int main() {
-    std::string row;
     Sudoku::initialize();
-    while (std::getline(std::cin, row)) {
-        std::unique_ptr<Sudoku> solvedSudoku = Sudoku::solve(std::make_unique<Sudoku>(row));
-        if (solvedSudoku) {
-            solvedSudoku->write(std::cout);
-        } else {
-            std::cout << "No solution";
-        }
-        std::cout << std::endl;
+    std::string rows = "8..........36......7..9.2...5...7.......457.....1...3...1....68..85...1..9....4..";
+    std::unique_ptr<Sudoku> sudoku = std::make_unique<Sudoku>(rows);
+    std::unique_ptr<Sudoku> solvedSudoku = Sudoku::solve(std::move(sudoku));
+    if (solvedSudoku) {
+        solvedSudoku->print();
+    } else {
+        std::cout << "No solution" << std::endl;
     }
 
     return EXIT_SUCCESS;

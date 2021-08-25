@@ -28,6 +28,8 @@
 
 - ### :chains: [Dynamic Programming Algorithms](https://github.com/tensorush/Computer-Scientists-Toolkit/blob/master/Algorithms/Dynamic-Programming-Algorithms)
 
+- ### :joystick: [Game Playing Algorithms](https://github.com/tensorush/Computer-Scientists-Toolkit/blob/master/Algorithms/Game-Playing-Algorithms)
+
 - ### :diamond_shape_with_a_dot_inside: [Graph Algorithms](https://github.com/tensorush/Computer-Scientists-Toolkit/blob/master/Algorithms/Graph-Algorithms)
 
 - ### :moneybag: [Greedy Algorithms](https://github.com/tensorush/Computer-Scientists-Toolkit/blob/master/Algorithms/Greedy-Algorithms)
@@ -102,9 +104,9 @@
 
 - ### :black_joker: [Data Structures Cheatsheet](https://www.clear.rice.edu/comp160/data_cheat.html)
 
-- ### :card_file_box: [Mathematics Source Library](http://www.mymathlib.com/)
-
 - ### :book: [Algorithms by Jeff Erickson](http://jeffe.cs.illinois.edu/teaching/algorithms/book/Algorithms-JeffE.pdf)
+
+- ### :card_file_box: [Mathematics Source Library](http://www.mymathlib.com/)
 
 - ### :man_technologist: [Collection of C++ Algorithms](https://github.com/TheAlgorithms/C-Plus-Plus)
 
@@ -122,9 +124,9 @@
 
 - ### :man_technologist: [Cosmos Codebase by OpenGenus Foundation](https://github.com/OpenGenus/cosmos)
 
-- ### :man_technologist: [Algorithms by Robert Sedgewick and Kevin Wayne](https://algs4.cs.princeton.edu/code/)
-
 - ### :man_technologist: [Algorithms and Data Structures by Ravi Mandliya](https://github.com/mandliya/algorithms_and_data_structures/)
+
+- ### :man_technologist: [Algorithms by Robert Sedgewick and Kevin Wayne](https://algs4.cs.princeton.edu/code/)
 
 - ### :card_file_box: [Algorithms and Data Structures by Douglas Harder](https://ece.uwaterloo.ca/~dwharder/aads/Algorithms/)
 
