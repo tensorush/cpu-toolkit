@@ -1,4 +1,4 @@
-# :man_technologist: :toolbox: **Computer Scientist's Toolkit**
+# :man_scientist: :toolbox: **Computer Scientist's Toolkit**
 
 [![PRs Welcome](https://img.shields.io/badge/PRs-welcome-brightgreen.svg?style=for-the-badge)](https://github.com/tensorush/Computer-Scientists-Toolkit/pulls)
 [![Contributors][contributors-shield]][contributors-url]
@@ -28,7 +28,7 @@
 
 - ### :chains: [Dynamic Programming Algorithms](https://github.com/tensorush/Computer-Scientists-Toolkit/blob/master/Algorithms/Dynamic-Programming-Algorithms)
 
-- ### :joystick: [Game Playing Algorithms](https://github.com/tensorush/Computer-Scientists-Toolkit/blob/master/Algorithms/Game-Playing-Algorithms)
+- ### :joystick: [Game-Playing Algorithms](https://github.com/tensorush/Computer-Scientists-Toolkit/blob/master/Algorithms/Game-Playing-Algorithms)
 
 - ### :diamond_shape_with_a_dot_inside: [Graph Algorithms](https://github.com/tensorush/Computer-Scientists-Toolkit/blob/master/Algorithms/Graph-Algorithms)
 
@@ -54,7 +54,7 @@
 
   - ### :globe_with_meridians: [Computational Geometry](https://github.com/tensorush/Computer-Scientists-Toolkit/blob/master/Algorithms/Mathematical-Algorithms/Computational-Geometry)
 
-- ### :jigsaw: [Puzzle Solving Algorithms](https://github.com/tensorush/Computer-Scientists-Toolkit/blob/master/Algorithms/Puzzle-Solving-Algorithms)
+- ### :jigsaw: [Puzzle-Solving Algorithms](https://github.com/tensorush/Computer-Scientists-Toolkit/blob/master/Algorithms/Puzzle-Solving-Algorithms)
 
 - ### :mag: [Search Algorithms](https://github.com/tensorush/Computer-Scientists-Toolkit/blob/master/Algorithms/Search-Algorithms)
 
@@ -85,6 +85,8 @@
 - ### :mount_fuji: [Heap Structures (coming soon...)](https://github.com/tensorush/Computer-Scientists-Toolkit/blob/master/Data-Structures/Heap-Structures)
 
 - ### :card_file_box: [Hashing Structures (coming soon...)](https://github.com/tensorush/Computer-Scientists-Toolkit/blob/master/Data-Structures/Hashing-Structures)
+
+- ### :ice_cube: [Geometric Structures (coming soon...)](https://github.com/tensorush/Computer-Scientists-Toolkit/blob/master/Data-Structures/Geometric-Structures)
 
 - ### :slot_machine: [Probabilistic Structures (coming soon...)](https://github.com/tensorush/Computer-Scientists-Toolkit/blob/master/Data-Structures/Probabilistic-Structures)
 
