@@ -126,7 +126,19 @@
 
 - ### :man_technologist: [Cosmos Codebase by OpenGenus Foundation](https://github.com/OpenGenus/cosmos)
 
+- ### :tv: [CS Theory Toolkit Lectures by Ryan O'Donnell](https://www.youtube.com/playlist?list=PLm3J0oaFux3ZYpFLwwrlv_EHH9wtH6pnX)
+
+- ### :tv: [Advanced Algorithms Lectures by Jelani Nelson](https://www.youtube.com/playlist?list=PL2SOU6wwxB0uP4rJgf5ayhHWgw7akUWSf)
+
+- ### :tv: [Computer Science Lectures by Ghassan Shobaki](https://www.youtube.com/channel/UCthr5rA6EA4c1S0L2OOiygA/playlists)
+
+- ### :tv: [Analysis of Algorithms Lectures by Steven Skiena](https://www.youtube.com/playlist?list=PLOtl7M3yp-DX6ic0HGT0PUX_wiNmkWkXx)
+
 - ### :man_technologist: [Algorithms and Data Structures by Ravi Mandliya](https://github.com/mandliya/algorithms_and_data_structures/)
+
+- ### :tv: [Algorithms for Big Data Lectures by Jelani Nelson](https://www.youtube.com/playlist?list=PL2SOU6wwxB0v1kQTpqpuu5kEJo2i-iUyf)
+
+- ### :man_teacher: [Advanced Data Structures Course by Erik Demaine](https://ocw.mit.edu/courses/electrical-engineering-and-computer-science/6-851-advanced-data-structures-spring-2012/)
 
 - ### :man_technologist: [Algorithms by Robert Sedgewick and Kevin Wayne](https://algs4.cs.princeton.edu/code/)
 
@@ -140,6 +152,10 @@
 
 - ### :tv: [Advanced Data Structures Lectures by Niema Moshiri](https://www.youtube.com/playlist?list=PLM_KIlU0WoXmkV4QB1Dg8PtJaHTdWHwRS)
 
+- ### :tv: [Algorithms Illuminated Lectures by Tim Roughgarden](https://www.youtube.com/channel/UCcH4Ga14Y4ELFKrEYM1vXCg/playlists)
+
+- ### :man_teacher: [Algorithms and Data Structures Course by Pavel Mavrin](https://www.youtube.com/playlist?list=PLrS21S1jm43igE57Ye_edwds_iL7ZOAG4)
+
 - ### :writing_hand: [Computational Geometry Course Notes by David Mount](https://www.cse.cuhk.edu.hk/~taoyf/course/5010/notes/mount-cg2.pdf)
 
 - ### :tv: [Computational Geometry Course by Philipp Kindermann](https://www.youtube.com/playlist?list=PLubYOWSl9mIvTio-1bXWnhE9LdeXfox1z)
@@ -148,17 +164,19 @@
 
 - ### :man_technologist: [Collection of Algorithms and Data Structures by William Fiset](https://github.com/williamfiset/Algorithms/)
 
-- ### :card_file_box: [COS226 Undergraduate Course offered by Princeton University](https://www.cs.princeton.edu/courses/archive/fall20/cos226/syllabus.php)
-
 - ### :man_teacher: [Algorithms Coursera Specialization offered by Stanford University](https://www.coursera.org/specializations/algorithms/)
+
+- ### :man_teacher: [Algorithms and Data Structures Course by Kevin Wayne and others](https://www.cs.princeton.edu/courses/archive/fall20/cos226/syllabus.php)
 
 - ### :man_teacher: [Algorithms Coursera Specialization offered by Princeton University](https://www.coursera.org/learn/algorithms-part1/)
 
 - ### :man_technologist: [Collection of Algorithms and Data Structures by Andrei Navumenka](https://github.com/indy256/codelibrary/)
 
-- ### :man_teacher: [MIT 6.006 Introduction to Algorithms Course by Erik Demaine and Srini Devadas](https://ocw.mit.edu/courses/electrical-engineering-and-computer-science/6-006-introduction-to-algorithms-fall-2011/)
+- ### :man_teacher: [Introduction to Algorithms Course by Erik Demaine and Srini Devadas](https://ocw.mit.edu/courses/electrical-engineering-and-computer-science/6-006-introduction-to-algorithms-fall-2011/)
 
-- ### :man_teacher: [MIT 6.042 Mathematics for Computer Science by Albert Meyer and Adam Chlipala](https://ocw.mit.edu/courses/electrical-engineering-and-computer-science/6-042j-mathematics-for-computer-science-spring-2015/index.htm)
+- ### :man_teacher: [Mathematics for Computer Science by Albert Meyer and Adam Chlipala](https://ocw.mit.edu/courses/electrical-engineering-and-computer-science/6-042j-mathematics-for-computer-science-spring-2015/index.htm)
+
+- ### :tv: [Efficient Programming with Components Lectures by Alexander Stepanov](https://www.youtube.com/playlist?list=PLHxtyCq_WDLXryyw91lahwdtpZsmo4BGD)
 
 - ### :man_teacher: [Data Structures and Algorithms Coursera Specialization offered by University of California, San Diego (UCSD) and HSE University](https://www.coursera.org/specializations/data-structures-algorithms/)
 
