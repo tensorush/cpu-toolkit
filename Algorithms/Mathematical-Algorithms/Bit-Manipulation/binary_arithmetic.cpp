@@ -9,8 +9,10 @@
 #include <array>
 
 int main() {
-    // For efficient standard library implementations
-    // consult the <bitset> and <bit> (C++20) headers.
+    // For efficient implementations consult
+    // <bitset> and <bit> (C++20) headers
+    // and built-ins of your compiler.
+
     int integer, integer_2;
     unsigned number, number_2;
     const unsigned integerSize = sizeof(int) * CHAR_BIT;
@@ -18,7 +20,7 @@ int main() {
     std::cin >> integer >> integer_2 >> number >> number_2;
 
     // Negation
-    int negated = ~integer + 1;
+    int twosComplement = ~integer + 1;
 
     // Merge bits
     unsigned mask = 0b1010; // 0 where bits from number should be selected, 1 - from number_2.
@@ -37,7 +39,7 @@ int main() {
     reversed <<= numUnsignedIntegerValueBits;
 
     // Bit inversion
-    unsigned flipped = ~number;
+    unsigned onesComplement = ~number;
 
     // Morton number
     unsigned int mortonNumber = 0; // Bits of number are in the even positions, number_2 - in the odd.
@@ -51,12 +53,10 @@ int main() {
     // Maximum value
     int maximum = integer - ((integer - integer_2) & ((integer - integer_2) >> numUnsignedIntegerValueBits));
 
+
     // Absolute value
     int signBit = integer >> numUnsignedIntegerValueBits;
     unsigned absolute = (integer + signBit) ^ signBit;
-
-    // Sign-bit retrieval
-    signBit = ((integer == 0) ? (0) : (1)) | (integer >> numUnsignedIntegerValueBits);
 
     // Hamming distance
     unsigned numDifferentBits = 0;
@@ -64,19 +64,43 @@ int main() {
         sum &= sum - 1;
     }
 
+    // Modular addition
+    unsigned numberSum = number + number_2;
+    unsigned modulus = numberSum + 1337; // greater than either number
+    unsigned remainder = numberSum - (modulus & -(numberSum >= modulus));
+
+    // Insert bit field
+    unsigned bitField = 0b10011;
+    unsigned bitFieldMaskShift = 2;
+    unsigned bitFieldMask = 0b01100;
+    unsigned bitFieldToInsert = 0b00011;
+    unsigned insertedBitField = (bitField & ~bitFieldMask) | (bitFieldMaskShift << bitFieldMaskShift);
+
+    // Extract bit field
+    unsigned extractedBitField = (bitField & bitFieldMask) >> bitFieldMaskShift;
+
     // Swap two integers
     integer ^= integer_2 ^= integer ^= integer_2;
 
     // Power of two check
     bool isPowerOfTwo = number && !(number & (number - 1));
 
+    // Sign-bit retrieval
+    signBit = ((integer == 0) ? (0) : (1)) | (integer >> numUnsignedIntegerValueBits);
+
     // Euclidean algorithm
     int gcd = integer;
     while (integer_2 %= gcd ^= integer_2 ^= gcd ^= integer_2);
 
-    // Single-bit inversion
+    // Set bit at position
     unsigned position = 0;
-    unsigned inverted = number ^ (1 << position);
+    unsigned setBit = number | (1 << position);
+
+    // Flip bit at position
+    unsigned flippedBit = number ^ (1 << position);
+
+    // Empty bit at position
+    unsigned emptiedBit = number & ~(1 << position);
 
     // Multiplication by two
     unsigned doubled = number << 1;
@@ -92,6 +116,17 @@ int main() {
         temp >>= 1;
     }
     isBinaryPalindrome = (binaryReverse == integer);
+
+    // Round up to a power of two
+    uint64_t roundedUpNumber = number;
+    --roundedUpNumber;
+    roundedUpNumber |= roundedUpNumber >> 1;
+    roundedUpNumber |= roundedUpNumber >> 2;
+    roundedUpNumber |= roundedUpNumber >> 4;
+    roundedUpNumber |= roundedUpNumber >> 8;
+    roundedUpNumber |= roundedUpNumber >> 16;
+    roundedUpNumber |= roundedUpNumber >> 32;
+    ++roundedUpNumber;
 
     // Signedness comparison check
     bool haveDifferentSign = (integer ^ integer_2 < 0);
@@ -124,19 +159,22 @@ int main() {
         knapsack |= knapsack << item;
     }
 
-    // Least significant bit set (index)
-    unsigned leastSignificantBitSet = 0;
+    // Least significant set bit mask
+    unsigned leastSignificantBitMask = number & (-number);
+
+    // Least significant set bit index
+    unsigned leastSignificantBitSetIndex = 0;
     if (number != 0) {
         unsigned powerOfTwo = 1;
         while (number & powerOfTwo == 0) {
             powerOfTwo <<= 1;
-            ++leastSignificantBitSet;
+            ++leastSignificantBitSetIndex;
         }
     }
 
     // Modulo division by a power of two
     unsigned powerOfTwo = 32;
-    unsigned remainder = number & (powerOfTwo - 1);
+    remainder = number & (powerOfTwo - 1);
 
     // Modulo division by a power of two less one
     unsigned powerOfTwoLessOne = 31;
@@ -147,13 +185,28 @@ int main() {
     }
     remainder = (remainder == powerOfTwoLessOne) ? (0) : (remainder);
 
-    // Brian Kernighan's bits set counting algorithm
-    unsigned numBitsSet;
-    for (numBitsSet = 0; number != 0; ++numBitsSet) {
+    // Brian Kernighan's set bits counting algorithm
+    unsigned numSetBits;
+    for (numSetBits = 0; number != 0; ++numSetBits) {
         number &= number - 1;
     }
 
-    // Logarithm base two or most significant bit set
+    // Divide-and-conquer set bits counting algorithm
+    uint64_t populationCount = number;
+    mask_5 = ~((-1) << 32);
+    mask_4 = mask_5 ^ (mask_5 << 16);
+    mask_3 = mask_4 ^ (mask_4 << 8);
+    mask_2 = mask_3 ^ (mask_3 << 4);
+    mask_1 = mask_2 ^ (mask_2 << 2);
+    mask_0 = mask_1 ^ (mask_1 << 1);
+    populationCount =  ((populationCount >> 1) & mask_0) + (populationCount & mask_0);
+    populationCount =  ((populationCount >> 2) & mask_1) + (populationCount & mask_1);
+    populationCount =  ((populationCount >> 4) + populationCount) & mask_2;
+    populationCount =  ((populationCount >> 8) + populationCount) & mask_3;
+    populationCount =  ((populationCount >> 16) + populationCount) & mask_4;
+    populationCount =  ((populationCount >> 32) + populationCount) & mask_5;
+
+    // Logarithm base two or most significant set bit
     unsigned logarithmBaseTwo = 0;
     while (number >>= 1)
         ++logarithmBaseTwo;

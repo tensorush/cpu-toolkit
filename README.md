@@ -13,7 +13,7 @@
     <img src="https://bleuje.github.io/gifset/2020/gifs/2020_16_threetrees.gif">
 </p>
 
-<h4 align="center"> 
+<h4 align="center">
     <p><a href="https://twitter.com/etiennejcb/">Animation by Étienne Jacob</a></p>
 </h4>
 
@@ -97,11 +97,13 @@
 
 - ### :card_file_box: [E-Maxx Algorithms](https://cp-algorithms.com/)
 
-- ### :card_file_box: [Bit Twiddling Hacks](https://graphics.stanford.edu/~seander/bithacks.html)
+- ### :man_technologist: [Bit-Twiddling Hacks](https://graphics.stanford.edu/~seander/bithacks.html)
 
 - ### :card_file_box: [LiteratePrograms Wiki](https://www.literateprograms.org/)
 
 - ### :black_joker: [Algorithmic Cheatsheet](https://sinon.org/algorithms/)
+
+- ### :card_file_box: [Bit-Twiddling Resources](https://www.chessprogramming.org/Bit-Twiddling)
 
 - ### :black_joker: [Data Structures Cheatsheet](https://www.clear.rice.edu/comp160/data_cheat.html)
 
@@ -176,6 +178,8 @@
 - ### :man_teacher: [Mathematics for Computer Science by Albert Meyer and Adam Chlipala](https://ocw.mit.edu/courses/electrical-engineering-and-computer-science/6-042j-mathematics-for-computer-science-spring-2015/index.htm)
 
 - ### :tv: [Efficient Programming with Components Lectures by Alexander Stepanov](https://www.youtube.com/playlist?list=PLHxtyCq_WDLXryyw91lahwdtpZsmo4BGD)
+
+- ### :man_teacher: [Performance Engineering of Software Systems Course by Charles Leiserson and Julian Shun](https://ocw.mit.edu/courses/6-172-performance-engineering-of-software-systems-fall-2018/)
 
 - ### :man_teacher: [Data Structures and Algorithms Coursera Specialization offered by University of California, San Diego (UCSD) and HSE University](https://www.coursera.org/specializations/data-structures-algorithms/)
 
