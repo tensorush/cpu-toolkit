@@ -123,17 +123,13 @@
 
 - ### :man_teacher: [Data Structures Course by Pat Morin](https://cglab.ca/~morin/teaching/2402/)
 
-- ### :man_teacher: [Data Structures Course by Dave Mount](https://www.cs.umd.edu/class/spring2021/cmsc420-0101/)
-
-- ### :man_teacher: [Computational Geometry Course by Dave Mount](https://www.cs.umd.edu/class/fall2021/cmsc754/)
-
-- ### :man_teacher: [Advanced Data Structures Course by Dave Mount](https://www.cs.umd.edu/class/spring2022/cmsc420-0101/)
-
 - ### :thought_balloon: [Programming Blog by Alesiani Marco](https://marcodiiga.github.io/archive/)
 
 - ### :man_teacher: [Algorithms Course by Damon Wischik](https://www.cl.cam.ac.uk/teaching/2122/Algorithm2/)
 
 - ### :card_file_box: [Computer Science Guides by CodePath](https://guides.codepath.com/compsci)
+
+- ### :man_teacher: [Data Structures Course by Dave Mount](https://www.cs.umd.edu/class/spring2021/cmsc420-0101/)
 
 - ### :man_teacher: [Discrete Structures Course by Pat Morin](https://cglab.ca/~morin/teaching/2804/)
 
@@ -158,6 +154,10 @@
 - ### :tv: [Analysis of Algorithms Lectures by Steven Skiena](https://www.youtube.com/playlist?list=PLOtl7M3yp-DX6ic0HGT0PUX_wiNmkWkXx)
 
 - ### :man_technologist: [Algorithms and Data Structures by Ravi Mandliya](https://github.com/mandliya/algorithms_and_data_structures/)
+
+- ### :man_teacher: [Computational Geometry Course by Dave Mount](https://www.cs.umd.edu/class/fall2021/cmsc754/)
+
+- ### :man_teacher: [Advanced Data Structures Course by Dave Mount](https://www.cs.umd.edu/class/spring2022/cmsc420-0101/)
 
 - ### :tv: [Advanced Algorithms Course by Michel Goemans](https://ocw.mit.edu/courses/6-854j-advanced-algorithms-fall-2008/)
 
@@ -227,16 +227,15 @@
 
 - ### :man_teacher: [Design and Analysis of Algorithms I Course from University of Washington](http://courses.cs.washington.edu/courses/cse521/)
 
-
 - ### :man_teacher: [Design and Analysis of Algorithms II Course from University of Washington](http://courses.cs.washington.edu/courses/cse522/)
 
 - ### :man_teacher: [Design and Analysis of Algorithms Course by Dana Moshkovitz and Bruce Tidor](https://ocw.mit.edu/courses/6-046j-design-and-analysis-of-algorithms-spring-2012/)
 
 - ### :man_teacher: [Algorithms and Computational Complexity Course from University of Washington](http://courses.cs.washington.edu/courses/cse417/)
 
-- ### :man_teacher: [Randomized Algorithms and Probabilistic Analysis Course from University of Washington](http://courses.cs.washington.edu/courses/cse525/)
-
 - ### :man_teacher: [Performance Engineering of Software Systems Course by Charles Leiserson and Julian Shun](https://ocw.mit.edu/courses/6-172-performance-engineering-of-software-systems-fall-2018/)
+
+- ### :man_teacher: [Randomized Algorithms and Probabilistic Analysis Course from University of Washington](http://courses.cs.washington.edu/courses/cse525/)
 
 - ### :man_teacher: [Design and Analysis of Algorithms Course by Erik Demaine, Srini Devadas and Nancy Lynch](https://ocw.mit.edu/courses/6-046j-design-and-analysis-of-algorithms-spring-2015/)
 
