@@ -1,259 +1,239 @@
-# :man_scientist: :toolbox: **Computer Scientist's Toolkit**
+## :dragon_face: :toolbox: **cpp toolkit**
 
-[![PRs Welcome](https://img.shields.io/badge/PRs-welcome-brightgreen.svg?style=for-the-badge)](https://github.com/tensorush/Computer-Scientists-Toolkit/pulls)
-[![Contributors][contributors-shield]][contributors-url]
-[![Issues][issues-shield]][issues-url]
-[![Stargazers][stars-shield]][stars-url]
-[![Forks][forks-shield]][forks-url]
-[![MIT License][license-shield]][license-url]
+[![CI][ci-shd]][ci-url]
+[![LC][lc-shd]][lc-url]
 
-[![forthebadge](https://forthebadge.com/images/badges/works-on-my-machine.svg)](https://forthebadge.com)
+### :hammer_and_wrench: Collection of basic algorithms and data structures implemented in C++.
 
-<p align="center">
-    <img src="https://bleuje.github.io/gifset/2020/gifs/2020_16_threetrees.gif">
-</p>
+### :hammer: [Algorithms](src/algorithms/)
 
-<h4 align="center">
-    <p><a href="https://twitter.com/etiennejcb/">Animation by Étienne Jacob</a></p>
-</h4>
+- #### :floppy_disk: [Compression](src/algorithms/compression/)
 
-## :hammer_and_wrench: Bare essentials for studying Computer Science — Algorithms and Data Structures — that I've been researching, reimplementing and refining for quick reference.
+- #### :chains: [Dynamic Programming](src/algorithms/dynamic-programming/)
 
-> ### _Any contributions, corrections or optimizations are very welcome!_ :hugs:
+- #### :joystick: [Game-Playing](src/algorithms/game-playing/)
 
-## :hammer: [Algorithms](https://github.com/tensorush/Computer-Scientists-Toolkit/blob/master/Algorithms)
+- #### :diamond_shape_with_a_dot_inside: [Graph](src/algorithms/graph/)
 
-- ### :floppy_disk: [Compression Algorithms](https://github.com/tensorush/Computer-Scientists-Toolkit/blob/master/Algorithms/Compression-Algorithms)
+- #### :moneybag: [Greedy](src/algorithms/greedy/)
 
-- ### :chains: [Dynamic Programming Algorithms](https://github.com/tensorush/Computer-Scientists-Toolkit/blob/master/Algorithms/Dynamic-Programming-Algorithms)
+- #### :closed_lock_with_key: [Hashing](src/algorithms/hashing/)
 
-- ### :joystick: [Game-Playing Algorithms](https://github.com/tensorush/Computer-Scientists-Toolkit/blob/master/Algorithms/Game-Playing-Algorithms)
+- #### :scroll: [Mathematical](src/algorithms/mathematical/)
 
-- ### :diamond_shape_with_a_dot_inside: [Graph Algorithms](https://github.com/tensorush/Computer-Scientists-Toolkit/blob/master/Algorithms/Graph-Algorithms)
+  - #### :man_juggling: [Combinatorics](src/algorithms/mathematical/combinatorics/)
 
-- ### :moneybag: [Greedy Algorithms](https://github.com/tensorush/Computer-Scientists-Toolkit/blob/master/Algorithms/Greedy-Algorithms)
+  - #### :mechanical_arm: [Linear Algebra](src/algorithms/mathematical/linear-algebra/)
 
-- ### :closed_lock_with_key: [Hashing Algorithms](https://github.com/tensorush/Computer-Scientists-Toolkit/blob/master/Algorithms/Hashing-Algorithms)
+  - #### :abacus: [Number Theory](src/algorithms/mathematical/number-theory/)
 
-- ### :scroll: [Mathematical Algorithms](https://github.com/tensorush/Computer-Scientists-Toolkit/blob/master/Algorithms/Mathematical-Algorithms)
+  - #### :twisted_rightwards_arrows: [Bit Manipulation](src/algorithms/mathematical/bit-manipulation/)
 
-  - ### :man_juggling: [Combinatorics](https://github.com/tensorush/Computer-Scientists-Toolkit/blob/master/Algorithms/Mathematical-Algorithms/Combinatorics)
+  - #### :game_die: [Probability Theory](src/algorithms/mathematical/probability-theory/)
 
-  - ### :mechanical_arm: [Linear Algebra](https://github.com/tensorush/Computer-Scientists-Toolkit/blob/master/Algorithms/Mathematical-Algorithms/Linear-Algebra)
+  - #### :1234: [Numerical Analysis](src/algorithms/mathematical/numerical-analysis/)
 
-  - ### :abacus: [Number Theory](https://github.com/tensorush/Computer-Scientists-Toolkit/blob/master/Algorithms/Mathematical-Algorithms/Number-Theory)
+  - #### :milky_way: [Numerical Optimization](src/algorithms/mathematical/numerical-optimization/)
 
-  - ### :twisted_rightwards_arrows: [Bit Manipulation](https://github.com/tensorush/Computer-Scientists-Toolkit/blob/master/Algorithms/Mathematical-Algorithms/Bit-Manipulation)
+  - #### :globe_with_meridians: [Computational Geometry](src/algorithms/mathematical/computational-geometry/)
 
-  - ### :game_die: [Probability Theory](https://github.com/tensorush/Computer-Scientists-Toolkit/blob/master/Algorithms/Mathematical-Algorithms/Probability-Theory)
+- #### :jigsaw: [Puzzle-Solving](src/algorithms/puzzle-solving/)
 
-  - ### :1234: [Numerical Analysis](https://github.com/tensorush/Computer-Scientists-Toolkit/blob/master/Algorithms/Mathematical-Algorithms/Numerical-Analysis)
+- #### :mag: [Search](src/algorithms/search/)
 
-  - ### :milky_way: [Numerical Optimization](https://github.com/tensorush/Computer-Scientists-Toolkit/blob/master/Algorithms/Mathematical-Algorithms/Numerical-Optimization)
+- #### :bar_chart: [Sorting](src/algorithms/sorting/)
 
-  - ### :globe_with_meridians: [Computational Geometry](https://github.com/tensorush/Computer-Scientists-Toolkit/blob/master/Algorithms/Mathematical-Algorithms/Computational-Geometry)
+  - #### :wrestling: [Comparison-Based](src/algorithms/sorting/comparison-based/)
 
-- ### :jigsaw: [Puzzle-Solving Algorithms](https://github.com/tensorush/Computer-Scientists-Toolkit/blob/master/Algorithms/Puzzle-Solving-Algorithms)
+    - #### :1st_place_medal: [Linear](src/algorithms/sorting/comparison-based/linear/)
 
-- ### :mag: [Search Algorithms](https://github.com/tensorush/Computer-Scientists-Toolkit/blob/master/Algorithms/Search-Algorithms)
+    - #### :2nd_place_medal: [Log-Linear](src/algorithms/sorting/comparison-based/log-linear/)
 
-- ### :bar_chart: [Sorting Algorithms](https://github.com/tensorush/Computer-Scientists-Toolkit/blob/master/Algorithms/Sorting-Algorithms)
+    - #### :3rd_place_medal: [Quadratic](src/algorithms/sorting/comparison-based/quadratic/)
 
-  - ### :wrestling: [Comparison Sorts](https://github.com/tensorush/Computer-Scientists-Toolkit/blob/master/Algorithms/Sorting-Algorithms/Comparison-Sorts)
+  - #### :lotus_position: [Non-Comparison](src/algorithms/sorting/non-comparison-based/)
 
-    - ### :1st_place_medal: [Linear Sorts](https://github.com/tensorush/Computer-Scientists-Toolkit/blob/master/Algorithms/Sorting-Algorithms/Comparison-Sorts/Linear-Sorts)
+  - #### :hankey: [Embarrassingly Inefficient](src/algorithms/sorting/embarrassingly-inefficient/)
 
-    - ### :2nd_place_medal: [Log-Linear Sorts](https://github.com/tensorush/Computer-Scientists-Toolkit/blob/master/Algorithms/Sorting-Algorithms/Comparison-Sorts/Log-Linear-Sorts)
+- #### :dna: [String](src/algorithms/string/)
 
-    - ### :3rd_place_medal: [Quadratic Sorts](https://github.com/tensorush/Computer-Scientists-Toolkit/blob/master/Algorithms/Sorting-Algorithms/Comparison-Sorts/Quadratic-Sorts)
+### :wrench: [Data Structures](src/data-structures/)
 
-  - ### :lotus_position: [Non-Comparison Sorts](https://github.com/tensorush/Computer-Scientists-Toolkit/blob/master/Algorithms/Sorting-Algorithms/Non-Comparison-Sorts)
+- #### :train: [List](src/data-structures/list/)
 
-  - ### :hankey: [Embarrassingly Inefficient Sorts](https://github.com/tensorush/Computer-Scientists-Toolkit/blob/master/Algorithms/Sorting-Algorithms/Embarrassingly-Inefficient-Sorts)
+- #### :deciduous_tree: [Tree](src/data-structures/tree/)
 
-- ### :dna: [String Algorithms](https://github.com/tensorush/Computer-Scientists-Toolkit/blob/master/Algorithms/String-Algorithms)
+- #### :bus: [Array](src/data-structures/array/)
 
-## :wrench: [Data Structures](https://github.com/tensorush/Computer-Scientists-Toolkit/blob/master/Data-Structures)
+- #### :mount_fuji: Heap
 
-- ### :train: [List Structures](https://github.com/tensorush/Computer-Scientists-Toolkit/blob/master/Data-Structures/List-Structures)
+- #### :card_file_box: Hashing
 
-- ### :deciduous_tree: [Tree Structures](https://github.com/tensorush/Computer-Scientists-Toolkit/blob/master/Data-Structures/Tree-Structures)
+- #### :ice_cube: Geometric
 
-- ### :bus: [Array Structures](https://github.com/tensorush/Computer-Scientists-Toolkit/blob/master/Data-Structures/Array-Structures)
+- #### :slot_machine: Probabilistic
 
-- ### :mount_fuji: [Heap Structures (coming soon...)](https://github.com/tensorush/Computer-Scientists-Toolkit/blob/master/Data-Structures/Heap-Structures)
+### :man_teacher: Learning Resources
 
-- ### :card_file_box: [Hashing Structures (coming soon...)](https://github.com/tensorush/Computer-Scientists-Toolkit/blob/master/Data-Structures/Hashing-Structures)
+- #### :card_file_box: [Rosetta Code](https://rosettacode.org/wiki/Rosetta_Code/)
 
-- ### :ice_cube: [Geometric Structures (coming soon...)](https://github.com/tensorush/Computer-Scientists-Toolkit/blob/master/Data-Structures/Geometric-Structures)
+- #### :black_joker: [Big-O Cheatsheet](https://www.bigocheatsheet.com/)
 
-- ### :slot_machine: [Probabilistic Structures (coming soon...)](https://github.com/tensorush/Computer-Scientists-Toolkit/blob/master/Data-Structures/Probabilistic-Structures)
+- #### :card_file_box: [E-Maxx Algorithms](https://cp-algorithms.com/)
 
-## :man_teacher: Learning Resources
+- #### :man_technologist: [Bit-Twiddling Hacks](https://graphics.stanford.edu/~seander/bithacks.html)
 
-- ### :card_file_box: [Rosetta Code](https://rosettacode.org/wiki/Rosetta_Code/)
+- #### :card_file_box: [LiteratePrograms Wiki](https://www.literateprograms.org/)
 
-- ### :black_joker: [Big-O Cheatsheet](https://www.bigocheatsheet.com/)
+- #### :black_joker: [Algorithmic Cheatsheet](https://sinon.org/algorithms/)
 
-- ### :card_file_box: [E-Maxx Algorithms](https://cp-algorithms.com/)
+- #### :card_file_box: [Bit-Twiddling Resources](https://www.chessprogramming.org/Bit-Twiddling)
 
-- ### :man_technologist: [Bit-Twiddling Hacks](https://graphics.stanford.edu/~seander/bithacks.html)
+- #### :black_joker: [Data Structures Cheatsheet](https://www.clear.rice.edu/comp160/data_cheat.html)
 
-- ### :card_file_box: [LiteratePrograms Wiki](https://www.literateprograms.org/)
+- #### :book: [Algorithms by Jeff Erickson](http://jeffe.cs.illinois.edu/teaching/algorithms/book/Algorithms-JeffE.pdf)
 
-- ### :black_joker: [Algorithmic Cheatsheet](https://sinon.org/algorithms/)
+- #### :card_file_box: [Mathematics Source Library](http://www.mymathlib.com/)
 
-- ### :card_file_box: [Bit-Twiddling Resources](https://www.chessprogramming.org/Bit-Twiddling)
+- #### :man_technologist: [Collection of C++ Algorithms](https://github.com/TheAlgorithms/C-Plus-Plus)
 
-- ### :black_joker: [Data Structures Cheatsheet](https://www.clear.rice.edu/comp160/data_cheat.html)
+- #### :card_file_box: [The Arcane Algorithm Archive](https://www.algorithm-archive.org/)
 
-- ### :book: [Algorithms by Jeff Erickson](http://jeffe.cs.illinois.edu/teaching/algorithms/book/Algorithms-JeffE.pdf)
+- #### :man_teacher: [Algorithms Course by Pat Morin](https://cglab.ca/~morin/teaching/4804/)
 
-- ### :card_file_box: [Mathematics Source Library](http://www.mymathlib.com/)
+- #### :thought_balloon: [Programming Blog by Ivan Kutskir](http://blog.ivank.net/)
 
-- ### :man_technologist: [Collection of C++ Algorithms](https://github.com/TheAlgorithms/C-Plus-Plus)
+- #### :man_teacher: [Algorithms Course by Frank Stajano](https://www.cl.cam.ac.uk/teaching/2122/Algorithm1/)
 
-- ### :card_file_box: [The Arcane Algorithm Archive](https://www.algorithm-archive.org/)
+- #### :man_teacher: [Data Structures Course by Pat Morin](https://cglab.ca/~morin/teaching/2402/)
 
-- ### :man_teacher: [Algorithms Course by Pat Morin](https://cglab.ca/~morin/teaching/4804/)
+- #### :thought_balloon: [Programming Blog by Alesiani Marco](https://marcodiiga.github.io/archive/)
 
-- ### :thought_balloon: [Programming Blog by Ivan Kutskir](http://blog.ivank.net/)
+- #### :man_teacher: [Algorithms Course by Damon Wischik](https://www.cl.cam.ac.uk/teaching/2122/Algorithm2/)
 
-- ### :man_teacher: [Algorithms Course by Frank Stajano](https://www.cl.cam.ac.uk/teaching/2122/Algorithm1/)
+- #### :card_file_box: [Computer Science Guides by CodePath](https://guides.codepath.com/compsci)
 
-- ### :man_teacher: [Data Structures Course by Pat Morin](https://cglab.ca/~morin/teaching/2402/)
+- #### :man_teacher: [Data Structures Course by Dave Mount](https://www.cs.umd.edu/class/spring2021/cmsc420-0101/)
 
-- ### :thought_balloon: [Programming Blog by Alesiani Marco](https://marcodiiga.github.io/archive/)
+- #### :man_teacher: [Discrete Structures Course by Pat Morin](https://cglab.ca/~morin/teaching/2804/)
 
-- ### :man_teacher: [Algorithms Course by Damon Wischik](https://www.cl.cam.ac.uk/teaching/2122/Algorithm2/)
+- #### :card_file_box: [The Sound of Sorting by Timo Bingmann](https://panthema.net/2013/sound-of-sorting/)
 
-- ### :card_file_box: [Computer Science Guides by CodePath](https://guides.codepath.com/compsci)
+- #### :card_file_box: [Dictionary of Algorithms and Data Structures](https://xlinux.nist.gov/dads/)
 
-- ### :man_teacher: [Data Structures Course by Dave Mount](https://www.cs.umd.edu/class/spring2021/cmsc420-0101/)
+- #### :man_technologist: [Cosmos Codebase by OpenGenus Foundation](https://github.com/OpenGenus/cosmos)
 
-- ### :man_teacher: [Discrete Structures Course by Pat Morin](https://cglab.ca/~morin/teaching/2804/)
+- #### :tv: [CS Theory Toolkit Lectures by Ryan O'Donnell](https://www.youtube.com/playlist?list=PLm3J0oaFux3ZYpFLwwrlv_EHH9wtH6pnX)
 
-- ### :card_file_box: [The Sound of Sorting by Timo Bingmann](https://panthema.net/2013/sound-of-sorting/)
+- #### :man_teacher: [Advanced Algorithms Course by David Karger](https://ocw.mit.edu/courses/6-854j-advanced-algorithms-fall-2005/)
 
-- ### :card_file_box: [Dictionary of Algorithms and Data Structures](https://xlinux.nist.gov/dads/)
+- #### :man_teacher: [Advanced Data Structures Course by Pat Morin](https://cglab.ca/~morin/teaching/5408/)
 
-- ### :man_technologist: [Cosmos Codebase by OpenGenus Foundation](https://github.com/OpenGenus/cosmos)
+- #### :tv: [Advanced Algorithms Lectures by Jelani Nelson](https://www.youtube.com/playlist?list=PL2SOU6wwxB0uP4rJgf5ayhHWgw7akUWSf)
 
-- ### :tv: [CS Theory Toolkit Lectures by Ryan O'Donnell](https://www.youtube.com/playlist?list=PLm3J0oaFux3ZYpFLwwrlv_EHH9wtH6pnX)
+- #### :tv: [Computer Science Lectures by Ghassan Shobaki](https://www.youtube.com/channel/UCthr5rA6EA4c1S0L2OOiygA/playlists)
 
-- ### :man_teacher: [Advanced Algorithms Course by David Karger](https://ocw.mit.edu/courses/6-854j-advanced-algorithms-fall-2005/)
+- #### :man_teacher: [Randomized Algorithms Course by David Karger](https://ocw.mit.edu/courses/6-856j-randomized-algorithms-fall-2002/)
 
-- ### :man_teacher: [Advanced Data Structures Course by Pat Morin](https://cglab.ca/~morin/teaching/5408/)
+- #### :tv: [Analysis of Algorithms Lectures by Steven Skiena](https://www.youtube.com/playlist?list=PLOtl7M3yp-DX6ic0HGT0PUX_wiNmkWkXx)
 
-- ### :tv: [Advanced Algorithms Lectures by Jelani Nelson](https://www.youtube.com/playlist?list=PL2SOU6wwxB0uP4rJgf5ayhHWgw7akUWSf)
+- #### :man_technologist: [Algorithms and Data Structures by Ravi Mandliya](https://github.com/mandliya/algorithms_and_data_structures/)
 
-- ### :tv: [Computer Science Lectures by Ghassan Shobaki](https://www.youtube.com/channel/UCthr5rA6EA4c1S0L2OOiygA/playlists)
+- #### :man_teacher: [Computational Geometry Course by Dave Mount](https://www.cs.umd.edu/class/fall2021/cmsc754/)
 
-- ### :man_teacher: [Randomized Algorithms Course by David Karger](https://ocw.mit.edu/courses/6-856j-randomized-algorithms-fall-2002/)
+- #### :man_teacher: [Advanced Data Structures Course by Dave Mount](https://www.cs.umd.edu/class/spring2022/cmsc420-0101/)
 
-- ### :tv: [Analysis of Algorithms Lectures by Steven Skiena](https://www.youtube.com/playlist?list=PLOtl7M3yp-DX6ic0HGT0PUX_wiNmkWkXx)
+- #### :tv: [Advanced Algorithms Course by Michel Goemans](https://ocw.mit.edu/courses/6-854j-advanced-algorithms-fall-2008/)
 
-- ### :man_technologist: [Algorithms and Data Structures by Ravi Mandliya](https://github.com/mandliya/algorithms_and_data_structures/)
+- #### :tv: [Algorithms for Big Data Lectures by Jelani Nelson](https://www.youtube.com/playlist?list=PL2SOU6wwxB0v1kQTpqpuu5kEJo2i-iUyf)
 
-- ### :man_teacher: [Computational Geometry Course by Dave Mount](https://www.cs.umd.edu/class/fall2021/cmsc754/)
+- #### :man_teacher: [Advanced Data Structures Course by Erik Demaine](https://ocw.mit.edu/courses/electrical-engineering-and-computer-science/6-851-advanced-data-structures-spring-2012/)
 
-- ### :man_teacher: [Advanced Data Structures Course by Dave Mount](https://www.cs.umd.edu/class/spring2022/cmsc420-0101/)
+- #### :man_technologist: [Algorithms by Robert Sedgewick and Kevin Wayne](https://algs4.cs.princeton.edu/code/)
 
-- ### :tv: [Advanced Algorithms Course by Michel Goemans](https://ocw.mit.edu/courses/6-854j-advanced-algorithms-fall-2008/)
+- #### :card_file_box: [Algorithms and Data Structures by Douglas Harder](https://ece.uwaterloo.ca/~dwharder/aads/Algorithms/)
 
-- ### :tv: [Algorithms for Big Data Lectures by Jelani Nelson](https://www.youtube.com/playlist?list=PL2SOU6wwxB0v1kQTpqpuu5kEJo2i-iUyf)
+- #### :man_technologist: [Algorithms and Data Structures by Petar Veličković](https://github.com/PetarV-/Algorithms)
 
-- ### :man_teacher: [Advanced Data Structures Course by Erik Demaine](https://ocw.mit.edu/courses/electrical-engineering-and-computer-science/6-851-advanced-data-structures-spring-2012/)
+- #### :man_teacher: [Algorithmic Lower Bounds Course by Erik Demaine](https://ocw.mit.edu/courses/6-890-algorithmic-lower-bounds-fun-with-hardness-proofs-fall-2014/)
 
-- ### :man_technologist: [Algorithms by Robert Sedgewick and Kevin Wayne](https://algs4.cs.princeton.edu/code/)
+- #### :card_file_box: [Computer Science Courses by Dr. Shun Yan Cheung](http://www.mathcs.emory.edu/~cheung/Courses/)
 
-- ### :card_file_box: [Algorithms and Data Structures by Douglas Harder](https://ece.uwaterloo.ca/~dwharder/aads/Algorithms/)
+- #### :book: [The Computer Science Handbook by Michael Young](https://www.thecshandbook.com/)
 
-- ### :man_technologist: [Algorithms and Data Structures by Petar Veličković](https://github.com/PetarV-/Algorithms)
+- #### :tv: [Advanced Data Structures Lectures by Niema Moshiri](https://www.youtube.com/playlist?list=PLM_KIlU0WoXmkV4QB1Dg8PtJaHTdWHwRS)
 
-- ### :man_teacher: [Algorithmic Lower Bounds Course by Erik Demaine](https://ocw.mit.edu/courses/6-890-algorithmic-lower-bounds-fun-with-hardness-proofs-fall-2014/)
+- #### :tv: [Algorithms Illuminated Lectures by Tim Roughgarden](https://www.youtube.com/channel/UCcH4Ga14Y4ELFKrEYM1vXCg/playlists)
 
-- ### :card_file_box: [Computer Science Courses by Dr. Shun Yan Cheung](http://www.mathcs.emory.edu/~cheung/Courses/)
+- #### :man_teacher: [Modern C++ Programming Course by Federico Busato](https://github.com/federico-busato/Modern-CPP-Programming)
 
-- ### :book: [The Computer Science Handbook by Michael Young](https://www.thecshandbook.com/)
+- #### :man_teacher: [Geometric Folding Algorithms Course by Erik Demaine](https://ocw.mit.edu/courses/6-849-geometric-folding-algorithms-linkages-origami-polyhedra-fall-2012/)
 
-- ### :tv: [Advanced Data Structures Lectures by Niema Moshiri](https://www.youtube.com/playlist?list=PLM_KIlU0WoXmkV4QB1Dg8PtJaHTdWHwRS)
+- #### :man_teacher: [Algorithms and Data Structures Course by Pavel Mavrin](https://www.youtube.com/playlist?list=PLrS21S1jm43igE57Ye_edwds_iL7ZOAG4)
 
-- ### :tv: [Algorithms Illuminated Lectures by Tim Roughgarden](https://www.youtube.com/channel/UCcH4Ga14Y4ELFKrEYM1vXCg/playlists)
+- #### :writing_hand: [Computational Geometry Course Notes by David Mount](https://www.cse.cuhk.edu.hk/~taoyf/course/5010/notes/mount-cg2.pdf)
 
-- ### :man_teacher: [Geometric Folding Algorithms Course by Erik Demaine](https://ocw.mit.edu/courses/6-849-geometric-folding-algorithms-linkages-origami-polyhedra-fall-2012/)
+- #### :tv: [Computational Geometry Course by Philipp Kindermann](https://www.youtube.com/playlist?list=PLubYOWSl9mIvTio-1bXWnhE9LdeXfox1z)
 
-- ### :man_teacher: [Algorithms and Data Structures Course by Pavel Mavrin](https://www.youtube.com/playlist?list=PLrS21S1jm43igE57Ye_edwds_iL7ZOAG4)
+- #### :man_teacher: [Applied Algorithms Course from University of Washington](http://courses.cs.washington.edu/courses/csep521/)
 
-- ### :writing_hand: [Computational Geometry Course Notes by David Mount](https://www.cse.cuhk.edu.hk/~taoyf/course/5010/notes/mount-cg2.pdf)
+- #### :card_file_box: [Data Structure and Algorithm Tutorials offered by Programiz](https://www.programiz.com/dsa/)
 
-- ### :tv: [Computational Geometry Course by Philipp Kindermann](https://www.youtube.com/playlist?list=PLubYOWSl9mIvTio-1bXWnhE9LdeXfox1z)
+- #### :man_technologist: [Collection of Algorithms and Data Structures by William Fiset](https://github.com/williamfiset/Algorithms/)
 
-- ### :man_teacher: [Applied Algorithms Course from University of Washington](http://courses.cs.washington.edu/courses/csep521/)
+- #### :man_teacher: [Introduction to Algorithms Course from University of Washington](http://courses.cs.washington.edu/courses/cse421/)
 
-- ### :card_file_box: [Data Structure and Algorithm Tutorials offered by Programiz](https://www.programiz.com/dsa/)
+- #### :man_teacher: [Algorithms Coursera Specialization offered by Stanford University](https://www.coursera.org/specializations/algorithms/)
 
-- ### :man_technologist: [Collection of Algorithms and Data Structures by William Fiset](https://github.com/williamfiset/Algorithms/)
+- #### :man_teacher: [Topics in Theoretical Computer Science Course by Jonathan Kelner](https://ocw.mit.edu/courses/18-409-topics-in-theoretical-computer-science-an-algorithmists-toolkit-fall-2009/)
 
-- ### :man_teacher: [Introduction to Algorithms Course from University of Washington](http://courses.cs.washington.edu/courses/cse421/)
+- #### :book: [Distributed Algorithms Book by Juho Hirvonen and Jukka Suomela](https://jukkasuomela.fi/da2020/)
 
-- ### :man_teacher: [Algorithms Coursera Specialization offered by Stanford University](https://www.coursera.org/specializations/algorithms/)
+- #### :man_teacher: [Algorithms and Data Structures Course by Kevin Wayne and others](https://www.cs.princeton.edu/courses/archive/fall20/cos226/syllabus.php)
 
-- ### :man_teacher: [Topics in Theoretical Computer Science Course by Jonathan Kelner](https://ocw.mit.edu/courses/18-409-topics-in-theoretical-computer-science-an-algorithmists-toolkit-fall-2009/)
+- #### :man_teacher: [Algorithms Coursera Specialization offered by Princeton University](https://www.coursera.org/learn/algorithms-part1/)
 
-- ### :book: [Distributed Algorithms Book by Juho Hirvonen and Jukka Suomela](https://jukkasuomela.fi/da2020/)
+- #### :man_technologist: [Collection of Algorithms and Data Structures by Andrei Navumenka](https://github.com/indy256/codelibrary/)
 
-- ### :man_teacher: [Algorithms and Data Structures Course by Kevin Wayne and others](https://www.cs.princeton.edu/courses/archive/fall20/cos226/syllabus.php)
+- #### :man_teacher: [Introduction to Algorithms Course by Erik Demaine and Srini Devadas](https://ocw.mit.edu/courses/electrical-engineering-and-computer-science/6-006-introduction-to-algorithms-fall-2011/)
 
-- ### :man_teacher: [Algorithms Coursera Specialization offered by Princeton University](https://www.coursera.org/learn/algorithms-part1/)
+- #### :man_teacher: [Data Structures and Algorithms Course from University of Washington](http://courses.cs.washington.edu/courses/cse373/)
 
-- ### :man_technologist: [Collection of Algorithms and Data Structures by Andrei Navumenka](https://github.com/indy256/codelibrary/)
+- #### :man_teacher: [Design and Analysis of Computer Algorithms Course by Jonathan Katz](http://www.cs.umd.edu/~jkatz/451/f21/)
 
-- ### :man_teacher: [Introduction to Algorithms Course by Erik Demaine and Srini Devadas](https://ocw.mit.edu/courses/electrical-engineering-and-computer-science/6-006-introduction-to-algorithms-fall-2011/)
+- #### :man_teacher: [Computer Algorithms in Systems Engineering Course by George Kocur](https://ocw.mit.edu/courses/1-204-computer-algorithms-in-systems-engineering-spring-2010/)
 
-- ### :man_teacher: [Data Structures and Algorithms Course from University of Washington](http://courses.cs.washington.edu/courses/cse373/)
+- #### :man_teacher: [Mathematics for Computer Science by Albert Meyer and Adam Chlipala](https://ocw.mit.edu/courses/electrical-engineering-and-computer-science/6-042j-mathematics-for-computer-science-spring-2015/index.htm)
 
-- ### :man_teacher: [Design and Analysis of Computer Algorithms Course by Jonathan Katz](http://www.cs.umd.edu/~jkatz/451/f21/)
+- #### :man_teacher: [Introduction to Data Compression Course from University of Washington](http://courses.cs.washington.edu/courses/cse490g/)
 
-- ### :man_teacher: [Computer Algorithms in Systems Engineering Course by George Kocur](https://ocw.mit.edu/courses/1-204-computer-algorithms-in-systems-engineering-spring-2010/)
+- #### :man_teacher: [Introduction to Mathematical Programming Course by Dimitris Bertsimas](https://ocw.mit.edu/courses/6-251j-introduction-to-mathematical-programming-fall-2009/)
 
-- ### :man_teacher: [Mathematics for Computer Science by Albert Meyer and Adam Chlipala](https://ocw.mit.edu/courses/electrical-engineering-and-computer-science/6-042j-mathematics-for-computer-science-spring-2015/index.htm)
+- #### :tv: [Efficient Programming with Components Lectures by Alexander Stepanov](https://www.youtube.com/playlist?list=PLHxtyCq_WDLXryyw91lahwdtpZsmo4BGD)
 
-- ### :man_teacher: [Introduction to Data Compression Course from University of Washington](http://courses.cs.washington.edu/courses/cse490g/)
+- #### :man_teacher: [Design and Analysis of Algorithms I Course from University of Washington](http://courses.cs.washington.edu/courses/cse521/)
 
-- ### :man_teacher: [Introduction to Mathematical Programming Course by Dimitris Bertsimas](https://ocw.mit.edu/courses/6-251j-introduction-to-mathematical-programming-fall-2009/)
+- #### :man_teacher: [Design and Analysis of Algorithms II Course from University of Washington](http://courses.cs.washington.edu/courses/cse522/)
 
-- ### :tv: [Efficient Programming with Components Lectures by Alexander Stepanov](https://www.youtube.com/playlist?list=PLHxtyCq_WDLXryyw91lahwdtpZsmo4BGD)
+- #### :man_teacher: [Design and Analysis of Algorithms Course by Dana Moshkovitz and Bruce Tidor](https://ocw.mit.edu/courses/6-046j-design-and-analysis-of-algorithms-spring-2012/)
 
-- ### :man_teacher: [Design and Analysis of Algorithms I Course from University of Washington](http://courses.cs.washington.edu/courses/cse521/)
+- #### :man_teacher: [Algorithms and Computational Complexity Course from University of Washington](http://courses.cs.washington.edu/courses/cse417/)
 
-- ### :man_teacher: [Design and Analysis of Algorithms II Course from University of Washington](http://courses.cs.washington.edu/courses/cse522/)
+- #### :man_teacher: [Performance Engineering of Software Systems Course by Charles Leiserson and Julian Shun](https://ocw.mit.edu/courses/6-172-performance-engineering-of-software-systems-fall-2018/)
 
-- ### :man_teacher: [Design and Analysis of Algorithms Course by Dana Moshkovitz and Bruce Tidor](https://ocw.mit.edu/courses/6-046j-design-and-analysis-of-algorithms-spring-2012/)
+- #### :man_teacher: [Randomized Algorithms and Probabilistic Analysis Course from University of Washington](http://courses.cs.washington.edu/courses/cse525/)
 
-- ### :man_teacher: [Algorithms and Computational Complexity Course from University of Washington](http://courses.cs.washington.edu/courses/cse417/)
+- #### :man_teacher: [Design and Analysis of Algorithms Course by Erik Demaine, Srini Devadas and Nancy Lynch](https://ocw.mit.edu/courses/6-046j-design-and-analysis-of-algorithms-spring-2015/)
 
-- ### :man_teacher: [Performance Engineering of Software Systems Course by Charles Leiserson and Julian Shun](https://ocw.mit.edu/courses/6-172-performance-engineering-of-software-systems-fall-2018/)
+- #### :man_teacher: [Programming Parallel Computers Course by Jukka Suomela, Samuli Laine and Jaakko Lehtinen](https://ppc.cs.aalto.fi/)
 
-- ### :man_teacher: [Randomized Algorithms and Probabilistic Analysis Course from University of Washington](http://courses.cs.washington.edu/courses/cse525/)
+- #### :man_teacher: [Data Structures and Algorithms Coursera Specialization offered by University of California, San Diego (UCSD) and HSE University](https://www.coursera.org/specializations/data-structures-algorithms/)
 
-- ### :man_teacher: [Design and Analysis of Algorithms Course by Erik Demaine, Srini Devadas and Nancy Lynch](https://ocw.mit.edu/courses/6-046j-design-and-analysis-of-algorithms-spring-2015/)
-
-- ### :man_teacher: [Programming Parallel Computers Course by Jukka Suomela, Samuli Laine and Jaakko Lehtinen](https://ppc.cs.aalto.fi/)
-
-- ### :man_teacher: [Data Structures and Algorithms Coursera Specialization offered by University of California, San Diego (UCSD) and HSE University](https://www.coursera.org/specializations/data-structures-algorithms/)
-
-- ### :man_teacher: [Data Structures Stepik Course offered by University of California, San Diego (UCSD), the University of San Diego (USD) and the University of Puerto Rico (UPR)](https://stepik.org/course/579/promo)
+- #### :man_teacher: [Data Structures Stepik Course offered by University of California, San Diego (UCSD), the University of San Diego (USD) and the University of Puerto Rico (UPR)](https://stepik.org/course/579/promo)
 
 <!-- MARKDOWN LINKS -->
 
-[contributors-shield]: https://img.shields.io/github/contributors/tensorush/Computer-Scientists-Toolkit.svg?style=for-the-badge
-[contributors-url]: https://github.com/tensorush/Computer-Scientists-Toolkit/graphs/contributors
-[issues-shield]: https://img.shields.io/github/issues/tensorush/Computer-Scientists-Toolkit.svg?style=for-the-badge
-[issues-url]: https://github.com/tensorush/Computer-Scientists-Toolkit/issues
-[stars-shield]: https://img.shields.io/github/stars/tensorush/Computer-Scientists-Toolkit.svg?style=for-the-badge
-[stars-url]: https://github.com/tensorush/Computer-Scientists-Toolkit/stargazers
-[forks-shield]: https://img.shields.io/github/forks/tensorush/Computer-Scientists-Toolkit.svg?style=for-the-badge
-[forks-url]: https://github.com/tensorush/Computer-Scientists-Toolkit/network/members
-[license-shield]: https://img.shields.io/github/license/tensorush/Computer-Scientists-Toolkit.svg?style=for-the-badge
-[license-url]: https://github.com/tensorush/Computer-Scientists-Toolkit/blob/master/LICENSE.md
+[ci-shd]: https://img.shields.io/github/actions/workflow/status/tensorush/cpp-toolkit/ci.yaml?branch=main&style=for-the-badge&logo=github&label=CI&labelColor=black
+[ci-url]: https://github.com/tensorush/cpp-toolkit/blob/main/.github/workflows/ci.yaml
+[lc-shd]: https://img.shields.io/github/license/tensorush/cpp-toolkit.svg?style=for-the-badge&labelColor=black
+[lc-url]: https://github.com/tensorush/cpp-toolkit/blob/main/LICENSE.md
