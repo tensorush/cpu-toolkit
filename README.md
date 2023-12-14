@@ -1,4 +1,4 @@
-## :dragon_face: :toolbox: **cpp toolkit**
+## :dragon_face: :toolbox: **cpu toolkit**
 
 [![CI][ci-shd]][ci-url]
 [![LC][lc-shd]][lc-url]
@@ -233,7 +233,7 @@
 
 <!-- MARKDOWN LINKS -->
 
-[ci-shd]: https://img.shields.io/github/actions/workflow/status/tensorush/cpp-toolkit/ci.yaml?branch=main&style=for-the-badge&logo=github&label=CI&labelColor=black
-[ci-url]: https://github.com/tensorush/cpp-toolkit/blob/main/.github/workflows/ci.yaml
-[lc-shd]: https://img.shields.io/github/license/tensorush/cpp-toolkit.svg?style=for-the-badge&labelColor=black
-[lc-url]: https://github.com/tensorush/cpp-toolkit/blob/main/LICENSE.md
+[ci-shd]: https://img.shields.io/github/actions/workflow/status/tensorush/cpu-toolkit/ci.yaml?branch=main&style=for-the-badge&logo=github&label=CI&labelColor=black
+[ci-url]: https://github.com/tensorush/cpu-toolkit/blob/main/.github/workflows/ci.yaml
+[lc-shd]: https://img.shields.io/github/license/tensorush/cpu-toolkit.svg?style=for-the-badge&labelColor=black
+[lc-url]: https://github.com/tensorush/cpu-toolkit/blob/main/LICENSE.md
