@@ -3,7 +3,7 @@
 [![CI][ci-shd]][ci-url]
 [![LC][lc-shd]][lc-url]
 
-### :hammer_and_wrench: Collection of basic algorithms and data structures implemented in C++.
+### Collection of basic algorithms and data structures implemented in C++.
 
 ### :hammer: [Algorithms](src/algorithms/)
 
