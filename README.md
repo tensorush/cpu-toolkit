@@ -151,6 +151,8 @@
 
 - #### :man_technologist: [Algorithms by Robert Sedgewick and Kevin Wayne](https://algs4.cs.princeton.edu/code/)
 
+- #### :man_technologist: [Learn Modern C++ Course by Richard Spencer](https://learnmoderncpp.com/course-details/)
+
 - #### :card_file_box: [Algorithms and Data Structures by Douglas Harder](https://ece.uwaterloo.ca/~dwharder/aads/Algorithms/)
 
 - #### :man_technologist: [Algorithms and Data Structures by Petar Veličković](https://github.com/PetarV-/Algorithms)
